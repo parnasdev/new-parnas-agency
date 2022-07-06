@@ -31,7 +31,7 @@
         </div>
     </div>
 </section>
-{{--end-------addressbar--}}
+{{--end---addressbar--}}
 
 {{---PORTFOLIO---}}
 <section class="portfolio" x-data="{tab:'one'}">
@@ -207,6 +207,9 @@
                     </svg>
                 </div>
             </div>
+        </div>
+        <div class="banner-parnas mt-4 w-90 mx-auto">
+            <img class="w-100" src="/images/banner-two.png" alt="">
         </div>
     </div>
 </section>

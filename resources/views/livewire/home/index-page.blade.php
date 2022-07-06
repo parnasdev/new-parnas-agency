@@ -1,18 +1,18 @@
 <section x-data="{
         page:1,
-        changeStep(eventPage){
-        if (eventPage==-1){
-        if (this.page>=2){
-                this.step=this.step-1
+        section:1,
+        changeSection(){
+        console.log(this.section)
+           if (this.section==6){
+              this.section=1
+             }else{
+        this.section+=1
+             }
+             window.location.href = '#s'+ this.section;
         }
-        }else {
-        if (this.page<7){
-                 this.step=this.step+1
-        }
-        }}
 
  }">
-    <a @click.prevent="changeStep(1)" class="btn-change-page" href="">
+    <a @click.prevent="changeSection()" class="btn-change-page">
         <svg class="svg-line" width="50" height="50" viewBox="0 0 60 60">
             <g id="line-change-page" fill="#212e47" stroke="#ca7e65" stroke-width="2" stroke-dasharray="30">
                 <circle cx="30" cy="30" r="30" stroke="none"/>
@@ -41,7 +41,7 @@
 
     </a>
     <div class="prs-responsive">
-        <div class="w-90 s1-index">
+        <div id="s1" class="w-90 s1-index">
             <svg id="_039-pattern" data-name="039-pattern" width="30" height="28" viewBox="0 0 34.532 32.202">
                 <g id="Group_121" data-name="Group 121" transform="translate(0 0)">
                     <path id="Path_1488" data-name="Path 1488"
@@ -75,7 +75,7 @@
     </div>
 
 </section>
-<section class="w-90 s2-index" x-data="{
+<section id="s2" class="w-90 s2-index" x-data="{
         step:1,
         changeStep(event){
         console.log(this.step)
@@ -209,7 +209,7 @@
         </div>
     </div>
 </section>
-<section class="s3" x-data="{tab:'one'}">
+<section id="s3" class="s3" x-data="{tab:'one'}">
     <div class="prs-responsive">
         <div class="w-90 mx-auto p-s3">
             <svg class="me-2" id="_039-pattern" data-name="039-pattern" width="30" height="28"
@@ -316,7 +316,7 @@
 </section>
 
 
-<section class="special-parnas" x-data="{tabSlider:'sliderOne'}">
+<section id="s4" class="special-parnas" x-data="{tabSlider:'sliderOne'}">
     <div class="prs-responsive">
         <div class="w-90 mx-auto p-special-parnas">
             <svg class="svg-sepecial-parnas" id="_039-pattern" data-name="039-pattern" width="30" height="28"
@@ -489,7 +489,7 @@
         </div>
     </div>
 </section>
-<section class="blog-index-page" x-data="{tabBlog:'one'}">
+<section id="s5" class="blog-index-page" x-data="{tabBlog:'one'}">
     <div class="prs-responsive">
         <div class="w-90 mx-auto p-blog-index">
             <svg class="ms-3" id="_039-pattern" data-name="039-pattern" width="30" height="28"
@@ -586,7 +586,7 @@
                     <a href="" class="btn-last-blog btn-base">آخرین اخبار و مقالات</a>
                 </div>
                 <div class="l">
-                    <div x-show="tabBlog==='one'" class="swiper swiper-blog-index">
+                    <div x-show="tabBlog==='one'" class="swiper mySwiper-blog">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="card-blog w-100">
@@ -656,7 +656,7 @@
 </section>
 
 
-<section class="customers">
+<section id="s6" class="customers">
     <div class="prs-responsive">
         <div class="w-90 mx-auto p-customers">
             <svg class="ms-3" id="_039-pattern" data-name="039-pattern" width="30" height="28"
@@ -787,25 +787,35 @@
             slidesPerView: 3,
             spaceBetween: 0,
         });
-        var swiper = new Swiper(".swiper-blog-index", {
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
+
+        var swiper = new Swiper(".mySwiper-blog", {
             slidesPerView: 2,
-            spaceBetween: 20,
+            spaceBetween: 48,
+            freeMode: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
         });
     </script>
     <script>
+        $(document).ready(function () {
+            $('.btn-change-page').on('click', function () {
+                $('.svg-line').toggleClass('rotate')
+            })
+        })
         $(window).scroll(function () {
             if ($(this).scrollTop() > 0 && $(this).scrollTop() < 1490) {
-                $('.btn-back-top').css({'display': 'none'})
+                $('.btn-back-top').addClass('animated fadeOutRight')
             } else if ($(this).scrollTop() > 1500) {
                 $('.btn-back-top').css({'display': 'flex'})
+                $('.btn-back-top').removeClass('animated fadeOutRight')
+                $('.btn-back-top').addClass('animated fadeInRight')
 
             } else if ($(this).scrollTop() > 3000) {
                 $('.btn-back-top').css({'display': 'flex'})
-                $('.btn-back-top').css({'top': '70%'})
+                $('.btn-back-top').addClass('bottom-fix')
+
 
             }
         })
