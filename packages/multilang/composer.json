@@ -1,0 +1,17 @@
+{
+    "name": "parnas/multilang",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Parnas\\Multilang\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "parnas agency",
+            "email": "info@parnas.agency"
+        }
+    ],
+    "require": {}
+}

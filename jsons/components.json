@@ -1,0 +1,121 @@
+[
+    {
+        "id": 1,
+        "title" : "عنوان ها",
+        "context": "h1",
+        "options": {
+            "data-type": "editable"
+        },
+        "inner": null
+    },
+    {
+        "id": 2,
+        "title" : "متن ها",
+        "context": "p",
+        "options":{
+            "data-type": "editable"
+        },
+        "inner": null
+    },
+    {
+        "id": 3,
+        "title" : "تصور ها",
+        "context": "img",
+        "options":{
+            "data-type": "editable",
+            "class": "img-fluid",
+            "src": "/images/folder.png"
+        },
+        "inner": null
+    },
+    {
+        "id": 4,
+        "title" : "لینک ها",
+        "context": "a",
+        "options":{
+            "data-type": "editable",
+            "href": "#"
+        },
+        "inner": null
+    },
+    {
+        "id": 5,
+        "title" : "button",
+        "context": "a",
+        "options":{
+            "class": "btn btn-success",
+            "data-type": "editable",
+            "type": "button"
+        },
+        "inner": null
+    },
+    {
+        "id": 6,
+        "title": "تک ستون",
+        "context": "div",
+        "options": {
+            "class": "row row-cols-1"
+        },
+        "inner": ["div-dropable"]
+    },
+    {
+        "id": 7,
+        "title": "دو ستون",
+        "context": "div",
+        "options": {
+            "class": "row row-cols-2",
+            "data-type": "editable"
+        },
+        "inner": ["div-dropable" , "div-dropable"]
+    },
+    {
+        "id": 8,
+        "title": "سه ستون",
+        "context": "div",
+        "options": {
+            "class": "row row-cols-3",
+            "data-type": "editable"
+        },
+        "inner": ["div-dropable" , "div-dropable" , "div-dropable"]
+    },
+    {
+        "id": 9,
+        "title": "چهار ستون",
+        "context": "div",
+        "options": {
+            "class": "row row-cols-4",
+            "data-type": "editable"
+        },
+        "inner": ["div-dropable","div-dropable","div-dropable","div-dropable"]
+    },
+    {
+        "id": 10,
+        "title": "پنچ ستون",
+        "context": "div",
+        "options": {
+            "class": "row row-cols-5",
+            "data-type": "editable"
+        },
+        "inner": ["div-dropable","div-dropable","div-dropable","div-dropable","div-dropable"]
+    },
+    {
+        "id": 11,
+        "title": "شش ستون",
+        "context": "div",
+        "options": {
+            "class": "row row-cols-6",
+            "data-type": "editable"
+        },
+        "inner": ["div-dropable","div-dropable","div-dropable","div-dropable","div-dropable","div-dropable"]
+    },
+    {
+        "id": 12,
+        "title" : "لینک با تصویر",
+        "context": "a",
+        "options":{
+            "data-type": "editable",
+            "href": "#"
+        },
+        "inner": ["img-editable"]
+    }
+]

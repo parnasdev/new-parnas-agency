@@ -1,0 +1,18 @@
+{
+    "name": "parnas/form",
+    "description": "create form contact and extra",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Parnas\\Form\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "parnas agency",
+            "email": "info@parnas.agency"
+        }
+    ],
+    "require": {}
+}

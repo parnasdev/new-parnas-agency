@@ -1,0 +1,10 @@
+<svg id="circle-active" xmlns="http://www.w3.org/2000/svg" width="126" height="126" viewBox="0 0 126 126">
+  <g id="Ellipse_113" data-name="Ellipse 113" transform="translate(9 9)" fill="#212e47" stroke="#ca7e65" stroke-width="5">
+    <circle cx="54" cy="54" r="54" stroke="none"/>
+    <circle cx="54" cy="54" r="51.5" fill="none"/>
+  </g>
+  <g id="Ellipse_114" data-name="Ellipse 114" fill="none" stroke="#ca7e65" stroke-width="3" opacity="0.5">
+    <circle cx="63" cy="63" r="63" stroke="none"/>
+    <circle cx="63" cy="63" r="61.5" fill="none"/>
+  </g>
+</svg>

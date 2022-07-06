@@ -1,0 +1,18 @@
+{
+    "name": "parnas/ticket",
+    "description": "ticket system",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Parnas\\Ticket\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "parnas agency",
+            "email": "info@parnas.agency"
+        }
+    ],
+    "require": {}
+}

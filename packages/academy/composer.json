@@ -1,0 +1,27 @@
+{
+    "name": "parnas/academy",
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "academy store",
+    "autoload": {
+        "psr-4": {
+            "php": "^8.0",
+            "Parnas\\Academy\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "parnas agency",
+            "email": "info@parnas.agency"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Parnas\\Academy\\Provider\\AcademyServiceProvider"
+            ],
+            "aliases": {}
+        }
+    }
+}
