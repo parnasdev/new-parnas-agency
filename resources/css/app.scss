@@ -2257,7 +2257,54 @@ a {
 }
 
 //----------------------------------banner-parnas
-.rotate{
+.rotate {
     transform: rotate(180deg) !important;
     transition: 1s ease-in;
+}
+
+.popup-box-search {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $base-color;
+    position: fixed;
+    right: 0;
+    flex-direction: column;
+    top: 0;
+    z-index: 9999;
+
+    .close-popup-search {
+
+    }
+
+    .search-popup {
+        width: 60%;
+        height: 100px;
+        padding: 0 10px;
+        border: 3px solid $gold-second;
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 20px;
+        overflow: hidden;
+        font-weight: 600;
+
+        input {
+            font-family: Yekan-Bakh-xx !important;
+            outline: none;
+            background: unset;
+            width: 85%;
+            border: none;
+            text-align: right;
+            font-size: 25px;
+            color: $gold-second;
+            &::placeholder {
+                color: $gold-second;
+            }
+        }
+
+    }
 }

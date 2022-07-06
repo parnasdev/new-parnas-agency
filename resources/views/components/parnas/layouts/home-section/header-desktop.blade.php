@@ -70,8 +70,8 @@
             </div>
         </div>
         <div class="w-90 mx-auto flex-between p-header-desktop-second">
-            <div class="tools-header">
-                <a class="search-header" href="">
+            <div class="tools-header" x-data="{search:false}">
+                <a @click.prevent="search=true" class="search-header" href="">
                     <svg width="25" height="25" viewBox="0 0 29.393 29.593">
                         <g id="Search..." transform="translate(0 0)" opacity="0.5">
                             <path id="Path_1136" data-name="Path 1136"
@@ -84,6 +84,27 @@
                     </svg>
 
                 </a>
+                <div x-transition.scale.20 x-transition.duration.500ms style="display: none" x-show="search"
+                     class="popup-box-search">
+                    <a @click.prevent="search=false" class="close-popup-search btn-base" href="">بستن جستجو</a>
+                    <div class="search-popup">
+                        <input type="text" placeholder="جستجو کنید">
+                        <a href="">
+                            <svg width="40" height="40" viewBox="0 0 29.393 29.593">
+                                <g id="Search..." transform="translate(0 0)" opacity="1">
+                                    <path id="Path_1136" data-name="Path 1136"
+                                          d="M1,11.478c0,4.37.783,6.88,2.3,8.345s4.047,2.133,8.175,2.133,6.647-.659,8.175-2.133,2.3-3.975,2.3-8.345-.783-6.88-2.3-8.345S15.606,1,11.478,1,4.831,1.659,3.3,3.133,1,7.108,1,11.478Z"
+                                          fill="none" stroke="#CA7E65" stroke-linecap="round" stroke-linejoin="round"
+                                          stroke-width="2"></path>
+                                    <path id="Path_1137" data-name="Path 1137" d="M27.979,28.179l-7.631-7.831"
+                                          fill="none"
+                                          stroke="#CA7E65" stroke-linecap="round" stroke-linejoin="round"
+                                          stroke-width="2"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
                 <div class="line-between"></div>
                 <button class="change-language">
                     EN
