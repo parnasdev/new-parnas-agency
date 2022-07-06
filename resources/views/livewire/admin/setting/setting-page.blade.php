@@ -39,12 +39,7 @@
                                         </div>
                                     </div>
                                     <!--! Button 3 -->
-                                    <div class="our-services-card flex-15 m-flex-45 px-7" :class="{'selected-services': tab==='generalEn'}" @click="tab = 'generalEn'">
-                                        <!-- Title -->
-                                        <div class="paragraph">
-                                            <span class="f-12">عمومی انگلیسی</span>
-                                        </div>
-                                    </div>
+                                 
                                 </div>
                             </div>
                         </div>
@@ -53,10 +48,7 @@
                     <div class="mb-10 p-10 border-top-solid-2 border-info bg-light" x-show="tab == 'general'">
                         <livewire:admin.setting.public-form wire:key="general"/>
                     </div>
-                    <div class="mb-10 p-10 border-top-solid-2 border-info bg-light" x-show="tab == 'generalEn'">
-                        <livewire:admin.setting.public-form-en wire:key="generalEn"/>
-                    </div>
-
+                
                     <div class="mb-10 p-10 border-top-solid-2 border-info bg-light" x-show="tab == 'homepage'" x-data="{ settingTab: @entangle('homeTab')}">
                         <div class="main-data c-group-btn d-flex align-items-center m-align-items-start flex-wrap justify-content-between">
                             <div class="d-flex flex-wrap align-items-center flex-75 m-flex-100">

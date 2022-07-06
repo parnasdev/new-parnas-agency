@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
-use Packages\academy\src\Models\HasAcademy;
 use App\Models\Extra\{WithComment, WithPostFile, WithVisit};
 use Cviebrock\EloquentSluggable\{Sluggable, SluggableScopeHelpers};
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,7 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
-    use HasFactory, SoftDeletes, Sluggable, SluggableScopeHelpers, WithVisit, WithComment, WithPostFile, HasAcademy;
+    use HasFactory, SoftDeletes, Sluggable, SluggableScopeHelpers, WithVisit, WithComment, WithPostFile;
 
     protected $fillable = [
         'user_id',
@@ -74,9 +73,7 @@ class Post extends Model
             return route('posts.show', ['post' => $this->slug , "lang" => "$lang"]);
         }
 
-        if ($this->post_type == 'academy') {
-            return route('courses.show', ['course' => $this->slug , "lang" => "$lang"]);
-        }
+
 
         if ($this->post_type == 'page') {
             return url("/{$this->slug}");

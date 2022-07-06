@@ -3,15 +3,10 @@
 namespace App\Models;
 
 use App\Models\Extra\WithPostFile;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Packages\academy\src\Models\Learning;
-use Packages\order\src\Models\Order;
-use Packages\pay\src\Models\Transaction;
-use Packages\ticket\src\Models\Ticket;
 
 class User extends Authenticatable
 {

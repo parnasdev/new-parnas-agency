@@ -1,32 +1,8 @@
 [
-    {
-        "packageName": "academy",
-        "service" : "Packages\\academy\\src\\Provider\\AcademyServiceProvider",
-        "disabled": false
-    },
-    {
-        "packageName": "pay",
-        "service" : "Packages\\pay\\src\\Provider\\PayServiceProvider",
-        "disabled": false
-    },
-    {
-        "packageName": "order",
-        "service" : "Packages\\order\\src\\Provider\\OrderServiceProvider",
-        "disabled": false
-    },
+
     {
         "packageName": "form",
         "service" : "Packages\\form\\src\\Provider\\FormServiceProvider",
-        "disabled": false
-    },
-    {
-        "packageName": "ticket",
-        "service" : "Packages\\ticket\\src\\Provider\\TicketServiceProvider",
-        "disabled": false
-    },
-    {
-        "packageName": "multilang",
-        "service" : "Packages\\multilang\\src\\Provider\\MultiLangServiceProvider",
         "disabled": false
     }
 ]

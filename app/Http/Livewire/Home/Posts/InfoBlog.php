@@ -5,19 +5,15 @@ namespace App\Http\Livewire\Home\Posts;
 use App\Models\Comment;
 use App\Models\Post;
 use Livewire\Component;
-use Packages\multilang\src\WithMultiLang;
 
 class InfoBlog extends Component
 {
     public Post $post;
 
-    public ?string $lang = 'fa';
 
     public Comment $comment;
 
-    protected $queryString = ['lang' => ['except' => 'fa']];
 
-    use WithMultiLang;
 
     public $parentId = null;
 
@@ -39,9 +35,7 @@ class InfoBlog extends Component
 
         abort_if($this->post->status_id != getStatus('publish') , 404);
 
-        $this->getSessionLang();
 
-        session()->put('lang' , $this->lang);
     }
 
     public function render()

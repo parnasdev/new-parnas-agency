@@ -39,7 +39,6 @@ return [
         'socialMedia2' => ['label' => 'شبکه اجتماعی 2' ,'type' => 'text'],
         'socialMedia3' => ['label' => 'شبکه اجتماعی 3' ,'type' => 'text'],
         'form' => ['label' => 'فرم تماس' ,'type' => 'select' , "model" => ""],
-        'categoryAcademyIds' => ['label' => 'دسته بندی' ,'type' => 'multiSelect' , "model" => "App\\Models\\Category"  , "cat_type" => 2],
         'categoryPostIds' => ['label' => 'دسته بندی' ,'type' => 'multiSelect' , "model" => "App\\Models\\Category"  , "cat_type" => 1],
     ],
     'masters' => [

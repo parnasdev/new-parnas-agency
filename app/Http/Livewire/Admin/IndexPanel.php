@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Livewire\Component;
 use Morilog\Jalali\Jalalian;
-use Packages\pay\src\Models\Transaction;
 
 class IndexPanel extends Component
 {
@@ -27,33 +26,11 @@ class IndexPanel extends Component
         $this->visitData[] = Visit::query()->whereMonth('updated_at' , now())->get()->count();
         $this->visitData[] = Visit::query()->whereYear('updated_at' , now())->get()->count();
 
-        $dates = $this->getStartEndWeekDate(jdate());
 
-        $monthDates = [(new Jalalian(jdate()->getYear(), jdate()->getMonth(), 1))->toCarbon()->format('Y-m-d H:i:s') , (new Jalalian(jdate()->getYear(), jdate()->getMonth(), jdate()->getMonthDays()))->toCarbon()->format('Y-m-d H:i:s')];
 
-        $transactions = Transaction::query()->whereBetween('created_at' ,  $dates)
-            ->orderBy('created_at')->get()
-        ->map(function ($item) {
-            return [
-                'amount' => $item->amount,
-                'created_at' => jdate($item->created_at)->format('Y-m-d')
-            ];
-        });
-        foreach ($transactions->groupBy('created_at') as $item) {
-            $this->transactionWeekData[] = collect($item)->sum('amount');
-        }
+    
+ 
 
-        $transactions = Transaction::query()->whereBetween('created_at' ,  $monthDates)
-            ->orderBy('created_at')->get()
-            ->map(function ($item) {
-                return [
-                    'amount' => $item->amount,
-                    'created_at' => jdate($item->created_at)->format('m')
-                ];
-            });
-        foreach ($transactions->groupBy('created_at') as $item) {
-            $this->transactionMonthData[] = collect($item)->sum('amount');
-        }
 //
 //        $uploads = collect(File::allFiles(public_path('/uploads')))->sortBy(function ($file) {
 //            return $file->getCTime();
