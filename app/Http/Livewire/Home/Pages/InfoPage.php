@@ -5,18 +5,14 @@ namespace App\Http\Livewire\Home\Pages;
 use App\Models\Post;
 use Artesaos\SEOTools\Facades\SEOTools;
 use Livewire\Component;
-use Packages\multilang\src\WithMultiLang;
 
 class InfoPage extends Component
 {
 
     public Post $post;
 
-    public ?string $lang = 'fa';
 
-    protected $queryString = ['lang' => ['except' => 'fa']];
 
-    use WithMultiLang;
 
     public function mount()
     {
@@ -24,9 +20,7 @@ class InfoPage extends Component
         $url = url()->current();
         $array = explode('/', $url);
 
-        $this->getSessionLang();
 
-        session()->put('lang', $this->lang);
 
         $this->post = Post::query()->where('post_type', 'page')->whereSlug(urldecode($array[count($array) - 1]))->firstOrFail();
 
