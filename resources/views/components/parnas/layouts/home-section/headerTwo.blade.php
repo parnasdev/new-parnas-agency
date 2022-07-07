@@ -1,4 +1,4 @@
-<header class="header-desktop header-desktop-two">
+<header x-data x-show="window.innerWidth>869" class="header-desktop header-desktop-two">
     <div class="pattern"></div>
     <div class="prs-responsive">
         <div class="w-90 mx-auto flex-between p-header-desktop">
