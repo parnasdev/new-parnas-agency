@@ -1037,7 +1037,7 @@
                 <img style="display: none" x-show="step===7" class="img-step-6 img" src="/images/img-step-6.png" alt="">
             </div>
         </section>
-        <section id="s3" class="s3" x-data="{tab:'one'}">
+        <section id="s3" class="s3 w-100" x-data="{tab:'one'}">
             <div class="prs-responsive">
                 <div class="w-90 mx-auto p-s3">
                     <svg class="me-2" id="_039-pattern" data-name="039-pattern" width="30" height="28"
@@ -1566,7 +1566,7 @@
                         <div class="box-logo">
                             <img src="/images/Image-6.svg" alt="">
                         </div>
-                        <div style="width: 27.9%;display: flex;justify-content: center">
+                        <div style="width: 100%;display: flex;justify-content: center;margin: 10px 0">
                             <a href="" class="btn-all-project btn-base-second">همه نمونه کار ها</a>
                         </div>
                         <div class="box-logo">
@@ -1609,6 +1609,21 @@
                 </div>
             </div>
         </section>
+        <div class="p-back-top">
+            <a @click.prevent="window.scrollTo(0,0)" href="" class="btn-back-top">
+                <svg width="47" height="47" viewBox="0 0 58.993 58.993">
+                    <g id="_024-arrow" data-name="024-arrow" transform="translate(0 29.496) rotate(-45)">
+                        <g id="Group_97" data-name="Group 97" transform="translate(0 0)">
+                            <path id="Path_1470" data-name="Path 1470"
+                                  d="M41.356.358a1.222,1.222,0,0,0-1.237-.3l-11.556,3.7a1.222,1.222,0,0,0-.491,2.028l3.063,3.063L14.776,25.21,7.162,22.672a1.221,1.221,0,0,0-1.251.3L.358,28.521a1.222,1.222,0,0,0,.478,2.024l7.751,2.584,2.584,7.751a1.222,1.222,0,0,0,2.024.478L18.747,35.8a1.222,1.222,0,0,0,.3-1.251L16.5,26.938,32.863,10.58l3.063,3.063a1.222,1.222,0,0,0,2.028-.491L41.656,1.6A1.222,1.222,0,0,0,41.356.358ZM9.223,30.764,3.485,28.851l3.621-3.621,5.738,1.913-2.767,2.767Zm3.641,7.466-1.913-5.738,3.556-3.556.065-.065,1.913,5.738ZM36.237,10.5,31.216,5.477,38.6,3.11Z"
+                                  transform="translate(0 0)" fill="#a8b0a5"/>
+                        </g>
+                    </g>
+                </svg>
+
+            </a>
+
+        </div>
     </article>
 </div>
 
@@ -1625,7 +1640,7 @@
         });
 
         var swiper = new Swiper(".mySwiper-blog", {
-            slidesPerView: 2,
+            slidesPerView: mobile ? 1 : 2,
             spaceBetween: 48,
             freeMode: true,
             pagination: {
