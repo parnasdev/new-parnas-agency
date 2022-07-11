@@ -7078,4 +7078,206 @@ a {
     display: grid;
     grid-template-columns: 1fr !important;
   }
+
+  .p-header-desktop-three {
+    margin-top: 15rem;
+  }
+
+  .header-mobile {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+  }
+  .header-mobile .pattern {
+    background: url(/images/pattern-header.svg);
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 150px;
+    z-index: -1;
+  }
+  .header-mobile .p-header-desktop {
+    padding: 3rem 0 2rem 0;
+    position: relative;
+  }
+  .header-mobile .p-header-desktop:before {
+    content: url(/images/line-header-mobile.svg);
+    position: absolute;
+    right: -12px;
+    bottom: 11px;
+    transform: translateY(20px);
+    z-index: -1;
+  }
+  .header-mobile .p-header-desktop:after {
+    content: url(/images/line-header-two-mobi.svg);
+    position: absolute;
+    left: -11px;
+    transform: translateY(56px);
+    z-index: -1;
+  }
+  .header-mobile .p-header-desktop .name-parnas {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .header-mobile .p-header-desktop .name-parnas h1 {
+    color: #ffffff;
+    font-size: 14px;
+    font-family: "Yekan-Bakh-x" !important;
+  }
+  .header-mobile .p-header-desktop .name-parnas h2 {
+    color: #A8B0A5;
+    font-size: 12px;
+    margin-top: 6px;
+  }
+  .header-mobile .p-header-desktop .logo-website {
+    transform: translateY(32px) translateX(43px);
+  }
+  .header-mobile .p-header-desktop .l-header {
+    display: flex;
+    align-items: center;
+  }
+  .header-mobile .p-header-desktop .l-header .contact-header {
+    display: flex;
+    align-items: center;
+    height: 30px;
+  }
+  .header-mobile .p-header-desktop .l-header .contact-header span {
+    font-size: 18px;
+  }
+  .header-mobile .p-header-desktop .l-header .line-between {
+    height: 35px;
+    width: 3px;
+    border-radius: 30px;
+    margin: 0 1rem;
+    background: #4B4B4B;
+  }
+  .header-mobile .p-header-desktop .l-header .header-box-menu {
+    width: 45px;
+    height: 45px;
+    border-radius: 15px;
+    border: 2px solid #CA7E65;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .p-header-desktop-three:after {
+    display: none;
+  }
+
+  .mobile-index-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+    transform: translateY(-45px);
+  }
+
+  .s1-index:before {
+    display: none;
+  }
+
+  .s1-index .p-s1 {
+    height: auto;
+    flex-direction: column;
+  }
+  .s1-index .p-s1 .text-about-index {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .s1-index .p-s1 .text-about-index p {
+    font-size: 13px;
+  }
+  .s1-index .p-s1 .l-about-index {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .s1-index .p-s1 .l-about-index img {
+    transform: translateX(0);
+  }
+  .s1-index .p-s1 .l-about-index .p-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 1.8rem;
+  }
+  .s1-index .p-s1 .l-about-index .p-button a {
+    width: 45% !important;
+  }
+
+  .s1-index h3 {
+    font-size: 16px;
+  }
+
+  .s2-index {
+    width: 100%;
+    margin-top: 2rem;
+    height: auto !important;
+  }
+
+  .s2-index .p-steps:after {
+    display: none;
+  }
+
+  .s2-index .p-steps .text-steps {
+    height: 250px;
+  }
+  .s2-index .p-steps .text-steps p {
+    font-size: 12px;
+  }
+
+  .s2-index .p-steps h3 {
+    font-size: 16px;
+  }
+
+  .s3 .header-tab .activeTab img {
+    width: 130px !important;
+    z-index: 2;
+    transform: translateY(-34px) translateX(-1px);
+  }
+
+  .s3 .title-en-zeus {
+    font-size: 43px;
+  }
+
+  .s3 .body-tab .center-tab {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  .s3 .body-tab .center-tab .img-center-avatar {
+    width: 100%;
+    transform: translateY(0);
+  }
+
+  .s3 .body-tab .center-tab .p-implementation {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .p-buttons-package svg {
+    display: none;
+  }
+
+  .s3 .body-tab .center-tab .p-implementation .p-buttons-package .btn-work-samples {
+    font-size: 13px;
+  }
+
+  .banner {
+    transform: translateY(0);
+    margin: 1rem 0;
+  }
 }
