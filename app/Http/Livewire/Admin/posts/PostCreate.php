@@ -41,7 +41,7 @@ class PostCreate extends Component
             'post.pin' => ['nullable' , 'boolean'],
             'post.comment' => ['nullable' , 'boolean'],
             'post.status_id' => ['required'],
-            'post.lang' => ['required'],
+            // 'post.lang' => ['required'],
             'selectedTag' => ['nullable']
         ];
     }
@@ -51,7 +51,7 @@ class PostCreate extends Component
         $this->post = new Post([
             'pin' => false,
             'comment' => false,
-            'lang' => 'fa'
+            // 'lang' => 'fa'
         ]);
     }
 

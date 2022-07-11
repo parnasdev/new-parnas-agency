@@ -31,7 +31,7 @@ class CategoryEdit extends Component
             'category.name' => ['required', 'string', 'max:100'],
             'category.slug' => ['required', 'string', 'max:100', Rule::unique('categories', 'slug')->where('category_type' , $this->type)->ignore($this->category->id)],
             'category.description' => ['nullable', 'string', 'max:10000'],
-            'category.lang' => ['required' , Rule::in(['fa' , 'en'])],
+            // 'category.lang' => ['required' , Rule::in(['fa' , 'en'])],
             'file.url' => ['nullable'],
             'file.alt' => ['nullable'],
         ];

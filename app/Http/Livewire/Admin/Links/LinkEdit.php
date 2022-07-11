@@ -22,7 +22,7 @@ class LinkEdit extends Component
         return [
             'links.*.title' => ['required' , 'max:100'],
             'link.type' => ['required'],
-            'link.lang' => ['required'],
+            // 'link.lang' => ['required'],
             'link.used' => ['nullable']
         ];
     }

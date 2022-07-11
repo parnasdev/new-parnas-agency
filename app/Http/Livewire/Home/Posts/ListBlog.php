@@ -12,9 +12,6 @@ class ListBlog extends Component
 
     public $paginationTheme = 'new-paginate';
 
-
-
-
     public function mount()
     {
 

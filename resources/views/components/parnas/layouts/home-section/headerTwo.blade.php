@@ -71,10 +71,13 @@
         </div>
         <div class="w-90 mx-auto flex-between p-header-desktop-second">
             <div class="nav-header">
-                <h2><a href=""> طراحی سایت </a></h2>
-                <h2><a href=""> طراحی فروشگاه اینترنتی </a></h2>
-                <h2><a href=""> دیجیتال مارکتینگ </a></h2>
-                <h2><a href=""> اخبار و مقالات </a></h2>
+            @foreach(\App\Models\Link::query()->where('type' , 'header')->first()?->linkContents()->get()->sortBy('order_item') ?? [] as $link)
+                @if($link->is_link)
+                <h2><a href="{{ $link->href }}">  {{ $link->title }}  </a></h2>
+                @else
+                <h2><a href="{{ $link->href }}">  {{ $link->title }}  </a></h2>
+                @endif
+            @endforeach
             </div>
             <div class="d-flex align-items-center">
                 <div class="tools-header me-5">

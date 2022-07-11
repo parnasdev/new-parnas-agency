@@ -1,6 +1,6 @@
 <div class="sidebar-bottom-fix">
     <div class="item-sidebar-bottom" x-data="{tabMobile:'itemOne'}">
-        @foreach(\App\Models\Link::query()->where('type' , 'mobileHeader')->where('lang' , session('lang'))->where('lang' , session()->has('lang') ? session('lang') : app()->getLocale())->first()?->linkContents()->get()->sortBy('order_item') ?? [] as $link)
+        @foreach(\App\Models\Link::query()->where('type' , 'mobileHeader')->first()?->linkContents()->get()->sortBy('order_item') ?? [] as $link)
             @if($link->is_link)
                 <a href="{{ $link->href }}"
                    @click="tabMobile='itemOne'" class="item-menu-bottom">

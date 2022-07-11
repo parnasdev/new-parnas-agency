@@ -44,7 +44,7 @@ class PostEdit extends Component
             'post.pin' => ['nullable' , 'boolean'],
             'post.comment' => ['nullable' , 'boolean'],
             'post.status_id' => ['required'],
-            'post.lang' => ['required'],
+            // 'post.lang' => ['required'],
             'selectedTag' => ['nullable']
         ];
     }
@@ -112,7 +112,8 @@ class PostEdit extends Component
 
     public function openFileManager($file_type , $maxItems , $type)
     {
-        $this->emit('getData_fileManager' , ['maxItems' => $maxItems , 'file_type' => $file_type , 'direction' => 'posts' , 'type' => $type]);        $this->dispatchBrowserEvent('open-modal', ['name' => 'uploader']);
+        $this->emit('getData_fileManager' , ['maxItems' => $maxItems , 'file_type' => $file_type , 'direction' => 'posts' , 'type' => $type]);
+        $this->dispatchBrowserEvent('open-modal', ['name' => 'uploader']);
     }
 
     public function submit()

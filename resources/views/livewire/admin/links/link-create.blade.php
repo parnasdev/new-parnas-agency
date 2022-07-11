@@ -337,7 +337,7 @@
                                 </x-parnas.inputs.select>
                             </div>
                         </div>
-                        <div class="flex-48 m-flex-45 pr-10">
+                        {{-- <div class="flex-48 m-flex-45 pr-10">
                             <div class="d-flex justify-content-start m-left-auto pos-relative pt-5 pr-10 pb-10">
                                 <label for="useData" class="d-flex f-12 text-63">
                                     زبان
@@ -362,7 +362,7 @@
                                     <p>{{ $message }}</p>
                                 @enderror
                             </x-parnas.form-group>
-                        </div>
+                        </div> --}}
                     </div>
                     <!--? switch -->
                     <div class="c-switch mr-10">
@@ -372,9 +372,6 @@
                             استفاده
                         </label>
                     </div>
-
-
-
 
                     <!--? insert data  -->
                     <div class="c-btn justify-content-end py-8 pr-8">

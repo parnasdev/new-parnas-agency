@@ -10,10 +10,7 @@ class InfoBlog extends Component
 {
     public Post $post;
 
-
     public Comment $comment;
-
-
 
     public $parentId = null;
 
@@ -35,11 +32,11 @@ class InfoBlog extends Component
 
         abort_if($this->post->status_id != getStatus('publish') , 404);
 
-
     }
 
     public function render()
     {
+        
         $comments = $this->post->comments()->whereNull('parent_id')->where('approved', 1)->paginate(20, ['*'], 'commentsPage');
         return view('livewire.home.posts.info-blog', compact('comments'));
     }

@@ -26,8 +26,6 @@
                           transform="translate(18.55 18.68)" fill="#fff"/>
                 </svg>
             </a>
-
-
         </div>
     </div>
 </section>
@@ -44,7 +42,7 @@
                           transform="translate(-0.003 -17.275)" fill="#ca7e65"></path>
                 </g>
             </svg>
-            <h3>نمونه کار طراحی سایت و سئو</h3>
+            <h3>اخبار و مقالات</h3>
             <h4>Blogs & News</h4>
             <p class="text">
                 شرکت طراحی سایت و فروشگاه اینترنتی پارناس وب با بهره گیری از روش های نوین و چابک به عنوان بروزترین، سریع ترین و با تجربه ترین تیم ها در زمینه طراحی و پیاده سازی نرم افزار هایکاربردی و تخصصی فعالیت می کند.
@@ -60,10 +58,10 @@
                             </g>
                         </g>
                     </svg>
-
-                    <span>صوت</span>
+                    <span>مقالات</span>
                 </a>
-                <a class="item-change-tab" :class="{'activeTabBLog':tabBlog==='two'}" @click.prevent="tabBlog='two'" href="">
+                <a class="item-change-tab" :class="{'activeTabBLog':tabBlog==='two'}"
+                @click.prevent="tabBlog='two'" href="">
                     <svg id="_021-quill" width="50" height="42" viewBox="0 0 59.101 59.101">
                         <g id="Group_94" data-name="Group 94" transform="translate(0 0)">
                             <path id="Path_1467" data-name="Path 1467" d="M58.594.507A1.729,1.729,0,0,0,57.272,0,60.1,60.1,0,0,0,45.187,2.273,59.156,59.156,0,0,0,32.392,7.605a1.715,1.715,0,0,0-.325.186A44.43,44.43,0,0,0,22.9,14.754c-7.035,7.035-10.67,16-12.481,22.284A63.11,63.11,0,0,0,8.2,48.449l-7.7,7.7a1.731,1.731,0,1,0,2.449,2.449l7.7-7.7a63.124,63.124,0,0,0,11.411-2.219,59.147,59.147,0,0,0,12.793-5.331,1.72,1.72,0,0,0,.328-.187A44.419,44.419,0,0,0,44.346,36.2h0l0,0c7.034-7.035,10.669-16,12.479-22.282A60.122,60.122,0,0,0,59.1,1.828,1.732,1.732,0,0,0,58.594.507ZM43.093,32.5l-2.68-2.68a1.731,1.731,0,0,0-2.449,2.449l2.681,2.681a41.285,41.285,0,0,1-6.209,4.63l-1.891-1.891A1.731,1.731,0,0,0,30.1,40.132L31.3,41.339A56.781,56.781,0,0,1,21.19,45.326a63.739,63.739,0,0,1-6.481,1.513L46.791,14.758a1.731,1.731,0,0,0-2.449-2.449L12.268,44.384c1.194-6.623,4.451-18.55,13.083-27.181a40.359,40.359,0,0,1,7.463-5.826l1.891,1.891a1.731,1.731,0,1,0,2.448-2.449L35.947,9.614A56.783,56.783,0,0,1,46.059,5.626a62.628,62.628,0,0,1,9.372-1.957C54.776,8.779,52.23,22.461,43.093,32.5Z" transform="translate(-0.001 0)" fill="#ddd"></path>
@@ -71,7 +69,8 @@
                     </svg>
                     <span>صوت</span>
                 </a>
-                <a class="item-change-tab" :class="{'activeTabBLog':tabBlog==='three'}" @click.prevent="tabBlog='three'" href="">
+                <a class="item-change-tab" :class="{'activeTabBLog':tabBlog==='three'}"
+                @click.prevent="tabBlog='three'" href="">
                     <svg width="50" height="42" viewBox="0 0 59.101 59.101">
                         <g id="_006-theatre" data-name="006-theatre" opacity="1">
                             <g id="Group_72" data-name="Group 72" transform="translate(0 0)">
@@ -86,94 +85,52 @@
                             </g>
                         </g>
                     </svg>
-                    <span>صوت</span>
+                    <span>ویدیو</span>
                 </a>
 
             </div>
-            <div style="display: none" x-transition:enter="animated fadeIn"   x-show="tabBlog==='one'" class="list-box-blog">
+            <div style="display: none" x-transition:enter="animated fadeIn" x-show="tabBlog==='one'" class="list-box-blog">
+                @foreach ($posts as $post)
                     <div class="card-blog w-90 mx-auto">
-                        <a class="images w-90" href="">
+                        <a class="images w-90" href="{{$post->path()}}">
                             <img src="/images/img-test.png" alt="">
                         </a>
                         <div class="footer-card-blog px-3 w-100">
-                            <span class="text-dark">جاوا اسکریپت چیست ؟</span>
-                            <a class="btn-info-blog btn-base" href=""></a>
+                            <span class="text-dark">{{ $post->title }}</span>
+                            <a class="btn-info-blog btn-base" href="{{$post->path()}}"></a>
                         </div>
                     </div>
-                    <div class="card-blog w-90 mx-auto">
-                        <a class="images w-90" href="">
-                            <img src="/images/img-test.png" alt="">
-                        </a>
-                        <div class="footer-card-blog px-3 w-100">
-                            <span class="text-dark">جاوا اسکریپت چیست ؟</span>
-                            <a class="btn-info-blog btn-base" href=""></a>
-                        </div>
-                    </div>
-                    <div class="card-blog w-90 mx-auto">
-                        <a class="images w-90" href="">
-                            <img src="/images/img-test.png" alt="">
-                        </a>
-                        <div class="footer-card-blog px-3 w-100">
-                            <span class="text-dark">جاوا اسکریپت چیست ؟</span>
-                            <a class="btn-info-blog btn-base" href=""></a>
-                        </div>
-                    </div>
-                    <div class="card-blog w-90 mx-auto">
-                        <a class="images w-90" href="">
-                            <img src="/images/img-test.png" alt="">
-                        </a>
-                        <div class="footer-card-blog px-3 w-100">
-                            <span class="text-dark">جاوا اسکریپت چیست ؟</span>
-                            <a class="btn-info-blog btn-base" href=""></a>
-                        </div>
-                    </div>
-
+                @endforeach
             </div>
             <div style="display: none" x-transition:enter="animated fadeIn"  x-show="tabBlog==='two'" class="list-box-blog">
+                @foreach ($posts as $post)
                 <div class="card-blog w-90 mx-auto">
-                    <a class="images w-90" href="">
+                    <a class="images w-90" href="{{$post->path()}}">
                         <img src="/images/img-test.png" alt="">
                     </a>
                     <div class="footer-card-blog px-3 w-100">
-                        <span class="text-dark">جاوا اسکریپت چیست ؟</span>
-                        <a class="btn-info-blog btn-base" href=""></a>
+                        <span class="text-dark">{{ $post->title }}</span>
+                        <a class="btn-info-blog btn-base" href="{{$post->path()}}"></a>
                     </div>
                 </div>
-
-
+                @endforeach
             </div>
             <div style="display: none" x-transition:enter="animated fadeIn"    x-show="tabBlog==='three'" class="list-box-blog">
-                <div class="card-blog w-90 mx-auto">
-                    <a class="images w-90" href="">
-                        <img src="/images/img-test.png" alt="">
-                    </a>
-                    <div class="footer-card-blog px-3 w-100">
-                        <span class="text-dark">جاوا اسکریپت چیست ؟</span>
-                        <a class="btn-info-blog btn-base" href=""></a>
+                @foreach ($posts as $post)
+                    <div class="card-blog w-90 mx-auto">
+                        <a class="images w-90" href="{{$post->path()}}">
+                            <img src="/images/img-test.png" alt="">
+                        </a>
+                        <div class="footer-card-blog px-3 w-100">
+                            <span class="text-dark">{{ $post->title }}</span>
+                            <a class="btn-info-blog btn-base" href="{{$post->path()}}"></a>
+                        </div>
                     </div>
-                </div>
-                <div class="card-blog w-90 mx-auto">
-                    <a class="images w-90" href="">
-                        <img src="/images/img-test.png" alt="">
-                    </a>
-                    <div class="footer-card-blog px-3 w-100">
-                        <span class="text-dark">جاوا اسکریپت چیست ؟</span>
-                        <a class="btn-info-blog btn-base" href=""></a>
-                    </div>
-                </div>
-                <div class="card-blog w-90 mx-auto">
-                    <a class="images w-90" href="">
-                        <img src="/images/img-test.png" alt="">
-                    </a>
-                    <div class="footer-card-blog px-3 w-100">
-                        <span class="text-dark">جاوا اسکریپت چیست ؟</span>
-                        <a class="btn-info-blog btn-base" href=""></a>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
             <!-- pagination -->
-            <div class="mt-4 p-pagination d-flex align-items-center justify-content-center pb-2">
+            {!! $posts->links() !!}
+            {{-- <div class="mt-4 p-pagination d-flex align-items-center justify-content-center pb-2">
                 <!-- arrow right -->
                 <div class="pagination-first ps-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="43.973" height="43.973" viewBox="0 0 53.973 53.973">
@@ -217,7 +174,7 @@
                         </g>
                     </svg>
                 </div>
-            </div>
+            </div> --}}
         </div>
         <div class="banner-parnas mt-4 w-90 mx-auto">
             <img class="w-100" src="/images/banner-two.png" alt="">

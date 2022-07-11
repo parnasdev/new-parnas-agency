@@ -442,8 +442,7 @@
                                 </x-parnas.inputs.select>
                             </div>
                         </div>
-                        <div class="flex-100 selective-custom justify-content-end mt-10">
-                            <!-- child -->
+                        {{-- <div class="flex-100 selective-custom justify-content-end mt-10">
                             <div class="d-flex justify-content-start m-left-auto pos-relative pr-10">
                                 <label for="useData" class="d-flex f-12 text-63">
                                     زبان نوشته
@@ -468,14 +467,11 @@
                                 <p>{{ $message }}</p>
                                 @enderror
                             </x-parnas.form-group>
-                        </div>
-                        <div class="flex-100 selective-custom justify-content-end mt-7" x-data="{
-                            show: false
-                        }">
+                        </div> --}}
+                        <div class="flex-100 selective-custom justify-content-end mt-7" x-data="{show: false}">
                             <div class="data-in mt-13 mb-15" x-show="show">
                                 <livewire:admin.categories.quick-add-category type="1" />
                             </div>
-                            <!-- child -->
                             <div
                                 class="d-flex align-items-center justify-content-between m-left-auto pos-relative pr-10 pb-5">
                                 <label class="d-flex f-12 text-63">

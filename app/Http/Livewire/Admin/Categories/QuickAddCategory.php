@@ -19,16 +19,16 @@ class QuickAddCategory extends Component
         return [
             'nCategory.parent_id' => ['nullable' , Rule::exists('categories', 'id')],
             'nCategory.name' => ['required' , 'string' , 'max:100'],
-            'nCategory.lang' => ['required' , Rule::in(['fa' , 'en'])],
+            // 'nCategory.lang' => ['required' , Rule::in(['fa' , 'en'])],
         ];
     }
 
     public function mount()
     {
         $this->nCategory = new Category(
-            [
-                'lang' => 'fa'
-            ]
+            // [
+            //     'lang' => 'fa'
+            // ]
         );
     }
 

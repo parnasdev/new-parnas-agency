@@ -99,7 +99,7 @@
                                 <p>{{ $message }}</p>
                                 @enderror
                             </x-parnas.form-group>
-                            <div class="pr-10">
+                            {{-- <div class="pr-10">
                                 <div class="d-flex justify-content-start m-left-auto pos-relative pr-10">
                                     <label for="useData" class="d-flex f-12 text-63">
                                         زبان
@@ -124,7 +124,7 @@
                                     <p>{{ $message }}</p>
                                     @enderror
                                 </x-parnas.form-group>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

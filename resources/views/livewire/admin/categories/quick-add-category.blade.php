@@ -50,7 +50,7 @@
             </div>
         </div>
 
-        <div class="flex-100 selective-custom justify-content-start">
+        {{-- <div class="flex-100 selective-custom justify-content-start">
             <!-- child -->
             <div class="d-flex justify-content-start m-left-auto pos-relative pr-10">
                 <label for="useData" class="d-flex f-12 text-63">
@@ -76,7 +76,7 @@
                 <p>{{ $message }}</p>
                 @enderror
             </x-parnas.form-group>
-        </div>
+        </div> --}}
 
         <div class="c-btn justify-content-end pt-10">
             <button class="btn bg-success text-white radius-5" type="button" wire:click="submit">ثبت دسته بندی</button>
