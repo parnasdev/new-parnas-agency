@@ -36,7 +36,7 @@
 <section class="blog-info">
     <div class="prs-responsive">
         <div class="w-90 mx-auto p-blog-info">
-
+            {!! $post->body !!}
         </div>
     </div>
 </section>

@@ -36,6 +36,7 @@ class InfoBlog extends Component
 
     public function render()
     {
+        
         $comments = $this->post->comments()->whereNull('parent_id')->where('approved', 1)->paginate(20, ['*'], 'commentsPage');
         return view('livewire.home.posts.info-blog', compact('comments'));
     }
