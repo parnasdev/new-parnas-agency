@@ -18,7 +18,7 @@ class LinkCreate extends Component
         return [
             'links.*.title' => ['required' , 'max:100'],
             'link.type' => ['required'],
-            'link.lang' => ['required'],
+            // 'link.lang' => ['required'],
             'link.used' => ['nullable']
         ];
     }
@@ -26,7 +26,7 @@ class LinkCreate extends Component
     public function mount()
     {
         $this->link = new Link([
-            'lang' => 'fa',
+            // 'lang' => 'fa',
             'type' => 'header'
         ]);
         $this->link->used = 0;
@@ -36,8 +36,7 @@ class LinkCreate extends Component
     {
         $categories = Category::query()->get();
         $link_types = config('enums.link_types');
-        $pages = Post::query()->where('post_type' , 'page')
-            ->where('status_id' , getStatus('publish'))->get();
+        $pages = Post::query()->where('post_type' , 'page')->where('status_id' , getStatus('publish'))->get();
         return view('livewire.admin.links.link-create' , compact('categories' , 'link_types' , 'pages'));
     }
 

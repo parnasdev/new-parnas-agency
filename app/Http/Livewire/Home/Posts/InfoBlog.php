@@ -10,10 +10,7 @@ class InfoBlog extends Component
 {
     public Post $post;
 
-
     public Comment $comment;
-
-
 
     public $parentId = null;
 
@@ -34,7 +31,6 @@ class InfoBlog extends Component
         $this->comment = new Comment();
 
         abort_if($this->post->status_id != getStatus('publish') , 404);
-
 
     }
 
