@@ -505,8 +505,7 @@
                     <h3 class="title-fa">کبوتر نامه رسان پارناس ؛ اخبار و مقالات </h3>
                     <h3 class="title-en">Blog & News</h3>
                     <div class="header-tab-blog">
-                        <a class="item-change-tab" :class="{'activeTabBLog':tabBlog==='one'}" @click.prevent="tabBlog='one'"
-                           href="">
+                        <a class="item-change-tab" :class="{'activeTabBLog':tabBlog==='one'}" @click.prevent="tabBlog='one'" href="">
                             <svg x width="52" height="42" viewBox="0 0 59.101 49.514">
                                 <g id="_016-lightning" data-name="016-lightning" opacity="1">
                                     <g id="Group_89" data-name="Group 89" transform="translate(0 0)">
@@ -516,11 +515,9 @@
                                     </g>
                                 </g>
                             </svg>
-
-                            صوت
+                            مقالات
                         </a>
-                        <a class="item-change-tab" :class="{'activeTabBLog':tabBlog==='two'}" @click.prevent="tabBlog='two'"
-                           href="">
+                        <a class="item-change-tab" :class="{'activeTabBLog':tabBlog==='two'}" @click.prevent="tabBlog='two'" href="">
                             <svg id="_021-quill" width="52" height="52" viewBox="0 0 59.101 59.101">
                                 <g id="Group_94" data-name="Group 94" transform="translate(0 0)">
                                     <path id="Path_1467" data-name="Path 1467"
@@ -528,11 +525,9 @@
                                           transform="translate(-0.001 0)" fill="#433e4d"/>
                                 </g>
                             </svg>
-
                             صوت
                         </a>
-                        <a class="item-change-tab" :class="{'activeTabBLog':tabBlog==='three'}" @click.prevent="tabBlog='three'"
-                           href="">
+                        <a class="item-change-tab" :class="{'activeTabBLog':tabBlog==='three'}" @click.prevent="tabBlog='three'" href="">
                             <svg width="50" height="50" viewBox="0 0 59.101 59.101">
                                 <g id="_006-theatre" data-name="006-theatre" opacity="1">
                                     <g id="Group_72" data-name="Group 72" transform="translate(0 0)">
@@ -551,9 +546,7 @@
                                     </g>
                                 </g>
                             </svg>
-
-
-                            صوت
+                            ویدیو
                         </a>
 
                     </div>
@@ -585,67 +578,64 @@
                                 </svg>
                                 صوت های ارزشمند و ویدیو های دیدنی
                             </div>
-                            <a href="" class="btn-last-blog btn-base">آخرین اخبار و مقالات</a>
+                            <a href="{{ route('posts.index') }}" class="btn-last-blog btn-base">آخرین اخبار و مقالات</a>
                         </div>
                         <div class="l">
                             <div x-show="tabBlog==='one'" class="swiper mySwiper-blog">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="card-blog w-100">
-                                            <a class="images" href="">
-                                                <img src="/images/img-test.png" alt="">
-                                            </a>
-                                            <div class="footer-card-blog">
-                                                <span>جاوا اسکریپت چیست ؟</span>
-                                                <a class="btn-info-blog btn-base" href=""></a>
+                                    @foreach ($posts as $post)
+                                        <div class="swiper-slide">
+                                            <div class="card-blog w-100">
+                                                <a class="images" href="{{ $post->path() }}">
+                                                    <img src="{{ $post->files()->where('type', 1)->first()?->url }}" alt="">
+                                                </a>
+                                                <div class="footer-card-blog">
+                                                    <span>{{ $post->title }}</span>
+                                                    <a class="btn-info-blog btn-base" href="{{ $post->path() }}"></a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card-blog w-100">
-                                            <a class="images" href="">
-                                                <img src="/images/img-test.png" alt="">
-                                            </a>
-                                            <div class="footer-card-blog">
-                                                <span>جاوا اسکریپت چیست ؟</span>
-                                                <a class="btn-info-blog btn-base" href=""></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card-blog w-100">
-                                            <a class="images" href="">
-                                                <img src="/images/img-test.png" alt="">
-                                            </a>
-                                            <div class="footer-card-blog">
-                                                <span>جاوا اسکریپت چیست ؟</span>
-                                                <a class="btn-info-blog btn-base" href=""></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card-blog w-100">
-                                            <a class="images" href="">
-                                                <img src="/images/img-test.png" alt="">
-                                            </a>
-                                            <div class="footer-card-blog">
-                                                <span>جاوا اسکریپت چیست ؟</span>
-                                                <a class="btn-info-blog btn-base" href=""></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card-blog w-100">
-                                            <a class="images" href="">
-                                                <img src="/images/img-test.png" alt="">
-                                            </a>
-                                            <div class="footer-card-blog">
-                                                <span>جاوا اسکریپت چیست ؟</span>
-                                                <a class="btn-info-blog btn-base" href=""></a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
 
+                            <div x-show="tabBlog==='two'" class="swiper mySwiper-blog">
+                                <div class="swiper-wrapper">
+                                    @foreach ($posts as $post)
+                                        <div class="swiper-slide">
+                                            <div class="card-blog w-100">
+                                                <a class="images" href="{{ $post->path() }}">
+                                                    <img src="{{ $post->files()->where('type', 1)->first()?->url }}" alt="">
+                                                </a>
+                                                <div class="footer-card-blog">
+                                                    <span>{{ $post->title }}</span>
+                                                    <a class="btn-info-blog btn-base" href="{{ $post->path() }}"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+
+                            <div x-show="tabBlog==='three'" class="swiper mySwiper-blog">
+                                <div class="swiper-wrapper">
+                                    @foreach ($posts as $post)
+                                        <div class="swiper-slide">
+                                            <div class="card-blog w-100">
+                                                <a class="images" href="{{ $post->path() }}">
+                                                    <img src="{{ $post->files()->where('type', 1)->first()?->url }}" alt="">
+                                                </a>
+                                                <div class="footer-card-blog">
+                                                    <span>{{ $post->title }}</span>
+                                                    <a class="btn-info-blog btn-base" href="{{ $post->path() }}"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
                                 </div>
                                 <div class="swiper-button-next"></div>
                                 <div class="swiper-button-prev"></div>

@@ -20,6 +20,7 @@ class IndexPage extends Component
 
     public function render()
     {
-        return view('livewire.home.index-page');
+        $posts = Post::query()->where('post_type' , 'post')->where('status_id' , getStatus('publish'))->take(7)->get();
+        return view('livewire.home.index-page', compact('posts'));
     }
 }
