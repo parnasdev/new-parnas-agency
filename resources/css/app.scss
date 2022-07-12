@@ -49,7 +49,9 @@ body {
 * {
     box-sizing: border-box;
 }
-
+.opacity-btn{
+    opacity: 0.5 !important;
+}
 .prs-responsive {
     max-width: 1366px;
     margin: 0 auto;
@@ -396,6 +398,7 @@ a {
         position: absolute;
         left: 10px;
         transform: translateY(-91px);
+
     }
 
     svg {
@@ -418,7 +421,73 @@ a {
         line-height: 28px;
     }
 }
-
+    .nav-header h2:hover:nth-child(1){
+        &:before {
+            position: absolute;
+            right: -100px;
+            content: url(/images/helmt-right.svg);
+            transform: translateY(-14px) !important;
+            opacity: 1;
+        }
+        .nav-header:before{
+            display: none;
+        }
+    }
+.nav-header h2:hover:nth-child(2){
+    &:before {
+        position: absolute;
+        right: -100px;
+        content: url(/images/helmt-right.svg);
+        transform: translateY(-14px) !important;
+        opacity: 1;
+    }
+    .nav-header:before{
+        display: none;
+    }
+}
+.nav-header h2:hover:nth-child(3){
+    &:before {
+        position: absolute;
+        right: -100px;
+        content: url(/images/helmt-right.svg);
+        transform: translateY(-14px) !important;
+        opacity: 1;
+    }
+    &:after {
+        position: absolute;
+        left: -100px;
+        content: url(/images/helmet-left.svg);
+        transform: translateY(-30px);
+        opacity: 1;
+    }
+    .nav-header:before{
+        display: none;
+    }
+}
+.nav-header h2:hover:nth-child(4){
+    &:after {
+        position: absolute;
+        left: -100px;
+        content: url(/images/helmet-left.svg);
+        transform: translateY(-30px);
+        opacity: 1;
+    }
+    .nav-header:before{
+        display: none;
+    }
+}
+.nav-header h2:hover:nth-child(5){
+    &:after {
+        position: absolute;
+        left: -100px;
+        content: url(/images/helmet-left.svg);
+        transform: translateY(-30px);
+        opacity: 1;
+    }
+    .nav-header:before{
+        display: none;
+    }
+}
 .nav-header {
     display: flex;
     align-items: center;
@@ -432,6 +501,7 @@ a {
         right: -100px;
         content: url(/images/helmt-right.svg);
         transform: translateY(6px);
+        opacity: 0.5;
     }
 
     &:after {
@@ -439,6 +509,7 @@ a {
         left: -100px;
         content: url(/images/helmet-left.svg);
         transform: translateY(6px);
+        opacity: 0.5;
     }
 
     h2 {
@@ -656,7 +727,7 @@ a {
                 width: 90%;
                 justify-content: space-evenly;
                 margin-top: 1.8rem;
-
+                padding-right: 3rem;
                 a {
                     width: 200px !important;
                     padding: 0 !important;
@@ -1236,9 +1307,10 @@ a {
                 }
 
                 .link-info-work-samples {
-                    width: 45px !important;
+                    width: 39px !important;
                     height: 39px !important;
                     padding: 0 !important;
+                    transform: translateY(-4px);
                 }
             }
 
@@ -1386,18 +1458,19 @@ a {
 
         .body-tab-blog {
             width: 100%;
-            margin-top: 3rem;
+            margin-top: 1rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 1rem;
+            margin-bottom: 2rem;
 
             .r {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
                 width: 45%;
-                padding-top: 3rem;
+                padding: 3rem 3rem 0 0;
 
                 .item-omega {
                     width: 100%;
@@ -2168,9 +2241,10 @@ a {
                     }
 
                     .link-info-work-samples {
-                        width: 45px !important;
+                        width: 39px !important;
                         height: 39px !important;
                         padding: 0 !important;
+                        transform: translateY(-4px);
                     }
                 }
 
@@ -2577,6 +2651,160 @@ a {
 .bg-gold{
     color: $gold-second;
 }
+
+.loading{
+    z-index: 99999;
+     .svg-loading {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%) rotate(45deg) scale(1);
+        transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+
+     .logo-parnas-loading {
+        position: fixed;
+        top: 44%;
+        left: 46.6%;
+    }
+
+    .stroke-still {
+        stroke: #232323;
+    }
+
+    .stroke-animation {
+        animation: stroke-spacing 1.2s ease-in, stroke-color 4.8s linear;
+        animation-iteration-count: infinite;
+        animation-delay: 0;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+        transform-origin: center center;
+    }
+
+    @-webkit-keyframes stroke-spacing {
+        0% {
+            stroke-dasharray: 0 200;
+        }
+        45% {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 200 200;
+        }
+        90% {
+            stroke-dashoffset: -200;
+            stroke-dasharray: 200 200;
+        }
+        100% {
+            stroke-dashoffset: -200;
+            stroke-dasharray: 200 200;
+        }
+    }
+
+    @keyframes stroke-spacing {
+        0% {
+            stroke-dasharray: 0 200;
+        }
+        45% {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 200 200;
+        }
+        90% {
+            stroke-dashoffset: -200;
+            stroke-dasharray: 200 200;
+        }
+        100% {
+            stroke-dashoffset: -200;
+            stroke-dasharray: 200 200;
+        }
+    }
+
+    @-webkit-keyframes stroke-color {
+        0% {
+            stroke: $base-color;
+        }
+        24% {
+            stroke: $base-color;
+        }
+        25% {
+            stroke: $gray-color;
+        }
+        49% {
+            stroke: $gray-color;
+        }
+        50% {
+            stroke: $base-color-three;
+        }
+        74% {
+            stroke: $base-color-three;
+        }
+        75% {
+            stroke: $gold-second;
+        }
+        99% {
+            stroke: $gold-second;
+        }
+    }
+
+    @keyframes stroke-color {
+        0% {
+            stroke: $base-color;
+        }
+        24% {
+            stroke: $base-color;
+        }
+        25% {
+            stroke: $gray-color;
+        }
+        49% {
+            stroke: $gray-color;
+        }
+        50% {
+            stroke: $base-color-three;
+        }
+        74% {
+            stroke: $base-color-three;
+        }
+        75% {
+            stroke: $gold-second;
+        }
+        99% {
+            stroke: $gold-second;
+        }
+    }
+
+    .parent-loading {
+        height: 100vh;
+        width: 100%;
+        background-color: rgb(0 0 0 / 77%);
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        right: 0;
+    }
+    @media only screen and (min-width: 2000px)and (max-width: 2500px){
+         .logo-parnas-loading {
+            top: 46% !important;
+            left: 47.6% !important;
+            width: 5% !important;
+        }
+    }
+    @media only screen and (min-width: 2500px) {
+         .logo-parnas-loading {
+            position: fixed !important;
+            top: 48% !important;
+            left: 49% !important;
+            width: 2% !important;
+        }
+    }
+    @media only screen and (max-width: 868px) {
+         .logo-parnas-loading {
+            position: fixed;
+            top: 39%;
+            left: 33.5%;
+            width: 120px !important;
+        }
+    }
+}
 //-------------------------------------------------------------mobile
 @media only screen and (max-width: 450px) {
     .p-address-bar {
@@ -2901,7 +3129,7 @@ a {
     }
     .banner {
         transform: translateY(0);
-        margin: 1rem 0;
+        margin: 2rem 0;
     }
     .body-sliders-website .swiper-special-project-one .swiper-button-prev {
         right: 0 !important;
@@ -3103,6 +3331,14 @@ a {
         margin: 0 auto;
         text-align: justify;
         font-size: 14px;
+    }
+    .special-parnas {
+        margin: 0;
+        transform: translateY(-20px);
+    }
+    .contact-header-mobi{
+        position: absolute;
+        bottom: 25px;
     }
 }
 

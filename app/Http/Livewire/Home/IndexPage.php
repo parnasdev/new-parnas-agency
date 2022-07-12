@@ -14,13 +14,20 @@ use Packages\multilang\src\WithMultiLang;
 class IndexPage extends Component
 {
 
+    public $readyToLoad = false;
+
+    public function loadPosts()
+    {
+        $this->readyToLoad = true;
+    }
+
     public function mount()
     {
     }
 
     public function render()
     {
-        $posts = Post::query()->where('post_type' , 'post')->where('status_id' , getStatus('publish'))->take(7)->get();
+        $posts = $this->readyToLoad ? Post::query()->where('post_type' , 'post')->where('status_id' , getStatus('publish'))->take(7)->get() : [];
         return view('livewire.home.index-page', compact('posts'));
     }
 }
