@@ -1,4 +1,5 @@
 <div>
+    {{-- @dd($this->post_type); --}}
     <form wire:submit.prevent="submit">
         <div
             class="main-data flex-100 d-flex align-items-start m-align-items-stretch justify-content-between mx-10 my-5">

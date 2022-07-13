@@ -16,6 +16,9 @@ use Livewire\Component;
 class PostCreate extends Component
 {
     public Post $post;
+    public $post_type = 'post';
+
+    protected $queryString = ['post_type' => ['except' => '']];
 
     public $file = [
         'url' => null,
@@ -41,6 +44,7 @@ class PostCreate extends Component
             'post.pin' => ['nullable' , 'boolean'],
             'post.comment' => ['nullable' , 'boolean'],
             'post.status_id' => ['required'],
+            'post.post_type' => ['required'],
             // 'post.lang' => ['required'],
             'selectedTag' => ['nullable']
         ];
@@ -51,6 +55,7 @@ class PostCreate extends Component
         $this->post = new Post([
             'pin' => false,
             'comment' => false,
+            'post_type' => $this->post_type,
             // 'lang' => 'fa'
         ]);
     }
@@ -116,7 +121,7 @@ class PostCreate extends Component
     {
         $this->validate();
         $this->post->user_id = auth()->id();
-        $this->post->post_type = 'post';
+        // $this->post->post_type = $this->post_type;
         $this->post->save();
 
         foreach ($this->files as $file) {
@@ -133,8 +138,12 @@ class PostCreate extends Component
 
         $this->post->tags()->sync(collect($this->selectedTag)->pluck('id') ?? []);
 
-        session()->flash('message' , ['title' =>  'پست شما با موفقیت ثبت شد.' , 'icon' => 'success']);
-
-        return redirect(route('admin.posts.index'));
+        if($this->post_type === 'post'){
+            session()->flash('message' , ['title' =>  'پست شما با موفقیت ثبت شد.' , 'icon' => 'success']);
+            return redirect(route('admin.posts.index'));
+        } else {
+            session()->flash('message' , ['title' =>  'نمونه کار شما با موفقیت ثبت شد.' , 'icon' => 'success']);
+            return redirect(route('admin.portfolio.index'));
+        }
     }
 }

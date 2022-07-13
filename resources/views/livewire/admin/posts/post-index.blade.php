@@ -62,13 +62,21 @@
                                             <div class="circle-solid top-right bg-white"></div>برچسب ها</a>
                                     </div>
                                     <div class="c-btn pb-5">
-                                        <a href="{{ route('admin.posts.create') }}" class="ancher btn-effect bg-success text-white radius-5">
+                                        <a href="{{
+                                            $post_type === 'post' ? route('admin.posts.create' , ['post_type' => 'post']) : route('admin.portfolio.create' , ['post_type' => 'portfolio'])
+                                            }}" class="ancher btn-effect bg-success text-white radius-5">
                                             <div class="circle-solid top-right bg-white"></div>
                                             <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M15.9375 8.02344L15.9375 23.3601" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
                                                 <path d="M23.5898 15.6914L8.29139 15.6914" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
                                             </svg>
-                                            ایجاد نوشته</a>
+                                            @if ($post_type === 'post')
+                                            ایجاد نوشته
+                                            @else
+                                            ایجاد نمونه کار
+                                            @endif
+
+                                        </a>
                                     </div>
                                 </div>
                             </div>

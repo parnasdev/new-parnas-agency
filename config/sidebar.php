@@ -23,6 +23,17 @@ return array(
         'order' => 2
     ),
     array(
+        'title' => 'نمونه کار ها',
+        'icon' => '<svg width="17" height="19" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 19.22H5V7H12V5H5C3.9 5 3 5.9 3 7V19C3 20.1 3.9 21 5 21H17C18.1 21 19 20.1 19 19V12H17V19.22Z" fill="#A9B0A6"/>
+                                    <path d="M19 2H17V5H14C14.01 5.01 14 7 14 7H17V9.99C17.01 10 19 9.99 19 9.99V7H22V5H19V2ZM7 9H15V11H7V9ZM7 12V14H15V12H12H7ZM7 15H15V17H7V15Z" fill="#A9B0A6"/>
+                                </svg>',
+        'route' => '/admin/portfolio?post_type=portfolio',
+        'links' => array(),
+        'can' => 'posts.read',
+        'order' => 3
+    ),
+    array(
         'title' => 'صفحه ها',
         'icon' => '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M7.00019 2H16.5002L21.0002 6.5V19M1.99219 19H4.99219H1.99219ZM7.99219 19H4.99219H7.99219ZM4.99219 19V16V19ZM4.99219 19V22V19Z" stroke="#A9B0A6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -32,7 +43,7 @@ return array(
         'route' => 'admin.pages.index',
         'links' => array(),
         'can' => 'pages.read',
-        'order' => 3
+        'order' => 4
     ),
     array(
         'title' => 'منو سایت',
@@ -44,7 +55,7 @@ return array(
 ',
         'links' => array(),
         'can' => 'links.read',
-        'order' => 4
+        'order' => 5
     ),
     array(
         'title' => 'فایل ها',
@@ -54,7 +65,7 @@ return array(
         </svg>',
         'links' => array(),
         'can' => '',
-        'order' => 4
+        'order' => 6
     ),
     array(
         'title' => 'کاربران',
@@ -65,7 +76,7 @@ return array(
         'links' => array(
         ),
         'can' => 'users.read',
-        'order' => 5
+        'order' => 7
     ),
     array(
         'title' => 'تنظیمات',
@@ -75,6 +86,6 @@ return array(
         'route' => 'admin.settings.index',
         'links' => array(),
         'can' => 'settings.read',
-        'order' => 6
+        'order' => 8
     ),
 );

@@ -21,13 +21,14 @@ class PostIndex extends Component
     public $status = '0';
     public $category = '0';
     public $q = '';
+    public $post_type = 'post';
     public $orderCol = 'created_at';
     public $ordering = 'desc';
     public $selected = [];
     public $action = 0;
     public $trash = 0;
 
-    protected $queryString = ['perPage' => ['except' => 15] , 'status' => ['except' => '0'] , 'category' => ['except' => '0'] , 'q' => ['except' => ''] , 'trash' => ['except' => 0] , 'orderCol', 'ordering'];
+    protected $queryString = ['perPage' => ['except' => 15] , 'status' => ['except' => '0'] , 'category' => ['except' => '0'] , 'q' => ['except' => ''] , 'trash' => ['except' => 0] , 'orderCol', 'ordering', 'post_type'];
 
     public $readyToLoad = false;
 
@@ -46,7 +47,7 @@ class PostIndex extends Component
 
     public function render()
     {
-        $conditions = [array('condition' => 'where' , 'key' => 'status_id' , 'value' => $this->status , 'except' => 0) , array('condition' => 'whereHas' , 'key' => 'id' , 'rel' => 'categories' , 'value' => $this->category , 'except' => 0) , array('condition' => 'where' , 'key' => 'post_type' , 'value' => 'post' , 'except' => null) , array('condition' => 'order' , 'key' => $this->orderCol , 'value' => $this->ordering , 'except' => null)];
+        $conditions = [array('condition' => 'where' , 'key' => 'status_id' , 'value' => $this->status , 'except' => 0) , array('condition' => 'whereHas' , 'key' => 'id' , 'rel' => 'categories' , 'value' => $this->category , 'except' => 0) , array('condition' => 'where' , 'key' => 'post_type' , 'value' => $this->post_type , 'except' => null) , array('condition' => 'order' , 'key' => $this->orderCol , 'value' => $this->ordering , 'except' => null)];
         if ($this->trash) {
             $conditions = array_merge($conditions , [array('condition' => 'trash' , 'key' => 'd' , 'value' => null , 'except' => null)]);
         }

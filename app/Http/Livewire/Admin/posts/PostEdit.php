@@ -120,7 +120,7 @@ class PostEdit extends Component
     {
         $this->validate();
 
-        $this->post->post_type = 'post';
+        // $this->post->post_type = 'post';
 
         if (count($this->deletedFiles) > 0) {
             PostFile::query()->whereIn('id' , $this->deletedFiles)->delete();
@@ -150,9 +150,13 @@ class PostEdit extends Component
 
         $this->post->save();
 
+        if($this->post->post_type === 'post'){
+            session()->flash('message' , ['title' =>  'پست شما با موفقیت ویرایش شد.' , 'icon' => 'success']);
+            return redirect(route('admin.posts.index'));
 
-        session()->flash('message' , ['title' =>  'پست شما با موفقیت ویرایش شد.' , 'icon' => 'success']);
-
-        return redirect(route('admin.posts.index'));
+        } else {
+            session()->flash('message' , ['title' =>  'نمونه کار شما با موفقیت ویرایش شد.' , 'icon' => 'success']);
+            return redirect(route('admin.portfolio.index'));
+        }
     }
 }
