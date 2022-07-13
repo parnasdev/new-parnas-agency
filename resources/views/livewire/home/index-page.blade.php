@@ -1,48 +1,89 @@
+
+{{--        <div class="loading">--}}
+{{--            <div class="parent-loading">--}}
+{{--                <svg class="svg-loading" width="200" height="200" viewBox="0 0 100 100">--}}
+{{--                    <polyline class="line-cornered stroke-still" points="0,0 100,0 100,100" stroke-width="10" fill="none"></polyline>--}}
+{{--                    <polyline class="line-cornered stroke-still" points="0,0 0,100 100,100" stroke-width="10" fill="none"></polyline>--}}
+{{--                    <polyline class="line-cornered stroke-animation" points="0,0 100,0 100,100" stroke-width="10" fill="none"></polyline>--}}
+{{--                    <polyline class="line-cornered stroke-animation" points="0,0 0,100 100,100" stroke-width="10" fill="none"></polyline>--}}
+{{--                </svg>--}}
+{{--                <svg class="logo-parnas-loading" style="width: 100px !important;height: 88px !important;" viewBox="0 0 106.636 90.916">--}}
+{{--                    <g id="Logo_Parnas" data-name="Logo Parnas" transform="translate(2.194 2.463)">--}}
+{{--                        <g id="Layer_1" data-name="Layer 1" transform="translate(0 0)">--}}
+{{--                            <path id="Path_1344" data-name="Path 1344" d="M88.751,78.021,56.645,21.66,15.31,93.516"--}}
+{{--                                  transform="translate(-5.213 -6.77)" fill="none" stroke="#ca7e65"--}}
+{{--                                  stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.5"/>--}}
+{{--                            <path id="Path_1345" data-name="Path 1345"--}}
+{{--                                  d="M55.432,72.121H73.938L62.121,50.98,42.19,86.04"--}}
+{{--                                  transform="translate(-10.689 -12.743)" fill="none" stroke="#fff"--}}
+{{--                                  stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.5"/>--}}
+{{--                            <path id="Path_1351" data-name="Path 1351"--}}
+{{--                                  d="M55.5,74.709l59.087-.5L72.341,2.96l-5.232,8.934,29.51,50.444H89.1"--}}
+{{--                                  transform="translate(-12.325 -2.96)" fill="none" stroke="#ca7e65"--}}
+{{--                                  stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.5"/>--}}
+{{--                            <path id="Path_1352" data-name="Path 1352"--}}
+{{--                                  d="M14.5,74.211H2.63L44.865,2.96,50.1,11.894,20.586,62.339"--}}
+{{--                                  transform="translate(-2.63 -2.96)" fill="none" stroke="#ca7e65" stroke-linecap="round"--}}
+{{--                                  stroke-miterlimit="10" stroke-width="2.5"/>--}}
+{{--                        </g>--}}
+{{--                    </g>--}}
+{{--                </svg>--}}
+
+{{--            </div>--}}
+{{--        </div>--}}
+
 <div x-data>
     <article class="desktop" style="display: none" x-show="window.innerWidth>869">
-        <section x-data="{
+        <section x-data='{
         page:1,
         section:1,
         changeSection(){
-        console.log(this.section)
-           if (this.section==6){
-              this.section=1
-             }else{
-        this.section+=1
-             }
-             window.location.href = '#s'+ this.section;
+        console.log(this.section);
+        if (this.section==6){
+         this.section=1
+        }else{
+           this.section+=1
+        };
+        window.location.href = "#s" + this.section;
+        },
+        scrollTop(){
+        window.scrollTo(0,0);
+        window.location.href = "#s0";
+        this.section = 0
         }
-
- }">
-            <a @click.prevent="changeSection()" class="btn-change-page">
-                <svg class="svg-line" width="50" height="50" viewBox="0 0 60 60">
-                    <g id="line-change-page" fill="#212e47" stroke="#ca7e65" stroke-width="2" stroke-dasharray="30">
-                        <circle cx="30" cy="30" r="30" stroke="none"/>
-                        <circle cx="30" cy="30" r="29" fill="none"/>
-                    </g>
-                </svg>
-                <svg class="svg-icon" id="_012-omega" data-name="012-omega" width="26" height="26"
-                     viewBox="0 0 31.21 31.21">
-                    <g id="Group_85" data-name="Group 85" transform="translate(0)">
-                        <path id="Path_1458" data-name="Path 1458"
-                              d="M30.3,26.443a.914.914,0,0,0-.914.914v2.024H21.416V23.924a12.666,12.666,0,1,0-11.623,0v5.457H1.829V27.358a.914.914,0,0,0-1.829,0V30.3a.914.914,0,0,0,.914.914h9.794a.914.914,0,0,0,.914-.914V23.353a.914.914,0,0,0-.533-.831,10.838,10.838,0,1,1,9.031,0,.914.914,0,0,0-.533.831V30.3a.914.914,0,0,0,.914.914H30.3a.914.914,0,0,0,.914-.914V27.358A.914.914,0,0,0,30.3,26.443Z"
-                              fill="#fff"/>
-                    </g>
-                </svg>
-
-            </a>
-            <a @click.prevent="window.scrollTo(0,0)" href="" class="btn-back-top">
-                <svg width="47" height="47" viewBox="0 0 58.993 58.993">
-                    <g id="_024-arrow" data-name="024-arrow" transform="translate(0 29.496) rotate(-45)">
-                        <g id="Group_97" data-name="Group 97" transform="translate(0 0)">
-                            <path id="Path_1470" data-name="Path 1470"
-                                  d="M41.356.358a1.222,1.222,0,0,0-1.237-.3l-11.556,3.7a1.222,1.222,0,0,0-.491,2.028l3.063,3.063L14.776,25.21,7.162,22.672a1.221,1.221,0,0,0-1.251.3L.358,28.521a1.222,1.222,0,0,0,.478,2.024l7.751,2.584,2.584,7.751a1.222,1.222,0,0,0,2.024.478L18.747,35.8a1.222,1.222,0,0,0,.3-1.251L16.5,26.938,32.863,10.58l3.063,3.063a1.222,1.222,0,0,0,2.028-.491L41.656,1.6A1.222,1.222,0,0,0,41.356.358ZM9.223,30.764,3.485,28.851l3.621-3.621,5.738,1.913-2.767,2.767Zm3.641,7.466-1.913-5.738,3.556-3.556.065-.065,1.913,5.738ZM36.237,10.5,31.216,5.477,38.6,3.11Z"
-                                  transform="translate(0 0)" fill="#a8b0a5"/>
+     }'>
+            <div class="btn-fix-page-index">
+                <a id="btn-circle" :class="{'d-none':section===6}"  @click.prevent="changeSection()" class="btn-change-page">
+                    <svg class="svg-line" width="50" height="50" viewBox="0 0 60 60">
+                        <g id="line-change-page" fill="#212e47" stroke="#ca7e65" stroke-width="2" stroke-dasharray="30">
+                            <circle cx="30" cy="30" r="30" stroke="none"/>
+                            <circle cx="30" cy="30" r="29" fill="none"/>
                         </g>
-                    </g>
-                </svg>
+                    </svg>
+                    <svg class="svg-icon" id="_012-omega" data-name="012-omega" width="26" height="26"
+                         viewBox="0 0 31.21 31.21">
+                        <g id="Group_85" data-name="Group 85" transform="translate(0)">
+                            <path id="Path_1458" data-name="Path 1458"
+                                  d="M30.3,26.443a.914.914,0,0,0-.914.914v2.024H21.416V23.924a12.666,12.666,0,1,0-11.623,0v5.457H1.829V27.358a.914.914,0,0,0-1.829,0V30.3a.914.914,0,0,0,.914.914h9.794a.914.914,0,0,0,.914-.914V23.353a.914.914,0,0,0-.533-.831,10.838,10.838,0,1,1,9.031,0,.914.914,0,0,0-.533.831V30.3a.914.914,0,0,0,.914.914H30.3a.914.914,0,0,0,.914-.914V27.358A.914.914,0,0,0,30.3,26.443Z"
+                                  fill="#fff"/>
+                        </g>
+                    </svg>
 
-            </a>
+                </a>
+                <a @click.prevent="scrollTop()" href="" class="btn-back-top">
+                    <svg width="47" height="47" viewBox="0 0 58.993 58.993">
+                        <g id="_024-arrow" data-name="024-arrow" transform="translate(0 29.496) rotate(-45)">
+                            <g id="Group_97" data-name="Group 97" transform="translate(0 0)">
+                                <path id="Path_1470" data-name="Path 1470"
+                                      d="M41.356.358a1.222,1.222,0,0,0-1.237-.3l-11.556,3.7a1.222,1.222,0,0,0-.491,2.028l3.063,3.063L14.776,25.21,7.162,22.672a1.221,1.221,0,0,0-1.251.3L.358,28.521a1.222,1.222,0,0,0,.478,2.024l7.751,2.584,2.584,7.751a1.222,1.222,0,0,0,2.024.478L18.747,35.8a1.222,1.222,0,0,0,.3-1.251L16.5,26.938,32.863,10.58l3.063,3.063a1.222,1.222,0,0,0,2.028-.491L41.656,1.6A1.222,1.222,0,0,0,41.356.358ZM9.223,30.764,3.485,28.851l3.621-3.621,5.738,1.913-2.767,2.767Zm3.641,7.466-1.913-5.738,3.556-3.556.065-.065,1.913,5.738ZM36.237,10.5,31.216,5.477,38.6,3.11Z"
+                                      transform="translate(0 0)" fill="#a8b0a5"/>
+                            </g>
+                        </g>
+                    </svg>
+
+                </a>
+            </div>
+
             <div class="prs-responsive">
                 <div id="s1" class="w-90 s1-index">
                     <svg id="_039-pattern" data-name="039-pattern" width="30" height="28" viewBox="0 0 34.532 32.202">
@@ -245,15 +286,15 @@
                         </p>
                     </div>
                     <div class="p-btn-step">
-                        <button class="next" @click="changeStep(1)"></button>
+                        <button class="next" :class="{'opacity-btn':step===7}"  @click="changeStep(1)"></button>
                         <span>شروع کنید …</span>
-                        <button class="prev" @click="changeStep(-1)"></button>
+                        <button class="prev" :class="{'opacity-btn':step===1}" @click="changeStep(-1)"></button>
                     </div>
 
                 </div>
             </div>
         </section>
-        <section id="s3" class="s3" x-data="{tab:'one'}">
+        <section id="s3" class="s3" x-data="{tab:'two'}">
             <div class="prs-responsive">
                 <div class="w-90 mx-auto p-s3">
                     <svg class="me-2" id="_039-pattern" data-name="039-pattern" width="30" height="28"
@@ -284,7 +325,10 @@
 
 
                     </div>
-                    <h2 class="title-en-zeus">I’m Zeus : My Job Is WebDesigner</h2>
+                    <h2 style="display: none" x-show="tab==='one'" class="title-en-zeus">I’m zeus2 : My Job Is WebDesigner</h2>
+                    <h2 style="display: none" x-show="tab==='two'" class="title-en-zeus">I’m Zeus : My Job Is WebDesigner</h2>
+                    <h2 style="display: none" x-show="tab==='three'" class="title-en-zeus">I’m Zeus3 : My Job Is WebDesigner</h2>
+
                     <div class="body-tab">
                         <div x-show="tab==='one'"><h1 class="text-white">one</h1></div>
                         <div class="center-tab" x-show="tab==='two'">
@@ -706,7 +750,6 @@
                                 <div class="swiper-button-next"></div>
                                 <div class="swiper-button-prev"></div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -859,7 +902,8 @@
             <h3>یک کوه، یک جمع خلاق، یک خیال: داستانِ پارناس</h3>
             <div class="p-s1">
                 <div class="text-about-index">
-                    <p class="text-one">خیال؛ مبدا اتفاقات جهان است. یک تصویر که هیچکس به جز خودت به واقعی بودنش ایمان
+                    <img draggable="false" width="90%" src="/images/img-about-index.svg" alt="">
+                    <p class="mt-4 text-one">خیال؛ مبدا اتفاقات جهان است. یک تصویر که هیچکس به جز خودت به واقعی بودنش ایمان
                         ندارد. اینجا نقطۀ ابتدایی داستان پارناس است، خیالی کوچک در یک گاراژِ اطراف تهران که دوست داشت به
                         بلندی یک کوه اساطیری در یونان بلند شود. آخ یادم رفت بگویم، پارناس اسم یک کوه اساطیری وسط مسط‌های
                         یونان است. حالا این خیال بزرگ شده و می‌خواهد دست بقیه را بگیرد و در بزرگ شدنشان سهمی داشته باشد.
@@ -868,12 +912,9 @@
                         دگرگون کند. چگونه؟</p>
                     <p class="text-two">عجله نکنید… پایین‌تر برایتان داستان چگونگی‌اش را تعریف می‌کنم. حالا حالاها باهم
                         کار داریم.</p>
-                </div>
-                <div class="l-about-index">
-                    <img draggable="false" width="90%" src="/images/img-about-index.svg" alt="">
-                    <div class="p-button">
-                        <a href="" class="team-parnas btn-base">تیم خلاق پارناس</a>
-                        <a href="" class="about-parnas btn-base-second">درباره آژانس پارناس</a>
+                    <div class="p-button mt-4 d-flex flex-column align-items-center w-100">
+                        <a href="" class="team-parnas btn-base w-75">تیم خلاق پارناس</a>
+                        <a href="" class="about-parnas btn-base-second mt-3 w-75">درباره آژانس پارناس</a>
                     </div>
                 </div>
             </div>
@@ -1021,9 +1062,9 @@
                     </p>
                 </div>
                 <div class="p-btn-step my-3">
-                    <button class="next" @click="changeStep(1)"></button>
+                    <button class="next" :class="{'opacity-btn':step===7}"  @click="changeStep(1)"></button>
                     <span>شروع کنید …</span>
-                    <button class="prev" @click="changeStep(-1)"></button>
+                    <button class="prev" :class="{'opacity-btn':step===1}" @click="changeStep(-1)"></button>
                 </div>
 
             </div>
@@ -1037,7 +1078,7 @@
                 <img style="display: none" x-show="step===7" class="img-step-6 img" src="/images/img-step-6.png" alt="">
             </div>
         </section>
-        <section id="s3" class="s3" x-data="{tab:'one'}">
+        <section id="s3" class="s3 w-100" x-data="{tab:'two'}">
             <div class="prs-responsive">
                 <div class="w-90 mx-auto p-s3">
                     <svg class="me-2" id="_039-pattern" data-name="039-pattern" width="30" height="28"
@@ -1060,8 +1101,9 @@
                            href=""><img
                                 width="90" src="/images/img-avatar-l.png" alt=""></a>
                     </div>
-                    <h2 class="title-en-zeus">I’m Zeus : My Job Is WebDesigner</h2>
-                    <div class="body-tab">
+                    <h2 style="display: none" x-show="tab==='one'" class="title-en-zeus">I’m zeus2 : My Job Is WebDesigner</h2>
+                    <h2 style="display: none" x-show="tab==='two'" class="title-en-zeus">I’m Zeus : My Job Is WebDesigner</h2>
+                    <h2 style="display: none" x-show="tab==='three'" class="title-en-zeus">I’m Zeus3 : My Job Is WebDesigner</h2>                    <div class="body-tab">
                         <div x-show="tab==='one'"><h1 class="text-white">one</h1></div>
                         <div class="center-tab" x-show="tab==='two'">
                             <img class="img-center-avatar" src="/images/avatar-img-center-big.png" alt="">
@@ -1410,7 +1452,7 @@
                             <a href="{{ route('posts.index') }}" class="btn-last-blog btn-base">آخرین اخبار و مقالات</a>
                         </div>
                         <div class="l">
-                            <div x-show="tabBlog==='one'" class="swiper mySwiper-blog">
+                            <div x-show="tabBlog==='one'" class="swiper mySwiper-blog-mobi">
                                 <div class="swiper-wrapper">
                                     @foreach ($posts as $post)
                                         <div class="swiper-slide">
@@ -1430,7 +1472,7 @@
                                 <div class="swiper-button-prev"></div>
                             </div>
 
-                            <div x-show="tabBlog==='two'" class="swiper mySwiper-blog">
+                            <div x-show="tabBlog==='two'" class="swiper mySwiper-blog-mobi-2">
                                 <div class="swiper-wrapper">
                                     @foreach ($posts as $post)
                                         <div class="swiper-slide">
@@ -1450,7 +1492,7 @@
                                 <div class="swiper-button-prev"></div>
                             </div>
 
-                            <div x-show="tabBlog==='three'" class="swiper mySwiper-blog">
+                            <div x-show="tabBlog==='three'" class="swiper mySwiper-blog-mobi-3">
                                 <div class="swiper-wrapper">
                                     @foreach ($posts as $post)
                                         <div class="swiper-slide">
@@ -1553,7 +1595,7 @@
                         <div class="box-logo">
                             <img src="/images/Image-6.svg" alt="">
                         </div>
-                        <div style="width: 27.9%;display: flex;justify-content: center">
+                        <div style="width: 100%;display: flex;justify-content: center;margin: 10px 0">
                             <a href="" class="btn-all-project btn-base-second">همه نمونه کار ها</a>
                         </div>
                         <div class="box-logo">
@@ -1596,8 +1638,24 @@
                 </div>
             </div>
         </section>
+        <div class="p-back-top">
+            <a @click.prevent="window.scrollTo(0,0)" href="" class="btn-back-top">
+                <svg width="47" height="47" viewBox="0 0 58.993 58.993">
+                    <g id="_024-arrow" data-name="024-arrow" transform="translate(0 29.496) rotate(-45)">
+                        <g id="Group_97" data-name="Group 97" transform="translate(0 0)">
+                            <path id="Path_1470" data-name="Path 1470"
+                                  d="M41.356.358a1.222,1.222,0,0,0-1.237-.3l-11.556,3.7a1.222,1.222,0,0,0-.491,2.028l3.063,3.063L14.776,25.21,7.162,22.672a1.221,1.221,0,0,0-1.251.3L.358,28.521a1.222,1.222,0,0,0,.478,2.024l7.751,2.584,2.584,7.751a1.222,1.222,0,0,0,2.024.478L18.747,35.8a1.222,1.222,0,0,0,.3-1.251L16.5,26.938,32.863,10.58l3.063,3.063a1.222,1.222,0,0,0,2.028-.491L41.656,1.6A1.222,1.222,0,0,0,41.356.358ZM9.223,30.764,3.485,28.851l3.621-3.621,5.738,1.913-2.767,2.767Zm3.641,7.466-1.913-5.738,3.556-3.556.065-.065,1.913,5.738ZM36.237,10.5,31.216,5.477,38.6,3.11Z"
+                                  transform="translate(0 0)" fill="#a8b0a5"/>
+                        </g>
+                    </g>
+                </svg>
+
+            </a>
+
+        </div>
     </article>
 </div>
+
 
 @push('scripts')
     <script>
@@ -1620,6 +1678,16 @@
                 clickable: true,
             },
         });
+        var swiper = new Swiper(".mySwiper-blog-mobi", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            freeMode: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+
     </script>
     <script>
         $(document).ready(function () {
