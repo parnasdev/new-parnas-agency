@@ -7866,6 +7866,22 @@ a {
     position: absolute;
     bottom: 25px;
   }
+
+  .blog-index-page .p-blog-index .body-tab-blog .r {
+    padding: 1rem 0 0 0;
+  }
+
+  .p-back-top {
+    transform: translateY(65px) !important;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-t .p-footer-t .img-contact-footer img {
+    transform: rotate(90deg);
+  }
 }
 @media only screen and (min-width: 451px) and (max-width: 868px) {
   .p-address-bar {
@@ -8420,6 +8436,22 @@ a {
     left: auto;
     top: 50% !important;
   }
+
+  .blog-index-page .p-blog-index .body-tab-blog .r {
+    padding: 1rem 0 0 0;
+  }
+
+  .p-back-top {
+    transform: translateY(65px) !important;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-t .p-footer-t .img-contact-footer img {
+    transform: rotate(90deg);
+  }
 }
 @-webkit-keyframes menu-x {
   0% {
@@ -8436,4 +8468,61 @@ a {
   100% {
     transform: translateX(0);
   }
+}
+.modal-menu-desktop {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 9999;
+}
+.modal-menu-desktop:after {
+  content: "";
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  right: 0;
+  top: 0;
+  background: #212E47 url(/images/pattern-header.svg) no-repeat;
+  background-size: cover;
+  z-index: 0;
+  opacity: 1;
+}
+.modal-menu-desktop .box {
+  width: 85%;
+  height: 85%;
+  background-color: #212E47;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+}
+.modal-menu-desktop .box .images {
+  width: 50%;
+  height: 100%;
+}
+.modal-menu-desktop .box .images img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+}
+.modal-menu-desktop .box .p-buttons-link-page {
+  width: 50%;
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-menu-desktop .box .p-buttons-link-page .btn-close-modal {
+  position: absolute;
+  left: 30px;
+  top: 30px;
 }

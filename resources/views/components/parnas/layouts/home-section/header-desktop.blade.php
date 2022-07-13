@@ -1,8 +1,8 @@
 <div style="display: none" x-data x-show="window.innerWidth>868">
-    <header class="header-desktop" >
+    <header class="header-desktop">
         <div class="pattern"></div>
         <div class="prs-responsive">
-            <div  class="w-90 mx-auto flex-between p-header-desktop">
+            <div class="w-90 mx-auto flex-between p-header-desktop">
                 <div class="name-parnas">
                     <h1>آژانس خلاقیت پارناس</h1>
                     <h2>ایــــدتـو ، ایـــــده آل کــــن !</h2>
@@ -24,7 +24,8 @@
                                       stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.5"/>
                                 <path id="Path_1352" data-name="Path 1352"
                                       d="M14.5,74.211H2.63L44.865,2.96,50.1,11.894,20.586,62.339"
-                                      transform="translate(-2.63 -2.96)" fill="none" stroke="#ca7e65" stroke-linecap="round"
+                                      transform="translate(-2.63 -2.96)" fill="none" stroke="#ca7e65"
+                                      stroke-linecap="round"
                                       stroke-miterlimit="10" stroke-width="2.5"/>
                             </g>
                         </g>
@@ -47,31 +48,49 @@
                                   transform="translate(0 0)" fill="#ca7e65" fill-rule="evenodd"/>
                         </svg>
                         <div class="line-between"></div>
-                        <a class="header-box-menu" href="">
-                            <svg id="_032-pattern-1" data-name="032-pattern-1" width="23" height="23"
-                                 viewBox="0 0 27.742 27.742">
-                                <g id="Group_112" data-name="Group 112" transform="translate(0 15.67)">
-                                    <g id="Group_111" data-name="Group 111">
-                                        <path id="Path_1480" data-name="Path 1480"
-                                              d="M21.706,294.423a.813.813,0,0,0,0,1.626h5.223a.813.813,0,0,0,.813-.813v-5.223a.813.813,0,0,0-.813-.813H16.483a.813.813,0,0,0-.813.813v9.634H1.626v-8.821h8.821v3.6H6.036a.813.813,0,0,0,0,1.626h5.223a.813.813,0,0,0,.813-.813v-5.223a.813.813,0,0,0-.813-.813H.813a.813.813,0,0,0-.813.813v10.447a.813.813,0,0,0,.813.813H26.929a.813.813,0,1,0,0-1.625H17.3v-8.821h8.821v3.6Z"
-                                              transform="translate(0 -289.2)" fill="#ca7e65"/>
+                        <div x-data="{modal:false}" class="header-box-menu">
+                            <a @click.prevent="modal=true" >
+                                <svg id="_032-pattern-1" data-name="032-pattern-1" width="23"
+                                     height="23"
+                                     viewBox="0 0 27.742 27.742">
+                                    <g id="Group_112" data-name="Group 112" transform="translate(0 15.67)">
+                                        <g id="Group_111" data-name="Group 111">
+                                            <path id="Path_1480" data-name="Path 1480"
+                                                  d="M21.706,294.423a.813.813,0,0,0,0,1.626h5.223a.813.813,0,0,0,.813-.813v-5.223a.813.813,0,0,0-.813-.813H16.483a.813.813,0,0,0-.813.813v9.634H1.626v-8.821h8.821v3.6H6.036a.813.813,0,0,0,0,1.626h5.223a.813.813,0,0,0,.813-.813v-5.223a.813.813,0,0,0-.813-.813H.813a.813.813,0,0,0-.813.813v10.447a.813.813,0,0,0,.813.813H26.929a.813.813,0,1,0,0-1.625H17.3v-8.821h8.821v3.6Z"
+                                                  transform="translate(0 -289.2)" fill="#ca7e65"/>
+                                        </g>
                                     </g>
-                                </g>
-                                <g id="Group_114" data-name="Group 114" transform="translate(0 0)">
-                                    <g id="Group_113" data-name="Group 113">
-                                        <path id="Path_1481" data-name="Path 1481"
-                                              d="M26.929,0H16.483a.813.813,0,0,0-.813.813V6.036a.813.813,0,0,0,.813.813h5.223a.813.813,0,0,0,0-1.626H17.3v-3.6h8.821v8.821H12.072V.813A.813.813,0,0,0,11.259,0H.813A.813.813,0,0,0,0,.813V6.036a.813.813,0,0,0,.813.813H6.036a.813.813,0,0,0,0-1.626H1.626v-3.6h8.821v8.821H.813a.813.813,0,0,0,0,1.626H26.929a.813.813,0,0,0,.813-.813V.813A.813.813,0,0,0,26.929,0Z"
-                                              transform="translate(0 0)" fill="#ca7e65"/>
+                                    <g id="Group_114" data-name="Group 114" transform="translate(0 0)">
+                                        <g id="Group_113" data-name="Group 113">
+                                            <path id="Path_1481" data-name="Path 1481"
+                                                  d="M26.929,0H16.483a.813.813,0,0,0-.813.813V6.036a.813.813,0,0,0,.813.813h5.223a.813.813,0,0,0,0-1.626H17.3v-3.6h8.821v8.821H12.072V.813A.813.813,0,0,0,11.259,0H.813A.813.813,0,0,0,0,.813V6.036a.813.813,0,0,0,.813.813H6.036a.813.813,0,0,0,0-1.626H1.626v-3.6h8.821v8.821H.813a.813.813,0,0,0,0,1.626H26.929a.813.813,0,0,0,.813-.813V.813A.813.813,0,0,0,26.929,0Z"
+                                                  transform="translate(0 0)" fill="#ca7e65"/>
+                                        </g>
                                     </g>
-                                </g>
-                            </svg>
+                                </svg>
+                            </a>
 
-                        </a>
+                            <div x-show="modal" x-transition.scale.20 x-transition.duration.500ms class="modal-menu-desktop">
+                                <div class="box">
+                                    <div class="images">
+                                        <img src="/images/bg-fix-modal-min.png" alt="">
+                                    </div>
+                                    <div class="p-buttons-link-page">
+                                        <a @click.prevent="modal=false" class="btn-close-modal btn-base" href="">بستن</a>
+                                        <div class="w-75 d-flex align-items-center justify-content-between">
+                                            <a class="btn-contact-us btn-base px-5" href="">تماس با ما</a>
+                                            <a class="btn-about-us btn-base-second px-5" href="">درباره ما</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="w-90 mx-auto flex-between p-header-desktop-second">
-                <div  class="tools-header" x-data="{search:false}">
+                <div class="tools-header" x-data="{search:false}">
                     <a @click.prevent="search=true" class="search-header" href="">
                         <svg width="25" height="25" viewBox="0 0 29.393 29.593">
                             <g id="Search..." transform="translate(0 0)" opacity="0.5">
@@ -95,7 +114,8 @@
                                     <g id="Search..." transform="translate(0 0)" opacity="1">
                                         <path id="Path_1136" data-name="Path 1136"
                                               d="M1,11.478c0,4.37.783,6.88,2.3,8.345s4.047,2.133,8.175,2.133,6.647-.659,8.175-2.133,2.3-3.975,2.3-8.345-.783-6.88-2.3-8.345S15.606,1,11.478,1,4.831,1.659,3.3,3.133,1,7.108,1,11.478Z"
-                                              fill="none" stroke="#CA7E65" stroke-linecap="round" stroke-linejoin="round"
+                                              fill="none" stroke="#CA7E65" stroke-linecap="round"
+                                              stroke-linejoin="round"
                                               stroke-width="2"></path>
                                         <path id="Path_1137" data-name="Path 1137" d="M27.979,28.179l-7.631-7.831"
                                               fill="none"
@@ -126,7 +146,8 @@
                 </svg>
 
                 <h3>کسب و کار خود را متوقف کنید؛ اما روی قله.</h3>
-                <p>زندگی حق انتخاب زیادی جلوی پای آدم‌ نمی‌گذارد؛ مثلا ما انتخاب نکردیم که دائما دلمان پیشرفت و بالا رفتن
+                <p>زندگی حق انتخاب زیادی جلوی پای آدم‌ نمی‌گذارد؛ مثلا ما انتخاب نکردیم که دائما دلمان پیشرفت و بالا
+                    رفتن
                     بخواهد. دست ما نیست، ما قله‌ها را دوست داریم؛ مخصوصا اگر پای کسب‌وکارمان وسط باشد.</p>
             </div>
             <div class="nav-header">
