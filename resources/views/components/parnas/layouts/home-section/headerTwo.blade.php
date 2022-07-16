@@ -46,26 +46,44 @@
                               transform="translate(0 0)" fill="#ca7e65" fill-rule="evenodd"/>
                     </svg>
                     <div class="line-between"></div>
-                    <a class="header-box-menu" href="">
-                        <svg id="_032-pattern-1" data-name="032-pattern-1" width="23" height="23"
-                             viewBox="0 0 27.742 27.742">
-                            <g id="Group_112" data-name="Group 112" transform="translate(0 15.67)">
-                                <g id="Group_111" data-name="Group 111">
-                                    <path id="Path_1480" data-name="Path 1480"
-                                          d="M21.706,294.423a.813.813,0,0,0,0,1.626h5.223a.813.813,0,0,0,.813-.813v-5.223a.813.813,0,0,0-.813-.813H16.483a.813.813,0,0,0-.813.813v9.634H1.626v-8.821h8.821v3.6H6.036a.813.813,0,0,0,0,1.626h5.223a.813.813,0,0,0,.813-.813v-5.223a.813.813,0,0,0-.813-.813H.813a.813.813,0,0,0-.813.813v10.447a.813.813,0,0,0,.813.813H26.929a.813.813,0,1,0,0-1.625H17.3v-8.821h8.821v3.6Z"
-                                          transform="translate(0 -289.2)" fill="#ca7e65"/>
+                    <div x-data="{modal:false}" class="header-box-menu">
+                        <a @click.prevent="modal=true" >
+                            <svg id="_032-pattern-1" data-name="032-pattern-1" width="23"
+                                 height="23"
+                                 viewBox="0 0 27.742 27.742">
+                                <g id="Group_112" data-name="Group 112" transform="translate(0 15.67)">
+                                    <g id="Group_111" data-name="Group 111">
+                                        <path id="Path_1480" data-name="Path 1480"
+                                              d="M21.706,294.423a.813.813,0,0,0,0,1.626h5.223a.813.813,0,0,0,.813-.813v-5.223a.813.813,0,0,0-.813-.813H16.483a.813.813,0,0,0-.813.813v9.634H1.626v-8.821h8.821v3.6H6.036a.813.813,0,0,0,0,1.626h5.223a.813.813,0,0,0,.813-.813v-5.223a.813.813,0,0,0-.813-.813H.813a.813.813,0,0,0-.813.813v10.447a.813.813,0,0,0,.813.813H26.929a.813.813,0,1,0,0-1.625H17.3v-8.821h8.821v3.6Z"
+                                              transform="translate(0 -289.2)" fill="#ca7e65"/>
+                                    </g>
                                 </g>
-                            </g>
-                            <g id="Group_114" data-name="Group 114" transform="translate(0 0)">
-                                <g id="Group_113" data-name="Group 113">
-                                    <path id="Path_1481" data-name="Path 1481"
-                                          d="M26.929,0H16.483a.813.813,0,0,0-.813.813V6.036a.813.813,0,0,0,.813.813h5.223a.813.813,0,0,0,0-1.626H17.3v-3.6h8.821v8.821H12.072V.813A.813.813,0,0,0,11.259,0H.813A.813.813,0,0,0,0,.813V6.036a.813.813,0,0,0,.813.813H6.036a.813.813,0,0,0,0-1.626H1.626v-3.6h8.821v8.821H.813a.813.813,0,0,0,0,1.626H26.929a.813.813,0,0,0,.813-.813V.813A.813.813,0,0,0,26.929,0Z"
-                                          transform="translate(0 0)" fill="#ca7e65"/>
+                                <g id="Group_114" data-name="Group 114" transform="translate(0 0)">
+                                    <g id="Group_113" data-name="Group 113">
+                                        <path id="Path_1481" data-name="Path 1481"
+                                              d="M26.929,0H16.483a.813.813,0,0,0-.813.813V6.036a.813.813,0,0,0,.813.813h5.223a.813.813,0,0,0,0-1.626H17.3v-3.6h8.821v8.821H12.072V.813A.813.813,0,0,0,11.259,0H.813A.813.813,0,0,0,0,.813V6.036a.813.813,0,0,0,.813.813H6.036a.813.813,0,0,0,0-1.626H1.626v-3.6h8.821v8.821H.813a.813.813,0,0,0,0,1.626H26.929a.813.813,0,0,0,.813-.813V.813A.813.813,0,0,0,26.929,0Z"
+                                              transform="translate(0 0)" fill="#ca7e65"/>
+                                    </g>
                                 </g>
-                            </g>
-                        </svg>
+                            </svg>
+                        </a>
 
-                    </a>
+                        <div style="display: none" x-show="modal" x-transition.scale.20 x-transition.duration.500ms class="modal-menu-desktop">
+                            <div class="box">
+                                <div class="images">
+                                    <img src="/images/bg-fix-modal-min.png" alt="">
+                                </div>
+                                <div class="p-buttons-link-page">
+                                    <a @click.prevent="modal=false" class="btn-close-modal btn-base" href="">بستن</a>
+                                    <div class="w-75 d-flex align-items-center justify-content-between">
+                                        <a class="btn-contact-us btn-base px-5" href="/contactus">تماس با ما</a>
+                                        <a class="btn-about-us btn-base-second px-5" href="/aboutus">درباره ما</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>

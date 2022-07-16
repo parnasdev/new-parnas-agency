@@ -70,7 +70,7 @@
                     </svg>
 
                 </a>
-                <a @click.prevent="scrollTop()" href="" class="btn-back-top">
+                <a id="btn-back-top" @click.prevent="scrollTop()" href="" class="btn-back-top">
                     <svg width="47" height="47" viewBox="0 0 58.993 58.993">
                         <g id="_024-arrow" data-name="024-arrow" transform="translate(0 29.496) rotate(-45)">
                             <g id="Group_97" data-name="Group 97" transform="translate(0 0)">
@@ -1384,5 +1384,14 @@
 
             }
         })
+        document.onscroll = function() {
+            if (window.innerHeight + window.scrollY > document.body.clientHeight) {
+                document.getElementById('btn-circle').style.display='none';
+                document.getElementById('btn-back-top').style.top='3%';
+            }else {
+                document.getElementById('btn-circle').style.display='flex';
+                document.getElementById('btn-back-top').style.top='55%';
+            }
+        }
     </script>
 @endpush

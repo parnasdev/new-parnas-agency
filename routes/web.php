@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', \App\Http\Livewire\Home\IndexPage::class)->name('home');
-//Route::get('/aboutus', \App\Http\Livewire\Home\AboutPage::class);
-//Route::get('/contactus', \App\Http\Livewire\Home\ContactPage::class);
+Route::get('/aboutus', \App\Http\Livewire\Home\AboutPage::class)->name('aboutus');
+Route::get('/contactus', \App\Http\Livewire\Home\ContactPage::class)->name('contactus');
 //Route::get('/teacher', \App\Http\Livewire\Home\Pages\teacher::class);
 Route::get('/portfolio', \App\Http\Livewire\Home\PortifiloList::class)->name('portifilos.index');
 Route::get('/portfolio/{portfolio:slug}', \App\Http\Livewire\Home\PortifolioInfo::class)->name('portifilos.show');
