@@ -17,6 +17,19 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="{{ asset('/lightbox2/src/css/lightbox.css') }}">
     {{ $styles ?? null }}
+    <style>
+        #preloader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 999;
+            width: 100%;
+            height: 100vh;
+            overflow: visible;
+            background: #333 url('https://svgshare.com/i/TGi.svg') no-repeat center center;
+        }
+
+    </style>
     <livewire:styles/>
 </head>
 <body x-data="{
@@ -27,15 +40,20 @@
      document.getElementById('progressBar').style.width = scrolled + '%';
 }
 }" @scroll.window="progressIndicator()"
-    @scroll-top.window="window.scrollTo(0,0)">
-<div class="progress-container">
-    <div class="progress-bar" id="progressBar"></div>
-</div>
+      @scroll-top.window="window.scrollTo(0,0)">
+<div x-data="{loader : true}">
+    <div id="preloader" x-init="setTimeout( () => { loader = false } , 2000)" x-show="loader" x-transition.opacity.duration.200ms></div>
+<div x-show="!loader" style="display: none">
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
 
-<livewire:home.sections.headers />
-{{ $slot }}
-<x-parnas.layouts.home-section.sidebar-mobi/>
-<x-parnas.layouts.home-section.footer/>
+    <livewire:home.sections.headers/>
+    {{ $slot }}
+    <x-parnas.layouts.home-section.sidebar-mobi/>
+    <x-parnas.layouts.home-section.footer/>
+</div>
+</div>
 <livewire:scripts/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="{{ mix('/js/app.js') }}" defer></script>
