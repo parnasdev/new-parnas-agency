@@ -140,7 +140,7 @@
         }
         }}
 
-    }">
+        }">
             <div class="prs-responsive">
                 <div class="w-100 p-realtive">
 
@@ -412,7 +412,7 @@
             </div>
         </section>
 
-        <section id="s4" class="special-parnas" x-data="{tabSlider:'sliderOne'}">
+        <section id="s4" class="special-parnas" x-data="{tabSlider:{{$this->getCategory(2)[0]->id}}}">
             <div class="prs-responsive">
                 <div class="w-90 mx-auto p-special-parnas">
                     <svg class="svg-sepecial-parnas" id="_039-pattern" data-name="039-pattern" width="30" height="28"
@@ -425,129 +425,37 @@
                     </svg>
                     <h3>برترین پروژه های پارناس ؛ خروجی های با ارزش ما</h3>
                     <div class="tab-header-slider-website">
-                        <a @click.prevent="tabSlider='sliderOne'" :class="{'activeSlider':tabSlider==='sliderOne'}"
+                        @foreach ($this->getCategory(2) as $category)
+                        <a @click.prevent="tabSlider={{$category->id}}" :class="{'activeSlider':tabSlider==={{$category->id}}}"
                            class="tabChange" href="">
                             <div class="line"></div>
-                            طراحی سایت
+                            {{$category->name}}
                         </a>
-                        <a @click.prevent="tabSlider='sliderTwo'" :class="{'activeSlider':tabSlider==='sliderTwo'}"
-                           class="tabChange" href="">
-                            <div class="line"></div>
-                            طراحی فروشگاه اینترنتی
-                        </a>
-                        <a @click.prevent="tabSlider='sliderThree'" :class="{'activeSlider':tabSlider==='sliderThree'}"
-                           class="tabChange" href="">
-                            <div class="line"></div>
-                            دیجیتال مارکتینگ
-                        </a>
+                        @endforeach
                     </div>
                     <div class="body-sliders-website">
-                        <div x-show="tabSlider==='sliderOne'" class="swiper swiper-special-project-one">
+                        @foreach ($this->getCategory(2) as $category)
+                        <div x-show="tabSlider==={{ $category->id }}" class="swiper swiper-special-project-one">
                             <div class="swiper-wrapper">
+                                @foreach ($category->posts->where('status_id' , getStatus('publish'))->take(7) as $portfolio)
                                 <div class="swiper-slide">
                                     <div class="card-work-samples">
-                                        <img class="img-work-samples" src="/images/img-test.png" alt="">
-                                        <div class="item">
-                                            <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                            <a class="link-info-work-samples btn-base" href=""> </a>
-                                        </div>
-                                        <div class="border"></div>
+                                            <img class="img-work-samples" src="{{ $portfolio->files()->where('type', 1)->first()->url ?? '/images/noPicture.png' }}" alt="{{  $portfolio->files()->where('type', 1)->first()->alt }}">
+                                            <div class="item">
+                                                <label for="">{{ $portfolio->title }}</label>
+                                                <a class="link-info-work-samples btn-base" href="{{ route('portifilos.show' , ['portfolio' => $portfolio->slug]) }}"> </a>
+                                            </div>
+                                            <div class="border"></div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
-                                    <div class="card-work-samples">
-                                        <img class="img-work-samples" src="/images/img-test.png" alt="">
-                                        <div class="item">
-                                            <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                            <a class="link-info-work-samples btn-base" href=""> </a>
-                                        </div>
-                                        <div class="border"></div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="card-work-samples">
-                                        <img class="img-work-samples" src="/images/img-test.png" alt="">
-                                        <div class="item">
-                                            <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                            <a class="link-info-work-samples btn-base" href=""> </a>
-                                        </div>
-                                        <div class="border"></div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="card-work-samples">
-                                        <img class="img-work-samples" src="/images/img-test.png" alt="">
-                                        <div class="item">
-                                            <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                            <a class="link-info-work-samples btn-base" href=""> </a>
-                                        </div>
-                                        <div class="border"></div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="card-work-samples">
-                                        <img class="img-work-samples" src="/images/img-test.png" alt="">
-                                        <div class="item">
-                                            <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                            <a class="link-info-work-samples btn-base" href=""> </a>
-                                        </div>
-                                        <div class="border"></div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="card-work-samples">
-                                        <img class="img-work-samples" src="/images/img-test.png" alt="">
-                                        <div class="item">
-                                            <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                            <a class="link-info-work-samples btn-base" href=""> </a>
-                                        </div>
-                                        <div class="border"></div>
-                                    </div>
-                                </div>
-
+                                @endforeach
                             </div>
                             <div class="swiper-button-next"></div>
                             <div class="swiper-button-prev"></div>
                         </div>
-                        <div style="display:none;" x-show="tabSlider==='sliderTwo'"
-                             class="swiper swiper-special-project-one">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="card-work-samples">
-                                        <img class="img-work-samples" src="/images/img-test.png" alt="">
-                                        <div class="item">
-                                            <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                            <a class="link-info-work-samples btn-base" href=""> </a>
-                                        </div>
-                                        <div class="border"></div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-                        </div>
-                        <div style="display:none;" x-show="tabSlider==='sliderThree'"
-                             class="swiper swiper-special-project-one">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="card-work-samples">
-                                        <img class="img-work-samples" src="/images/img-test.png" alt="">
-                                        <div class="item">
-                                            <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                            <a class="link-info-work-samples btn-base" href=""> </a>
-                                        </div>
-                                        <div class="border"></div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-                        </div>
-
+                        @endforeach
                     </div>
-                    <a href="" class="btn-all-works btn-base">
+                    <a href="/portfolio" class="btn-all-works btn-base">
                         همه نمونه کار ها
                     </a>
                     <div class="list-work-samples">
@@ -651,7 +559,7 @@
                             @foreach ($this->getCategory(1) as $category)
                             <div x-show="tabBlog==={{ $category->id }}" class="swiper mySwiper-blog">
                                 <div class="swiper-wrapper">
-                                    @foreach ($category->posts as $post)
+                                    @foreach ($category->posts->where('status_id' , getStatus('publish'))->take(7) as $post)
                                     <div class="swiper-slide">
                                         <div class="card-blog w-100">
                                             <a class="images" href="{{ $post->path() }}">
@@ -1113,7 +1021,7 @@
             </div>
         </section>
 
-        <section id="s4" class="special-parnas" x-data="{tabSlider:'sliderOne'}">
+        <section id="s4" class="special-parnas" x-data="{tabSlider:{{$this->getCategory(2)[0]->id}}}">
             <div class="prs-responsive">
                 <div class="w-90 mx-auto p-special-parnas">
                     <svg class="svg-sepecial-parnas" id="_039-pattern" data-name="039-pattern" width="30" height="28"
@@ -1126,129 +1034,37 @@
                     </svg>
                     <h3>برترین پروژه های پارناس ؛ خروجی های با ارزش ما</h3>
                     <div class="tab-header-slider-website">
-                        <a @click.prevent="tabSlider='sliderOne'" :class="{'activeSlider':tabSlider==='sliderOne'}"
+                        @foreach ($this->getCategory(2) as $category)
+                        <a @click.prevent="tabSlider={{$category->id}}" :class="{'activeSlider':tabSlider==={{$category->id}}}"
                            class="tabChange" href="">
                             <div class="line"></div>
-                            طراحی سایت
+                            {{ $category->name }}
                         </a>
-                        <a @click.prevent="tabSlider='sliderTwo'" :class="{'activeSlider':tabSlider==='sliderTwo'}"
-                           class="tabChange" href="">
-                            <div class="line"></div>
-                            طراحی فروشگاه اینترنتی
-                        </a>
-                        <a @click.prevent="tabSlider='sliderThree'" :class="{'activeSlider':tabSlider==='sliderThree'}"
-                           class="tabChange" href="">
-                            <div class="line"></div>
-                            دیجیتال مارکتینگ
-                        </a>
+                        @endforeach
                     </div>
                     <div class="body-sliders-website">
-                        <div x-show="tabSlider==='sliderOne'" class="swiper swiper-special-project-one">
+                        @foreach ($this->getCategory(2) as $category)
+                        <div x-show="tabSlider==={{$category->id}}" class="swiper swiper-special-project-one">
                             <div class="swiper-wrapper">
+                                @foreach ($category->posts->where('status_id' , getStatus('publish'))->take(7) as $portfolio)
                                 <div class="swiper-slide">
                                     <div class="card-work-samples">
-                                        <img class="img-work-samples" src="/images/img-test.png" alt="">
+                                        <img class="img-work-samples" src="{{ $portfolio->files()->where('type', 1)->first()->url ?? '/images/noPicture.png' }}" alt="{{ $portfolio->files()->where('type', 1)->first()->alt }}">
                                         <div class="item">
-                                            <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                            <a class="link-info-work-samples btn-base" href=""> </a>
+                                            <label for="">{{ $portfolio->title }}</label>
+                                            <a class="link-info-work-samples btn-base" href="{{ route('portifilos.show' , ['portfolio' => $portfolio->slug]) }}"></a>
                                         </div>
                                         <div class="border"></div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
-                                    <div class="card-work-samples">
-                                        <img class="img-work-samples" src="/images/img-test.png" alt="">
-                                        <div class="item">
-                                            <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                            <a class="link-info-work-samples btn-base" href=""> </a>
-                                        </div>
-                                        <div class="border"></div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="card-work-samples">
-                                        <img class="img-work-samples" src="/images/img-test.png" alt="">
-                                        <div class="item">
-                                            <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                            <a class="link-info-work-samples btn-base" href=""> </a>
-                                        </div>
-                                        <div class="border"></div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="card-work-samples">
-                                        <img class="img-work-samples" src="/images/img-test.png" alt="">
-                                        <div class="item">
-                                            <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                            <a class="link-info-work-samples btn-base" href=""> </a>
-                                        </div>
-                                        <div class="border"></div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="card-work-samples">
-                                        <img class="img-work-samples" src="/images/img-test.png" alt="">
-                                        <div class="item">
-                                            <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                            <a class="link-info-work-samples btn-base" href=""> </a>
-                                        </div>
-                                        <div class="border"></div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="card-work-samples">
-                                        <img class="img-work-samples" src="/images/img-test.png" alt="">
-                                        <div class="item">
-                                            <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                            <a class="link-info-work-samples btn-base" href=""> </a>
-                                        </div>
-                                        <div class="border"></div>
-                                    </div>
-                                </div>
-
+                                @endforeach
                             </div>
                             <div class="swiper-button-next"></div>
                             <div class="swiper-button-prev"></div>
                         </div>
-                        <div style="display:none;" x-show="tabSlider==='sliderTwo'"
-                             class="swiper swiper-special-project-one">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="card-work-samples">
-                                        <img class="img-work-samples" src="/images/img-test.png" alt="">
-                                        <div class="item">
-                                            <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                            <a class="link-info-work-samples btn-base" href=""> </a>
-                                        </div>
-                                        <div class="border"></div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-                        </div>
-                        <div style="display:none;" x-show="tabSlider==='sliderThree'"
-                             class="swiper swiper-special-project-one">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="card-work-samples">
-                                        <img class="img-work-samples" src="/images/img-test.png" alt="">
-                                        <div class="item">
-                                            <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                            <a class="link-info-work-samples btn-base" href=""> </a>
-                                        </div>
-                                        <div class="border"></div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-                        </div>
-
+                        @endforeach
                     </div>
-                    <a href="" class="btn-all-works btn-base">
+                    <a href="/portfolio" class="btn-all-works btn-base">
                         همه نمونه کار ها
                     </a>
                     <div class="list-work-samples">
@@ -1318,12 +1134,9 @@
                         @endforeach
                     </div>
 
-                    @foreach ($this->getCategory(1) as $category)
                     <div class="body-tab-blog">
                         <div class="r">
-                            <p>
-                                {{ $category->description }}
-                            </p>
+                            <p>{{ $this->getCategory(1)[0]->description }}</p>
                             <div class="item-omega">
                                 <svg id="_012-omega" data-name="012-omega" width="20" height="20"
                                      viewBox="0 0 25.887 25.887">
@@ -1349,9 +1162,10 @@
                             <a href="{{ route('posts.index') }}" class="btn-last-blog btn-base">آخرین اخبار و مقالات</a>
                         </div>
                         <div class="l">
+                            @foreach ($this->getCategory(1) as $category)
                             <div x-show="tabBlog==={{$category->id}}" class="swiper mySwiper-blog-mobi">
                                 <div class="swiper-wrapper">
-                                    @foreach ($category->posts as $post)
+                                    @foreach ($category->posts->where('status_id' , getStatus('publish'))->take(7) as $post)
                                         <div class="swiper-slide">
                                             <div class="card-blog w-100">
                                                 <a class="images" href="{{ $post->path() }}">
@@ -1368,10 +1182,9 @@
                                 <div class="swiper-button-next"></div>
                                 <div class="swiper-button-prev"></div>
                             </div>
-
+                            @endforeach
                         </div>
                     </div>
-                    @endforeach
                 </div>
             </div>
         </section>
