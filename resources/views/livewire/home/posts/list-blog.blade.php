@@ -31,7 +31,7 @@
 </section>
 {{--end---addressbar--}}
 
-<section class="blog-list" x-data="{tabBlog:'one'}">
+<section class="blog-list" x-data="{tabBlog:{{$categories[0]->id}}}">
     <div class="prs-responsive">
         <div class="w-90 mx-auto p-blog-info">
             <svg class="svg-sepecial-parnas" id="_039-pattern" data-name="039-pattern" width="30" height="28"
@@ -50,7 +50,8 @@
                 نقش ما فقط طراحی سایت و مارکتینگ نیست، در کنار این موارد به کسب و کار شما نظم می دهیم، سرعت میبخشیم و نتیجه کنار هم بودن سایت و شبکات اجتماعی را به شما ثابت می کنیم.
             </p>
             <div class="header-tab-blog">
-                <a class="item-change-tab activeTabBLog" :class="{'activeTabBLog':tabBlog==='one'}" @click.prevent="tabBlog='one'" href="">
+                @foreach ($categories as $category)
+                <a class="item-change-tab activeTabBLog" :class="{'activeTabBLog':tabBlog==={{$category->id}}}" @click.prevent="tabBlog={{$category->id}}" href="">
                     <svg x="" width="50" height="42" viewBox="0 0 59.101 49.514">
                         <g id="_016-lightning" data-name="016-lightning" opacity="1">
                             <g id="Group_89" data-name="Group 89" transform="translate(0 0)">
@@ -58,8 +59,10 @@
                             </g>
                         </g>
                     </svg>
-                    <span>مقالات</span>
+                    <span>{{ $category->name }}</span>
                 </a>
+                @endforeach
+{{--
                 <a class="item-change-tab" :class="{'activeTabBLog':tabBlog==='two'}"
                 @click.prevent="tabBlog='two'" href="">
                     <svg id="_021-quill" width="50" height="42" viewBox="0 0 59.101 59.101">
@@ -86,11 +89,12 @@
                         </g>
                     </svg>
                     <span>ویدیو</span>
-                </a>
+                </a> --}}
 
             </div>
-            <div style="display: none" x-transition:enter="animated fadeIn" x-show="tabBlog==='one'" class="list-box-blog">
-                @foreach ($posts as $post)
+            @foreach ($categories as $category)
+            <div x-transition:enter="animated fadeIn" x-show="tabBlog==={{ $category->id }}" class="list-box-blog">
+                @foreach ($category->posts as $post)
                     <div class="card-blog w-90 mx-auto">
                         <a class="images w-90" href="{{$post->path()}}">
                             <img src="/images/img-test.png" alt="">
@@ -102,6 +106,8 @@
                     </div>
                 @endforeach
             </div>
+            @endforeach
+
             <div style="display: none" x-transition:enter="animated fadeIn"  x-show="tabBlog==='two'" class="list-box-blog">
                 @foreach ($posts as $post)
                 <div class="card-blog w-90 mx-auto">
@@ -115,6 +121,7 @@
                 </div>
                 @endforeach
             </div>
+
             <div style="display: none" x-transition:enter="animated fadeIn"    x-show="tabBlog==='three'" class="list-box-blog">
                 @foreach ($posts as $post)
                     <div class="card-blog w-90 mx-auto">

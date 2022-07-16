@@ -34,7 +34,7 @@
 {{--end---addressbar--}}
 
 {{---PORTFOLIO---}}
-<section class="portfolio" x-data="{tab:'one'}">
+<section class="portfolio" x-data="{tab:{{$categories[0]->id}}}">
     <div class="prs-responsive">
         <div class="w-90 mx-auto p-portfolio">
             <svg class="svg-sepecial-parnas" id="_039-pattern" data-name="039-pattern" width="30" height="28"
@@ -49,82 +49,32 @@
             <h4>PORTFOLIO</h4>
             <p class="text-portfolio">آژانس خلاقیت پارناس قرار است همۀ زورش را بزند تا مجموعه شما بهترین خودش باشد. این وسط برایتان استراتژی تبلیغات آنلاین و آفلاین می‌چیند، وبسایت و اپلیکیشن می‌سازد، در شبکه‌های اجتماعی برایتان تولید محتوا می‌کند و… کلی کار دیگر، در اینجا قراره یک سری از برترین کار هایی که انجام دادیم در دنیای کسب و کار دیجیتالی را ببینیم، نکته حائز اهمیت این بخش ؛ برخی از نمونه کار های فروشگاهی پارناس به عنوان بهترین سایت در حوزه های تخصصی دارنده جایزه جشنواره وب و موبایل می باشند.</p>
             <div class="header-tab">
-                <a :class="{'activeTab':tab==='one'}" @click.prevent="tab='one'" class="link-tab-one align-items-center" href=""><img
-                        width="130" src="/images/img-avtar-r.png" alt="">
-                    <span>دیجیتال مارکتینگ</span>
-                </a>
-                <a :class="{'activeTab':tab==='two'}" @click.prevent="tab='two'" class="link-tab-two activeTab flex-column align-items-center" href=""><img
-                        width="130" src="/images/img-avatar-middle.png" alt="">
-                <span>طراحی سایت شرکتی</span>
-                </a>
-                <a :class="{'activeTab':tab==='three'}" @click.prevent="tab='three'" class="link-tab-three align-items-center" href=""><img
-                        width="130" src="/images/img-avatar-l.png" alt="">
-                <span>طراحی فروشگاه اینترنتی</span>
-                </a>
+                @foreach ($categories as $category)
+                    <a :class="{'activeTab':tab==={{$category->id}} }" @click.prevent="tab={{$category->id}}" class="link-tab-one align-items-center" href=""><img
+                        width="130" src="{{ $category->files()->where('type' , 2)->first()->url ?? '/images/noPicture.png' }}" alt="">
+                    <span>{{$category->name}}</span>
+                    </a>
+                @endforeach
             </div>
-            <div class="list-portfolio" x-show="tab==='one'">
+            @foreach ($categories as $category)
+            <div class="list-portfolio" x-show="tab==={{$category->id}}">
+                @foreach ($category->posts as $portfolio)
                 <div class="card-work-samples">
-                    <a class="w-100 link-card-portfolio" href="/portifilo/info">
-                        <img class="img-work-samples" src="/images/img-test.png" alt="">
+                    <a class="w-100 link-card-portfolio" href="{{ route('portifilos.show' , ['portfolio' => $portfolio->slug]) }}">
+                        <img class="img-work-samples" src="{{ $portfolio->files()->where('type', 1)->first()->url ?? '/images/noPicture.png' }}" alt="">
                         <div class="item">
-                            <label for="">فروشگاه اینترنتی کفش پارس</label>
-                            <a class="link-info-work-samples btn-base" href="/portifilo/info"> </a>
+                            <label for="">{{ $portfolio->title }}</label>
+                            <a class="link-info-work-samples btn-base" href="{{ route('portifilos.show' , ['portfolio' => $portfolio->slug]) }}"> </a>
                         </div>
                         <div class="border"></div>
                     </a>
                 </div>
-                <div class="card-work-samples">
-                    <a class="w-100 link-card-portfolio" href="/portifilo/info">
-                        <img class="img-work-samples" src="/images/img-test.png" alt="">
-                        <div class="item">
-                            <label for="">فروشگاه اینترنتی کفش پارس</label>
-                            <a class="link-info-work-samples btn-base" href="/portifilo/info"> </a>
-                        </div>
-                        <div class="border"></div>
-                    </a>
-                </div>
-                <div class="card-work-samples">
-                    <a class="w-100 link-card-portfolio" href="/portifilo/info">
-                        <img class="img-work-samples" src="/images/img-test.png" alt="">
-                        <div class="item">
-                            <label for="">فروشگاه اینترنتی کفش پارس</label>
-                            <a class="link-info-work-samples btn-base" href="/portifilo/info"> </a>
-                        </div>
-                        <div class="border"></div>
-                    </a>
-                </div>
-                <div class="card-work-samples">
-                    <a class="w-100 link-card-portfolio" href="/portifilo/info">
-                        <img class="img-work-samples" src="/images/img-test.png" alt="">
-                        <div class="item">
-                            <label for="">فروشگاه اینترنتی کفش پارس</label>
-                            <a class="link-info-work-samples btn-base" href="/portifilo/info"> </a>
-                        </div>
-                        <div class="border"></div>
-                    </a>
-                </div>
-                <div class="card-work-samples">
-                    <a class="w-100 link-card-portfolio" href="/portifilo/info">
-                        <img class="img-work-samples" src="/images/img-test.png" alt="">
-                        <div class="item">
-                            <label for="">فروشگاه اینترنتی کفش پارس</label>
-                            <a class="link-info-work-samples btn-base" href="/portifilo/info"> </a>
-                        </div>
-                        <div class="border"></div>
-                    </a>
-                </div>
-                <div class="card-work-samples">
-                    <a class="w-100 link-card-portfolio" href="/portifilo/info">
-                        <img class="img-work-samples" src="/images/img-test.png" alt="">
-                        <div class="item">
-                            <label for="">فروشگاه اینترنتی کفش پارس</label>
-                            <a class="link-info-work-samples btn-base" href="/portifilo/info"> </a>
-                        </div>
-                        <div class="border"></div>
-                    </a>
-                </div>
+                @endforeach
+
             </div>
-            <div style="display: none" class="list-portfolio" x-show="tab==='two'">
+            @endforeach
+
+            {{-- <div style="display: none" class="list-portfolio" x-show="tab==={{$categories[1]->id}}">
                 <div class="card-work-samples">
                     <a class="w-100 link-card-portfolio" href="/portifilo/info">
                         <img class="img-work-samples" src="/images/img-test.png" alt="">
@@ -149,7 +99,7 @@
 
 
             </div>
-            <div style="display: none" class="list-portfolio" x-show="tab==='three'">
+            <div style="display: none" class="list-portfolio" x-show="tab==={{$categories[2]->id}}">
                 <div class="card-work-samples">
                     <a class="w-100 link-card-portfolio" href="/portifilo/info">
                         <img class="img-work-samples" src="/images/img-test.png" alt="">
@@ -160,9 +110,10 @@
                         <div class="border"></div>
                     </a>
                 </div>
-            </div>
+            </div> --}}
+
             <!-- pagination -->
-            <div class="mt-4 p-pagination d-flex align-items-center justify-content-center pb-2">
+            {{-- <div class="mt-4 p-pagination d-flex align-items-center justify-content-center pb-2">
                 <!-- arrow right -->
                 <div class="pagination-first ps-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="43.973" height="43.973" viewBox="0 0 53.973 53.973">
@@ -206,7 +157,8 @@
                         </g>
                     </svg>
                 </div>
-            </div>
+            </div> --}}
+
         </div>
         <div class="banner-parnas mt-4 w-90 mx-auto">
             <img class="w-100" src="/images/banner-two.png" alt="">

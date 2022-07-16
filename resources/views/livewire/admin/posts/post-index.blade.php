@@ -25,7 +25,11 @@
                             <div class="main-data flex-100 d-flex justify-content-between">
                                 <div class="title d-flex align-items-center pb-10">
                                     <div class="text">
-                                        <h6>لیست نوشته ها</h6>
+                                        <h6>@if ($post_type === 'post')
+                                            لیست نوشته ها
+                                            @else
+                                            لیست نمونه کارها
+                                            @endif</h6>
                                     </div>
                                     <div class="p-rx">
                                         <div class="rx-border-rectangle"></div>
@@ -50,15 +54,15 @@
                                         </button>
                                     </div>
                                     <div class="c-btn ml-7 pb-5">
-                                        <a href="{{ route('admin.comments.index' , ['type' => 'post']) }}" class="ancher btn-effect bg-info text-white radius-5">
+                                        <a href="{{ route('admin.comments.index' , ['type' => $post_type ]) }}" class="ancher btn-effect bg-info text-white radius-5">
                                             <div class="circle-solid top-right bg-white"></div>دیدگاه ها</a>
                                     </div>
                                     <div class="c-btn ml-7 pb-5">
-                                        <a href="{{ route('admin.categories.index' , ['type' => '1']) }}" class="ancher btn-effect bg-info text-white radius-5">
+                                        <a href="{{ route('admin.categories.index' , ['type' => $post_type === 'post' ? '1' : '2']) }}" class="ancher btn-effect bg-info text-white radius-5">
                                             <div class="circle-solid top-right bg-white"></div>دسته بندی ها</a>
                                     </div>
                                     <div class="c-btn ml-7 pb-5">
-                                        <a href="{{ route('admin.tags.index' , ['type' => '1']) }}" class="ancher btn-effect bg-info text-white radius-5">
+                                        <a href="{{ route('admin.tags.index' , ['type' => $post_type === 'post' ? '1' : '2']) }}" class="ancher btn-effect bg-info text-white radius-5">
                                             <div class="circle-solid top-right bg-white"></div>برچسب ها</a>
                                     </div>
                                     <div class="c-btn pb-5">

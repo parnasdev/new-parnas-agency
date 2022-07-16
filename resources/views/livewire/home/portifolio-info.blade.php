@@ -40,7 +40,7 @@
         <div class="w-90 mx-auto p-portfolio-info">
             <div class="w-100 d-flex align-items-start justify-content-between">
                 <div class="logo-work-samples">
-                    <img src="/images/hoze.png" alt="">
+                    <img src="{{ $portfolio->files()->where('type' , 2)->get()[0]->url ?? '/images/noPicture.png' }}" alt="">
                 </div>
                 <div class="p-name-work-samples d-flex flex-column align-items-center">
                     <svg class="svg-sepecial-parnas" id="_039-pattern" data-name="039-pattern" width="30" height="28"
@@ -51,25 +51,29 @@
                                   transform="translate(-0.003 -17.275)" fill="#ca7e65"></path>
                         </g>
                     </svg>
-                    <h3>طراحی سایت حوزه هنری</h3>
-                    <p class="name-work-samples">hozehonari.ir</p>
+                    <h3>{{ $portfolio->title }}</h3>
+                    <p class="name-work-samples">{{ $portfolio->description }}</p>
                 </div>
                 <div class="cms-satrap">
-                    <img src="/images/logo-satrap.png" alt="">
+                    <img src="{{ $portfolio->files()->where('type' , 2)->get()[1]->url ?? '/images/noPicture.png' }}" alt="">
                 </div>
             </div>
-            <p class="p-text-work-samples">یکی از نام هایی که اکثر قریب به اتفاق ایرانیان با آن آشنایی دارند، نام حوزه
-                هنری سازمان تبلیغات اسلامی است. این موسسه وابسته به سازمان تبلیغات اسلامی یکی از متولیان فرهنگی - هنری
-                کشور است که با محوریت عنصر الهی اسلام و حکومت اسلامی دست اندرکار فعالیت های گسترده و متنوعی از قبیل:
-                انتشار چندین عنوان نشریه با زمینه های فرهنگی و هنری، آموزش رشته های مختلف هنری، تهیه کنندگی و ساخت فیلم
-                ها سینمایی، تولید فیلم نامه با بهره گیری از استعداد های کشور، پشتیبانی از گروه های هنری در زمینه های
-                گوناگون، حمایت از برگزاری نمایش های آیینی و تعزیه، اقدام به احیای هنر های اصیل ایرانی - اسلامی و همچنین
-                انجام فعالیت ها و ارائه خدمات دیگر در جهت حفظ امتداد و تکیه بر آرمان های انقلاب اسلامی می نماید.
+            <p class="p-text-work-samples">
+            {!! $portfolio->body ?? 'توضیحاتی برای این نمونه کار ثبت نشده است' !!}
             </p>
-            <div class="screenshot-portfolio">
-                <img src="/images/hoze-screenshot.png" alt="">
-            </div>
 
+            <div class="d-flex">
+                <p class="p-text-work-samples">:تگ ها</p>
+                @forelse ($portfolio->tags as $tag)
+                <div class="d-flex">
+                    <a class="w-100 link-card-portfolio" href="{{ route('portifilos.index') }}">{{ $tag->name }}</a>
+                </div>
+                @empty
+                <div class="d-flex">
+                    <p class="w-100 link-card-portfolio">تگی برای این نمونه کار ثبت نشده است</p>
+                </div>
+                @endforelse
+            </div>
         </div>
     </div>
 </section>

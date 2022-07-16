@@ -16,6 +16,7 @@ use Livewire\Component;
 class PostEdit extends Component
 {
     public Post $post;
+    public $post_type;
 
     public $file = [
         'url' => null,
@@ -58,7 +59,8 @@ class PostEdit extends Component
 
     public function render()
     {
-        $categories = Category::query()->where('parent_id' , null)->where('category_type' , 1)->get();
+        $this->post_type = $this->post->post_type === 'post' ? 1 : 2;
+        $categories = Category::query()->where('parent_id' , null)->where('category_type' , $this->post_type)->get();
         $statuses = Status::query()->where('type' , 1)->get();
         return view('livewire.admin.posts.post-edit' , compact('categories' , 'statuses'));
     }
@@ -156,7 +158,7 @@ class PostEdit extends Component
 
         } else {
             session()->flash('message' , ['title' =>  'نمونه کار شما با موفقیت ویرایش شد.' , 'icon' => 'success']);
-            return redirect(route('admin.portfolio.index'));
+            return redirect(route('admin.portfolio.index', ['post_type' => 'portfolio']));
         }
     }
 }

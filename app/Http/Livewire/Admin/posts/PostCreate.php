@@ -62,7 +62,7 @@ class PostCreate extends Component
 
     public function render()
     {
-        $categories = Category::query()->whereNull('parent_id')->where('category_type' , 1)->get();
+        $categories = Category::query()->whereNull('parent_id')->where('category_type' , $this->post_type == 'post' ? 1 : 2)->get();
         $statuses = Status::query()->where('type' , 1)->get();
         return view('livewire.admin.posts.post-create' , compact('categories' , 'statuses'));
     }
@@ -143,7 +143,7 @@ class PostCreate extends Component
             return redirect(route('admin.posts.index'));
         } else {
             session()->flash('message' , ['title' =>  'نمونه کار شما با موفقیت ثبت شد.' , 'icon' => 'success']);
-            return redirect(route('admin.portfolio.index'));
+            return redirect(route('admin.portfolio.index', ['post_type' => 'portfolio']));
         }
     }
 }
