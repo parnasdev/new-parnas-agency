@@ -140,7 +140,7 @@
         }
         }}
 
- }">
+    }">
             <div class="prs-responsive">
                 <div class="w-100 p-realtive">
 
@@ -294,6 +294,7 @@
                 </div>
             </div>
         </section>
+
         <section id="s3" class="s3" x-data="{tab:'two'}">
             <div class="prs-responsive">
                 <div class="w-90 mx-auto p-s3">
@@ -401,6 +402,7 @@
 
             </div>
         </section>
+
         <section class="banner">
             <div class="prs-responsive">
                 <div class="w-90 mx-auto p-banner">
@@ -409,6 +411,7 @@
 
             </div>
         </section>
+
         <section id="s4" class="special-parnas" x-data="{tabSlider:'sliderOne'}">
             <div class="prs-responsive">
                 <div class="w-90 mx-auto p-special-parnas">
@@ -584,7 +587,8 @@
                 </div>
             </div>
         </section>
-        <section id="s5" class="blog-index-page" x-data="{tabBlog:'one'}">
+
+        <section id="s5" class="blog-index-page" x-data="{tabBlog:{{$this->getCategory(1)[0]->id}}}">
             <div class="prs-responsive">
                 <div class="w-90 mx-auto p-blog-index">
                     <svg class="ms-3" id="_039-pattern" data-name="039-pattern" width="30" height="28"
@@ -598,8 +602,9 @@
                     <h3 class="title-fa">کبوتر نامه رسان پارناس ؛ اخبار و مقالات </h3>
                     <h3 class="title-en">Blog & News</h3>
                     <div class="header-tab-blog">
-                        <a class="item-change-tab" :class="{'activeTabBLog':tabBlog==='one'}"
-                           @click.prevent="tabBlog='one'"
+                        @foreach ($this->getCategory(1) as $category)
+                        <a class="item-change-tab" :class="{'activeTabBLog':tabBlog==={{ $category->id }}}"
+                           @click.prevent="tabBlog={{$category->id}}"
                            href="">
                             <svg x width="52" height="42" viewBox="0 0 59.101 49.514">
                                 <g id="_016-lightning" data-name="016-lightning" opacity="1">
@@ -610,59 +615,13 @@
                                     </g>
                                 </g>
                             </svg>
-
-                            صوت
+                            {{ $category->name }}
                         </a>
-                        <a class="item-change-tab" :class="{'activeTabBLog':tabBlog==='two'}"
-                           @click.prevent="tabBlog='two'"
-                           href="">
-                            <svg id="_021-quill" width="52" height="52" viewBox="0 0 59.101 59.101">
-                                <g id="Group_94" data-name="Group 94" transform="translate(0 0)">
-                                    <path id="Path_1467" data-name="Path 1467"
-                                          d="M58.594.507A1.729,1.729,0,0,0,57.272,0,60.1,60.1,0,0,0,45.187,2.273,59.156,59.156,0,0,0,32.392,7.605a1.715,1.715,0,0,0-.325.186A44.43,44.43,0,0,0,22.9,14.754c-7.035,7.035-10.67,16-12.481,22.284A63.11,63.11,0,0,0,8.2,48.449l-7.7,7.7a1.731,1.731,0,1,0,2.449,2.449l7.7-7.7a63.124,63.124,0,0,0,11.411-2.219,59.147,59.147,0,0,0,12.793-5.331,1.72,1.72,0,0,0,.328-.187A44.419,44.419,0,0,0,44.346,36.2h0l0,0c7.034-7.035,10.669-16,12.479-22.282A60.122,60.122,0,0,0,59.1,1.828,1.732,1.732,0,0,0,58.594.507ZM43.093,32.5l-2.68-2.68a1.731,1.731,0,0,0-2.449,2.449l2.681,2.681a41.285,41.285,0,0,1-6.209,4.63l-1.891-1.891A1.731,1.731,0,0,0,30.1,40.132L31.3,41.339A56.781,56.781,0,0,1,21.19,45.326a63.739,63.739,0,0,1-6.481,1.513L46.791,14.758a1.731,1.731,0,0,0-2.449-2.449L12.268,44.384c1.194-6.623,4.451-18.55,13.083-27.181a40.359,40.359,0,0,1,7.463-5.826l1.891,1.891a1.731,1.731,0,1,0,2.448-2.449L35.947,9.614A56.783,56.783,0,0,1,46.059,5.626a62.628,62.628,0,0,1,9.372-1.957C54.776,8.779,52.23,22.461,43.093,32.5Z"
-                                          transform="translate(-0.001 0)" fill="#433e4d"/>
-                                </g>
-                            </svg>
-
-                            صوت
-                        </a>
-                        <a class="item-change-tab" :class="{'activeTabBLog':tabBlog==='three'}"
-                           @click.prevent="tabBlog='three'"
-                           href="">
-                            <svg width="50" height="50" viewBox="0 0 59.101 59.101">
-                                <g id="_006-theatre" data-name="006-theatre" opacity="1">
-                                    <g id="Group_72" data-name="Group 72" transform="translate(0 0)">
-                                        <g id="Group_71" data-name="Group 71">
-                                            <path id="Path_1449" data-name="Path 1449"
-                                                  d="M57.369,11.128H40.555v-9.4A1.732,1.732,0,0,0,38.823,0H1.731A1.732,1.732,0,0,0,0,1.731V27.7A20.3,20.3,0,0,0,20.277,47.973c.15,0,.3,0,.451-.005A20.275,20.275,0,0,0,59.1,38.823V12.859A1.732,1.732,0,0,0,57.369,11.128Zm-37.092,0a1.732,1.732,0,0,0-1.731,1.731V26.131a9.164,9.164,0,0,0-7.418,8.983,1.731,1.731,0,1,0,3.463,0A5.7,5.7,0,0,1,18.546,29.7v9.126a20.215,20.215,0,0,0,.805,5.661A16.835,16.835,0,0,1,3.463,27.7V3.463H37.092v7.665Zm35.36,27.7a16.814,16.814,0,1,1-33.629,0V14.59H55.638Z"
-                                                  transform="translate(0 0)" fill="#433E4D"/>
-                                        </g>
-                                    </g>
-                                    <g id="Group_74" data-name="Group 74" transform="translate(29.673 37.092)">
-                                        <g id="Group_73" data-name="Group 73">
-                                            <path id="Path_1450" data-name="Path 1450"
-                                                  d="M273.634,321.333a1.732,1.732,0,0,0-1.731,1.731,5.687,5.687,0,1,1-11.374,0,1.731,1.731,0,1,0-3.463,0,9.15,9.15,0,0,0,18.3,0A1.732,1.732,0,0,0,273.634,321.333Z"
-                                                  transform="translate(-257.066 -321.333)" fill="#433E4D"/>
-                                        </g>
-                                    </g>
-                                </g>
-                            </svg>
-
-
-                            صوت
-                        </a>
-
+                        @endforeach
                     </div>
                     <div class="body-tab-blog">
                         <div class="r">
-                            <p>ما در پارناس فقط و فقط سرویس دهنده نیستیم، بلکه در ازای هر سرویس که خروجی داشته باشد
-                                آموزش همان
-                                خروجی هم تولید خواهیم کرد، از سیستم مدیریت محتوا ساتراپ گرفته تا آموزش های نو در زمینه
-                                دیجیتال
-                                مارکتینگ، طراحی سایت، تجارت الکترونیک، سوشال مدیا ها و حتی سئو و بهینه سازی.
-                                <br>
-                                با ما همراه باشید ؛
-                            </p>
+                            <p>{{ $this->getCategory(1)[0]->description }}</p>
                             <div class="item-omega">
                                 <svg id="_012-omega" data-name="012-omega" width="20" height="20"
                                      viewBox="0 0 25.887 25.887">
@@ -685,76 +644,41 @@
                                 </svg>
                                 صوت های ارزشمند و ویدیو های دیدنی
                             </div>
-                            <a href="" class="btn-last-blog btn-base">آخرین اخبار و مقالات</a>
+                            <a href="/posts" class="btn-last-blog btn-base">آخرین اخبار و مقالات</a>
                         </div>
-                        <div class="l">
-                            <div x-show="tabBlog==='one'" class="swiper mySwiper-blog">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="card-blog w-100">
-                                            <a class="images" href="">
-                                                <img src="/images/img-test.png" alt="">
-                                            </a>
-                                            <div class="footer-card-blog">
-                                                <span>جاوا اسکریپت چیست ؟</span>
-                                                <a class="btn-info-blog btn-base" href=""></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card-blog w-100">
-                                            <a class="images" href="">
-                                                <img src="/images/img-test.png" alt="">
-                                            </a>
-                                            <div class="footer-card-blog">
-                                                <span>جاوا اسکریپت چیست ؟</span>
-                                                <a class="btn-info-blog btn-base" href=""></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card-blog w-100">
-                                            <a class="images" href="">
-                                                <img src="/images/img-test.png" alt="">
-                                            </a>
-                                            <div class="footer-card-blog">
-                                                <span>جاوا اسکریپت چیست ؟</span>
-                                                <a class="btn-info-blog btn-base" href=""></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card-blog w-100">
-                                            <a class="images" href="">
-                                                <img src="/images/img-test.png" alt="">
-                                            </a>
-                                            <div class="footer-card-blog">
-                                                <span>جاوا اسکریپت چیست ؟</span>
-                                                <a class="btn-info-blog btn-base" href=""></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card-blog w-100">
-                                            <a class="images" href="">
-                                                <img src="/images/img-test.png" alt="">
-                                            </a>
-                                            <div class="footer-card-blog">
-                                                <span>جاوا اسکریپت چیست ؟</span>
-                                                <a class="btn-info-blog btn-base" href=""></a>
-                                            </div>
-                                        </div>
-                                    </div>
 
+                        <div class="l">
+                            @foreach ($this->getCategory(1) as $category)
+                            <div x-show="tabBlog==={{ $category->id }}" class="swiper mySwiper-blog">
+                                <div class="swiper-wrapper">
+                                    @foreach ($category->posts as $post)
+                                    <div class="swiper-slide">
+                                        <div class="card-blog w-100">
+                                            <a class="images" href="{{ $post->path() }}">
+                                                <img src="{{ $post->files()->where('type', 1)->first()->url ?? '/images/noPicture.png' }}" alt="">
+                                            </a>
+                                            <div class="footer-card-blog">
+                                                <span>{{ $post->title }}</span>
+                                                <a class="btn-info-blog btn-base" href="{{ $post->path() }}"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endforeach
                                 </div>
+                                @if(count($category->posts) > 0 )
                                 <div class="swiper-button-next"></div>
                                 <div class="swiper-button-prev"></div>
+                                @endif
                             </div>
+                            @endforeach
                         </div>
+
                     </div>
+
                 </div>
             </div>
         </section>
+
         <section id="s6" class="customers">
             <div class="prs-responsive">
                 <div class="w-90 mx-auto p-customers">
@@ -876,7 +800,10 @@
                 </div>
             </div>
         </section>
+
     </article>
+
+    {{-- mobile index page --}}
     <article class="mobile-index-page" style="display: none" x-show="window.innerWidth<868">
         <div class="w-100 mx-auto p-header-desktop-three">
             <img src="/images/mount.png" width="100%" alt="" class="mount-fix">
@@ -919,21 +846,21 @@
                 </div>
             </div>
         </div>
-        <section id="s2" class="w-90 s2-index" x-data="{
-        step:1,
-        changeStep(event){
-        console.log(this.step)
-        if (event==-1){
-        if (this.step>=2){
-                this.step=this.step-1
-        }
-        }else {
-        if (this.step<7){
-                 this.step=this.step+1
-        }
-        }}
 
- }">
+        <section id="s2" class="w-90 s2-index" x-data="{
+            step:1,
+            changeStep(event){
+            console.log(this.step)
+            if (event==-1){
+            if (this.step>=2){
+                    this.step=this.step-1
+            }
+            }else {
+            if (this.step<7){
+                     this.step=this.step+1
+            }
+            }}
+            }">
             <div class="p-steps">
                 <svg id="_039-pattern" data-name="039-pattern" width="30" height="28" viewBox="0 0 34.532 32.202">
                     <g id="Group_121" data-name="Group 121" transform="translate(0 0)">
@@ -1078,6 +1005,7 @@
                 <img style="display: none" x-show="step===7" class="img-step-6 img" src="/images/img-step-6.png" alt="">
             </div>
         </section>
+
         <section id="s3" class="s3 w-100" x-data="{tab:'two'}">
             <div class="prs-responsive">
                 <div class="w-90 mx-auto p-s3">
@@ -1175,6 +1103,7 @@
 
             </div>
         </section>
+
         <section class="banner">
             <div class="prs-responsive">
                 <div class="w-90 mx-auto p-banner">
@@ -1183,6 +1112,7 @@
 
             </div>
         </section>
+
         <section id="s4" class="special-parnas" x-data="{tabSlider:'sliderOne'}">
             <div class="prs-responsive">
                 <div class="w-90 mx-auto p-special-parnas">
@@ -1352,13 +1282,12 @@
                         <a href="" class="item-work-samples">
                             <img src="/images/Image-5.png" alt="">
                         </a>
-
-
                     </div>
                 </div>
             </div>
         </section>
-        <section id="s5" class="blog-index-page" x-data="{tabBlog:'one'}">
+
+        <section id="s5" class="blog-index-page" x-data="{tabBlog:{{$this->getCategory(1)[0]->id}} }">
             <div class="prs-responsive">
                 <div class="w-90 mx-auto p-blog-index">
                     <svg class="ms-3" id="_039-pattern" data-name="039-pattern" width="30" height="28"
@@ -1371,8 +1300,10 @@
                     </svg>
                     <h3 class="title-fa">کبوتر نامه رسان پارناس ؛ اخبار و مقالات </h3>
                     <h3 class="title-en">Blog & News</h3>
+
                     <div class="header-tab-blog">
-                        <a class="item-change-tab" :class="{'activeTabBLog':tabBlog==='one'}" @click.prevent="tabBlog='one'" href="">
+                        @foreach ($this->getCategory(1) as $category)
+                        <a class="item-change-tab" :class="{'activeTabBLog':tabBlog==={{$category->id}}}" @click.prevent="tabBlog={{$category->id}}" href="">
                             <svg x width="52" height="42" viewBox="0 0 59.101 49.514">
                                 <g id="_016-lightning" data-name="016-lightning" opacity="1">
                                     <g id="Group_89" data-name="Group 89" transform="translate(0 0)">
@@ -1382,50 +1313,16 @@
                                     </g>
                                 </g>
                             </svg>
-                            مقالات
+                            {{$category->name}}
                         </a>
-                        <a class="item-change-tab" :class="{'activeTabBLog':tabBlog==='two'}" @click.prevent="tabBlog='two'" href="">
-                            <svg id="_021-quill" width="52" height="52" viewBox="0 0 59.101 59.101">
-                                <g id="Group_94" data-name="Group 94" transform="translate(0 0)">
-                                    <path id="Path_1467" data-name="Path 1467"
-                                          d="M58.594.507A1.729,1.729,0,0,0,57.272,0,60.1,60.1,0,0,0,45.187,2.273,59.156,59.156,0,0,0,32.392,7.605a1.715,1.715,0,0,0-.325.186A44.43,44.43,0,0,0,22.9,14.754c-7.035,7.035-10.67,16-12.481,22.284A63.11,63.11,0,0,0,8.2,48.449l-7.7,7.7a1.731,1.731,0,1,0,2.449,2.449l7.7-7.7a63.124,63.124,0,0,0,11.411-2.219,59.147,59.147,0,0,0,12.793-5.331,1.72,1.72,0,0,0,.328-.187A44.419,44.419,0,0,0,44.346,36.2h0l0,0c7.034-7.035,10.669-16,12.479-22.282A60.122,60.122,0,0,0,59.1,1.828,1.732,1.732,0,0,0,58.594.507ZM43.093,32.5l-2.68-2.68a1.731,1.731,0,0,0-2.449,2.449l2.681,2.681a41.285,41.285,0,0,1-6.209,4.63l-1.891-1.891A1.731,1.731,0,0,0,30.1,40.132L31.3,41.339A56.781,56.781,0,0,1,21.19,45.326a63.739,63.739,0,0,1-6.481,1.513L46.791,14.758a1.731,1.731,0,0,0-2.449-2.449L12.268,44.384c1.194-6.623,4.451-18.55,13.083-27.181a40.359,40.359,0,0,1,7.463-5.826l1.891,1.891a1.731,1.731,0,1,0,2.448-2.449L35.947,9.614A56.783,56.783,0,0,1,46.059,5.626a62.628,62.628,0,0,1,9.372-1.957C54.776,8.779,52.23,22.461,43.093,32.5Z"
-                                          transform="translate(-0.001 0)" fill="#433e4d"/>
-                                </g>
-                            </svg>
-                            صوت
-                        </a>
-                        <a class="item-change-tab" :class="{'activeTabBLog':tabBlog==='three'}" @click.prevent="tabBlog='three'" href="">
-                            <svg width="50" height="50" viewBox="0 0 59.101 59.101">
-                                <g id="_006-theatre" data-name="006-theatre" opacity="1">
-                                    <g id="Group_72" data-name="Group 72" transform="translate(0 0)">
-                                        <g id="Group_71" data-name="Group 71">
-                                            <path id="Path_1449" data-name="Path 1449"
-                                                  d="M57.369,11.128H40.555v-9.4A1.732,1.732,0,0,0,38.823,0H1.731A1.732,1.732,0,0,0,0,1.731V27.7A20.3,20.3,0,0,0,20.277,47.973c.15,0,.3,0,.451-.005A20.275,20.275,0,0,0,59.1,38.823V12.859A1.732,1.732,0,0,0,57.369,11.128Zm-37.092,0a1.732,1.732,0,0,0-1.731,1.731V26.131a9.164,9.164,0,0,0-7.418,8.983,1.731,1.731,0,1,0,3.463,0A5.7,5.7,0,0,1,18.546,29.7v9.126a20.215,20.215,0,0,0,.805,5.661A16.835,16.835,0,0,1,3.463,27.7V3.463H37.092v7.665Zm35.36,27.7a16.814,16.814,0,1,1-33.629,0V14.59H55.638Z"
-                                                  transform="translate(0 0)" fill="#433E4D"/>
-                                        </g>
-                                    </g>
-                                    <g id="Group_74" data-name="Group 74" transform="translate(29.673 37.092)">
-                                        <g id="Group_73" data-name="Group 73">
-                                            <path id="Path_1450" data-name="Path 1450"
-                                                  d="M273.634,321.333a1.732,1.732,0,0,0-1.731,1.731,5.687,5.687,0,1,1-11.374,0,1.731,1.731,0,1,0-3.463,0,9.15,9.15,0,0,0,18.3,0A1.732,1.732,0,0,0,273.634,321.333Z"
-                                                  transform="translate(-257.066 -321.333)" fill="#433E4D"/>
-                                        </g>
-                                    </g>
-                                </g>
-                            </svg>
-                            ویدیو
-                        </a>
-
+                        @endforeach
                     </div>
+
+                    @foreach ($this->getCategory(1) as $category)
                     <div class="body-tab-blog">
                         <div class="r">
-                            <p>ما در پارناس فقط و فقط سرویس دهنده نیستیم، بلکه در ازای هر سرویس که خروجی داشته باشد
-                                آموزش همان
-                                خروجی هم تولید خواهیم کرد، از سیستم مدیریت محتوا ساتراپ گرفته تا آموزش های نو در زمینه
-                                دیجیتال
-                                مارکتینگ، طراحی سایت، تجارت الکترونیک، سوشال مدیا ها و حتی سئو و بهینه سازی.
-                                <br>
-                                با ما همراه باشید ؛
+                            <p>
+                                {{ $category->description }}
                             </p>
                             <div class="item-omega">
                                 <svg id="_012-omega" data-name="012-omega" width="20" height="20"
@@ -1452,49 +1349,9 @@
                             <a href="{{ route('posts.index') }}" class="btn-last-blog btn-base">آخرین اخبار و مقالات</a>
                         </div>
                         <div class="l">
-                            <div x-show="tabBlog==='one'" class="swiper mySwiper-blog-mobi">
+                            <div x-show="tabBlog==={{$category->id}}" class="swiper mySwiper-blog-mobi">
                                 <div class="swiper-wrapper">
-                                    @foreach ($posts as $post)
-                                        <div class="swiper-slide">
-                                            <div class="card-blog w-100">
-                                                <a class="images" href="{{ $post->path() }}">
-                                                    <img src="{{ $post->files()->where('type', 1)->first()?->url }}" alt="">
-                                                </a>
-                                                <div class="footer-card-blog">
-                                                    <span>{{ $post->title }}</span>
-                                                    <a class="btn-info-blog btn-base" href="{{ $post->path() }}"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                                <div class="swiper-button-next"></div>
-                                <div class="swiper-button-prev"></div>
-                            </div>
-
-                            <div x-show="tabBlog==='two'" class="swiper mySwiper-blog-mobi-2">
-                                <div class="swiper-wrapper">
-                                    @foreach ($posts as $post)
-                                        <div class="swiper-slide">
-                                            <div class="card-blog w-100">
-                                                <a class="images" href="{{ $post->path() }}">
-                                                    <img src="{{ $post->files()->where('type', 1)->first()?->url }}" alt="">
-                                                </a>
-                                                <div class="footer-card-blog">
-                                                    <span>{{ $post->title }}</span>
-                                                    <a class="btn-info-blog btn-base" href="{{ $post->path() }}"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                                <div class="swiper-button-next"></div>
-                                <div class="swiper-button-prev"></div>
-                            </div>
-
-                            <div x-show="tabBlog==='three'" class="swiper mySwiper-blog-mobi-3">
-                                <div class="swiper-wrapper">
-                                    @foreach ($posts as $post)
+                                    @foreach ($category->posts as $post)
                                         <div class="swiper-slide">
                                             <div class="card-blog w-100">
                                                 <a class="images" href="{{ $post->path() }}">
@@ -1514,9 +1371,11 @@
 
                         </div>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </section>
+
         <section id="s6" class="customers">
             <div class="prs-responsive">
                 <div class="w-90 mx-auto p-customers">
@@ -1638,6 +1497,7 @@
                 </div>
             </div>
         </section>
+
         <div class="p-back-top">
             <a @click.prevent="window.scrollTo(0,0)" href="" class="btn-back-top">
                 <svg width="47" height="47" viewBox="0 0 58.993 58.993">
@@ -1654,6 +1514,7 @@
 
         </div>
     </article>
+
 </div>
 
 
