@@ -1,21 +1,17 @@
 @component('layouts.app')
-<div class="not-found">
-    <div class="box-not-found">
-        <iframe src="https://embed.lottiefiles.com/animation/91191"></iframe>
-        <span class="error-message">{{ __('Not Found') }}</span>
-        <div class="button-not-found">
-            <a class="btn-home-p-nf" href="/">
-                <i class="icon-circle"></i>
-                صفحه اصلی
-            </a>
-            <a class="btn-courses-nf" href="{{ route('courses.index') }}">
-                <i class="icon-circle"></i>
-                دوره ها</a>
+    <div class="not-found">
+        <div class="box-not-found">
+            <img width="50%" src="/gif/404.gif" alt="">
+            <span class="error-message">{{ __('Not Found') }}</span>
+            <div class="button-not-found">
+                <a class="btn-base" href="/">
+                    صفحه اصلی
+                </a>
+            </div>
         </div>
+
+
     </div>
-
-
-</div>
 
 @endcomponent
 {{--@section('title', __('Not Found'))--}}

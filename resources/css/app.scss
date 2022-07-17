@@ -607,6 +607,9 @@ a {
 
 //header-two
 .header-desktop-two {
+    .nav-header h2:before ,.nav-header h2:after{
+        display: none !important;
+    }
     .p-header-desktop {
         padding: 3rem 0 2rem 0;
         position: relative;
@@ -2865,6 +2868,7 @@ a {
             left: 33.5%;
             width: 120px !important;
         }
+
     }
 }
 
@@ -3418,6 +3422,10 @@ a {
     .footer-t .p-footer-t .img-contact-footer img {
         transform: rotate(90deg);
     }
+    .not-found .box-not-found {
+        height: 54% !important;
+        width: 93% !important;
+    }
 }
 
 //-------------------------------------------------------------tablet
@@ -3936,6 +3944,11 @@ a {
     .footer-t .p-footer-t .img-contact-footer img {
         transform: rotate(90deg);
     }
+    .not-found .box-not-found {
+        height: 54% !important;
+        width: 93% !important;
+    }
+
 }
 
 
@@ -4011,8 +4024,23 @@ a {
         }
     }
 }
-
+.h1-parent {
+    margin-right: 10px !important;
+    position: relative;
+    h1{
+        font-family: "Yekan-Bakh-xx" !important;
+        color: $base-color !important;
+        font-size: 18px !important;
+        margin-top: 18px !important;
+    }
+}
 .s-about-us {
+    .bg-parnas{
+        background: $white-color;
+        padding: 1rem;
+        height: auto;
+        border-radius: 0 20px 0 20px;
+    }
     a {
         cursor: pointer !important;
     }
@@ -4029,6 +4057,12 @@ a {
     .h1-parent {
         margin-right: 10px !important;
         position: relative;
+        h1{
+            font-family: "Yekan-Bakh-xx" !important;
+            color: $base-color !important;
+            font-size: 18px !important;
+            margin-top: 18px !important;
+        }
     }
 
     .tabs {
@@ -4073,7 +4107,7 @@ a {
     .customers,
     .projects,
     .team-parnas {
-        background-color: #fafafa;
+        background-color: #e5e9f1;
         height: 230px;
         margin-bottom: 1rem !important;
         position: relative;
@@ -4637,6 +4671,10 @@ a {
             border-radius: 20px;
             padding: 1rem;
             margin: 3rem auto !important;
+            p{
+                text-align: justify;
+                line-height: 28px;
+            }
         }
 
         .info-who-we-are {
@@ -4644,6 +4682,10 @@ a {
             border-radius: 20px;
             padding: 1rem;
             margin: 3rem auto !important;
+            p{
+                text-align: justify;
+                line-height: 28px;
+            }
         }
     }
 
@@ -4836,6 +4878,11 @@ a {
         .s1-mobi {
             flex-direction: column !important;
         }
+        .s-about-us{
+            .w-90{
+                width: 95% !important;
+            }
+        }
         .all-btn {
             flex: 0 0 100% !important;
             max-width: 100% !important;
@@ -4984,6 +5031,12 @@ a {
 }
 
 .s-contact-us {
+    .bg-parnas{
+        background: $white-color;
+        padding: 1rem;
+        height: auto;
+        border-radius: 0 20px 0 20px;
+    }
     .img-parnas {
         position: absolute;
         right: -30px;
@@ -5012,10 +5065,11 @@ a {
     }
 
     .base-color {
-        background-color: $white-color;
+        background-color: #e5e9f1;
         height: 250px;
         position: relative;
         padding: 1rem 0;
+        margin: 10rem 0;
     }
 
     .img-parnas {
@@ -5416,5 +5470,65 @@ a {
     .submit-form {
         width: auto;
         padding: 0 6px !important;
+    }
+}
+
+
+//-----------------------------------------------404
+.not-found {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: #fff url(/images/Animated-Shape.svg) no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+
+    .box-not-found {
+        height: 70%;
+        border-radius: 10px;
+        border: 2px solid $light-color-second;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        background-color: $white-color;
+
+        iframe {
+            width: 100%;
+            height: 80%;
+        }
+
+        span {
+            font-size: 80px;
+            display: flex;
+        }
+
+        .error-message {
+            color: $base-color;
+            font-size: 25px;
+            font-family: Yekan-Bakh-xx !important;
+        }
+
+        .button-not-found {
+            height: 40%;
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-evenly;
+
+            .btn-home-p-nf {
+                width: 150px !important;
+            }
+
+            .btn-courses-nf {
+                width: 150px !important;
+            }
+        }
     }
 }

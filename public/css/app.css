@@ -5341,6 +5341,9 @@ a {
     height: 21px;
   }
 }
+.header-desktop-two .nav-header h2:before, .header-desktop-two .nav-header h2:after {
+  display: none !important;
+}
 .header-desktop-two .p-header-desktop {
   padding: 3rem 0 2rem 0;
   position: relative;
@@ -7923,6 +7926,11 @@ a {
   .footer-t .p-footer-t .img-contact-footer img {
     transform: rotate(90deg);
   }
+
+  .not-found .box-not-found {
+    height: 54% !important;
+    width: 93% !important;
+  }
 }
 @media only screen and (min-width: 451px) and (max-width: 868px) {
   .p-address-bar {
@@ -8493,6 +8501,11 @@ a {
   .footer-t .p-footer-t .img-contact-footer img {
     transform: rotate(90deg);
   }
+
+  .not-found .box-not-found {
+    height: 54% !important;
+    width: 93% !important;
+  }
 }
 @-webkit-keyframes menu-x {
   0% {
@@ -8568,6 +8581,23 @@ a {
   top: 30px;
 }
 
+.h1-parent {
+  margin-right: 10px !important;
+  position: relative;
+}
+.h1-parent h1 {
+  font-family: "Yekan-Bakh-xx" !important;
+  color: #212E47 !important;
+  font-size: 18px !important;
+  margin-top: 18px !important;
+}
+
+.s-about-us .bg-parnas {
+  background: #ffffff;
+  padding: 1rem;
+  height: auto;
+  border-radius: 0 20px 0 20px;
+}
 .s-about-us a {
   cursor: pointer !important;
 }
@@ -8582,6 +8612,12 @@ a {
 .s-about-us .h1-parent {
   margin-right: 10px !important;
   position: relative;
+}
+.s-about-us .h1-parent h1 {
+  font-family: "Yekan-Bakh-xx" !important;
+  color: #212E47 !important;
+  font-size: 18px !important;
+  margin-top: 18px !important;
 }
 .s-about-us .tabs {
   justify-content: center !important;
@@ -8619,7 +8655,7 @@ a {
 .s-about-us .customers,
 .s-about-us .projects,
 .s-about-us .team-parnas {
-  background-color: #fafafa;
+  background-color: #e5e9f1;
   height: 230px;
   margin-bottom: 1rem !important;
   position: relative;
@@ -9114,12 +9150,22 @@ a {
   padding: 1rem;
   margin: 3rem auto !important;
 }
+.s-about-us .who-we-are-info .info-What-We-Do-info p,
+.s-about-us .What-We-Do-info .info-What-We-Do-info p {
+  text-align: justify;
+  line-height: 28px;
+}
 .s-about-us .who-we-are-info .info-who-we-are,
 .s-about-us .What-We-Do-info .info-who-we-are {
   background-color: #ffffff;
   border-radius: 20px;
   padding: 1rem;
   margin: 3rem auto !important;
+}
+.s-about-us .who-we-are-info .info-who-we-are p,
+.s-about-us .What-We-Do-info .info-who-we-are p {
+  text-align: justify;
+  line-height: 28px;
 }
 .s-about-us .who-we-are-info .info figure {
   margin-top: 1rem !important;
@@ -9282,6 +9328,9 @@ a {
   .s-about-us .s1-mobi {
     flex-direction: column !important;
   }
+  .s-about-us .s-about-us .w-90 {
+    width: 95% !important;
+  }
   .s-about-us .all-btn {
     flex: 0 0 100% !important;
     max-width: 100% !important;
@@ -9425,6 +9474,12 @@ a {
   display: none;
 }
 
+.s-contact-us .bg-parnas {
+  background: #ffffff;
+  padding: 1rem;
+  height: auto;
+  border-radius: 0 20px 0 20px;
+}
 .s-contact-us .img-parnas {
   position: absolute;
   right: -30px;
@@ -9448,10 +9503,11 @@ a {
   font-size: 30px;
 }
 .s-contact-us .base-color {
-  background-color: #ffffff;
+  background-color: #e5e9f1;
   height: 250px;
   position: relative;
   padding: 1rem 0;
+  margin: 10rem 0;
 }
 .s-contact-us .img-parnas {
   position: absolute;
@@ -9832,4 +9888,54 @@ a {
     width: auto;
     padding: 0 6px !important;
   }
+}
+.not-found {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: #fff url(/images/Animated-Shape.svg) no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+}
+.not-found .box-not-found {
+  height: 70%;
+  border-radius: 10px;
+  border: 2px solid #CBCBCB;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  background-color: #ffffff;
+}
+.not-found .box-not-found iframe {
+  width: 100%;
+  height: 80%;
+}
+.not-found .box-not-found span {
+  font-size: 80px;
+  display: flex;
+}
+.not-found .box-not-found .error-message {
+  color: #212E47;
+  font-size: 25px;
+  font-family: Yekan-Bakh-xx !important;
+}
+.not-found .box-not-found .button-not-found {
+  height: 40%;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.not-found .box-not-found .button-not-found .btn-home-p-nf {
+  width: 150px !important;
+}
+.not-found .box-not-found .button-not-found .btn-courses-nf {
+  width: 150px !important;
 }
