@@ -7327,6 +7327,32 @@ a {
     padding: 12px;
   }
 
+  .p-team-members {
+    width: 100% !important;
+  }
+
+  .info-who-we-are, .info-What-We-Do-info, .list-customers, .project-box {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .who-we-are,
+.What-We-Do,
+.customers,
+.projects,
+.team-parnas {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .who-we-are .access,
+.What-We-Do .access,
+.customers .access,
+.projects .access,
+.team-parnas .access {
+    height: auto !important;
+    margin: 15px 0 !important;
+  }
+
   .location-addressBar {
     margin-right: 2px;
     flex-wrap: wrap;
@@ -7805,7 +7831,7 @@ a {
   }
 
   .nav-header h2 {
-    height: 40px !important;
+    height: 27px !important;
     margin: 10px 0;
   }
   .nav-header h2 a {
@@ -7821,23 +7847,33 @@ a {
   }
 
   .nav-header h2:nth-child(2) {
+    -webkit-animation: menu-x 0.6s forwards;
+            animation: menu-x 0.6s forwards;
+  }
+
+  .nav-header h2:nth-child(3) {
     -webkit-animation: menu-x 0.8s forwards;
             animation: menu-x 0.8s forwards;
   }
 
-  .nav-header h2:nth-child(3) {
+  .nav-header h2:nth-child(4) {
+    -webkit-animation: menu-x 1s forwards;
+            animation: menu-x 1s forwards;
+  }
+
+  .nav-header h2:nth-child(5) {
     -webkit-animation: menu-x 1.2s forwards;
             animation: menu-x 1.2s forwards;
   }
 
-  .nav-header h2:nth-child(4) {
-    -webkit-animation: menu-x 1.6s forwards;
-            animation: menu-x 1.6s forwards;
+  .nav-header h2:nth-child(6) {
+    -webkit-animation: menu-x 1.5s forwards;
+            animation: menu-x 1.5s forwards;
   }
 
-  .nav-header h2:nth-child(5) {
-    -webkit-animation: menu-x 2s forwards;
-            animation: menu-x 2s forwards;
+  .nav-header h2:nth-child(7) {
+    -webkit-animation: menu-x 1.8s forwards;
+            animation: menu-x 1.8s forwards;
   }
 
   .p-header-desktop-three {
@@ -8417,7 +8453,7 @@ a {
   }
 
   .nav-header h2 {
-    height: 40px !important;
+    height: 30px !important;
     margin: 10px 0;
   }
   .nav-header h2 a {
@@ -8437,23 +8473,33 @@ a {
   }
 
   .nav-header h2:nth-child(2) {
+    -webkit-animation: menu-x 0.6s forwards;
+            animation: menu-x 0.6s forwards;
+  }
+
+  .nav-header h2:nth-child(3) {
     -webkit-animation: menu-x 0.8s forwards;
             animation: menu-x 0.8s forwards;
   }
 
-  .nav-header h2:nth-child(3) {
+  .nav-header h2:nth-child(4) {
+    -webkit-animation: menu-x 1s forwards;
+            animation: menu-x 1s forwards;
+  }
+
+  .nav-header h2:nth-child(5) {
     -webkit-animation: menu-x 1.2s forwards;
             animation: menu-x 1.2s forwards;
   }
 
-  .nav-header h2:nth-child(4) {
-    -webkit-animation: menu-x 1.6s forwards;
-            animation: menu-x 1.6s forwards;
+  .nav-header h2:nth-child(6) {
+    -webkit-animation: menu-x 1.5s forwards;
+            animation: menu-x 1.5s forwards;
   }
 
-  .nav-header h2:nth-child(5) {
-    -webkit-animation: menu-x 2s forwards;
-            animation: menu-x 2s forwards;
+  .nav-header h2:nth-child(7) {
+    -webkit-animation: menu-x 1.8s forwards;
+            animation: menu-x 1.8s forwards;
   }
 
   .p-header-desktop-three {
@@ -8939,6 +8985,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 18px;
 }
 .s-about-us .p-team-members .list-members .item-member .wrapper {
   display: inline-flex;

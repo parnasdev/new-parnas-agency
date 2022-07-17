@@ -77,6 +77,8 @@
                                 <h2><a href=""> طراحی فروشگاه اینترنتی </a></h2>
                                 <h2><a href=""> دیجیتال مارکتینگ </a></h2>
                                 <h2><a href="/posts"> اخبار و مقالات </a></h2>
+                                <h2><a href="/aboutus">  درباره ما  </a></h2>
+                                <h2><a href="/contactus">  تماس با ما  </a></h2>
                             </div>
                             <div class="contact-header-mobi">
                                 <span class="text-white">۷۱۰۵۷۵۵9</span>

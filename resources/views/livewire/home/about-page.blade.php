@@ -457,6 +457,36 @@
                             <div class="list-members">
                                 <div class="item-member" x-data="{socialMedia:false}">
                                     <div @mouseover="socialMedia=true" @mouseout="socialMedia=false" class="top">
+                                        <img src="/images/user-1.jpeg" alt="" class="avatar">
+                                        <div class="socialMedia" x-transition:enter="animated bounceInDown" x-transition:leave="animated bounceOutUp" x-show="socialMedia">
+                                            <div class="wrapper">
+                                                <div class="icon instagram">
+                                                    <div class="tooltip">صفحه اینستاگرام</div>
+                                                    <div class="span-margin"><a href="https://www.instagram.com/parnas.agency/"><i
+                                                                class="fab fa-instagram text-white"></i></a></div>
+                                                </div>
+                                                <div class="icon github">
+                                                    <div class="tooltip">واحد پشتیبانی</div>
+                                                    <div class="span-margin"><a
+                                                            href="https://api.whatsapp.com/send?phone=+989354433706&amp;text=نیاز به پشتیبانی دارم."><i
+                                                                class="fab fa-whatsapp text-white"></i></a></div>
+                                                </div>
+                                                <div class="icon github">
+                                                    <div class="tooltip">واحد فروش</div>
+                                                    <div class="span-margin"><a
+                                                            href="https://api.whatsapp.com/send?phone=+989354433706&amp;text=نیاز به اطلاعات برای خرید سرویس دارم."><i
+                                                                class="fab fa-whatsapp text-white"></i></a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bottom">
+                                        <h3 class="btn-base">علی گنجی زاده</h3>
+                                        <span>مدیر عامل</span>
+                                    </div>
+                                </div>
+                                <div class="item-member" x-data="{socialMedia:false}">
+                                    <div @mouseover="socialMedia=true" @mouseout="socialMedia=false" class="top">
                                         <img src="/images/user-4.jpg" alt="" class="avatar">
                                         <div class="socialMedia" x-transition:enter="animated bounceInDown" x-transition:leave="animated bounceOutUp" x-show="socialMedia">
                                             <div class="wrapper">
