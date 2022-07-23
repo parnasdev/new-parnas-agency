@@ -78,8 +78,8 @@
                                     <div class="p-buttons-link-page">
                                         <a @click.prevent="modal=false" class="btn-close-modal btn-base" href="">بستن</a>
                                         <div class="w-75 d-flex align-items-center justify-content-between">
-                                            <a class="btn-contact-us btn-base px-5" href="/aboutus">تماس با ما</a>
-                                            <a class="btn-about-us btn-base-second px-5" href="/contactus">درباره ما</a>
+                                            <a class="btn-contact-us btn-base px-5" href="/contactus">تماس با ما</a>
+                                            <a class="btn-about-us btn-base-second px-5" href="/aboutus">درباره ما</a>
                                         </div>
                                     </div>
                                 </div>

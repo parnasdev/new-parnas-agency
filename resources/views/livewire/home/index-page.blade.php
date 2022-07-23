@@ -578,108 +578,29 @@
                     <h3 class="title-fa-sm">بیش از ۱۰۰ مشتری واقعــــــی ! نظراتشون رو در مورد ما بدونید…</h3>
                     <h3 class="title-en">Blog &amp; News</h3>
                     <div class="list-box-customers">
+
+
+                        @foreach ($this->getCategory(3)->slice(0,10) as $customer)
                         <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
+                            <img src="{{ $customer->files->first()?->url }}" alt="">
                         </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
+                        @endforeach
+                     
                         <div style="width: 27.9%;display: flex;justify-content: center">
-                            <a href="" class="btn-all-project btn-base-second">همه نمونه کار ها</a>
+                            <a href="/portfolio " class="btn-all-project btn-base-second">همه نمونه کار ها</a>
                         </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
-                        <div class="box-logo">
-                            <img src="/images/Image-6.svg" alt="">
-                        </div>
+
+                  @if (count($this->getCategory(3)) > 10)
+                  @foreach ($this->getCategory(3) as $customer)
+                     @if ($loop->index > 10)
+                     <div class="box-logo">
+                            <img src="{{ $customer->files->first()?->url }}" alt="">
+                        </div> 
+                     @endif
+                        @endforeach
+                  @endif
+
+
                     </div>
                 </div>
             </div>
@@ -724,8 +645,8 @@
                     <p class="text-two">عجله نکنید… پایین‌تر برایتان داستان چگونگی‌اش را تعریف می‌کنم. حالا حالاها باهم
                         کار داریم.</p>
                     <div class="p-button mt-4 d-flex flex-column align-items-center w-100">
-                        <a href="" class="team-parnas btn-base w-75">تیم خلاق پارناس</a>
-                        <a href="" class="about-parnas btn-base-second mt-3 w-75">درباره آژانس پارناس</a>
+                        <a href="/contactus" class="team-parnas btn-base w-75">تیم خلاق پارناس</a>
+                        <a href="/aboutus" class="about-parnas btn-base-second mt-3 w-75">درباره آژانس پارناس</a>
                     </div>
                 </div>
             </div>

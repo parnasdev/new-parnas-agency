@@ -72,10 +72,10 @@
                         <div style="display: none" x-show="menu" x-transition.scale.20 x-transition.duration.500ms class="menu-mobi">
                             <a @click.prevent="menu=false" class="close-menu-popup btn-base" href="">بستن منو</a>
                             <div class="nav-header d-flex flex-column w-100">
-                                <h2><a href="">صفحه نخست </a></h2>
+                                <h2><a href="/">صفحه نخست </a></h2>
                                 <h2><a href="/portifilo"> طراحی سایت </a></h2>
-                                <h2><a href=""> طراحی فروشگاه اینترنتی </a></h2>
-                                <h2><a href=""> دیجیتال مارکتینگ </a></h2>
+                                <h2><a href="/portifilo"> طراحی فروشگاه اینترنتی </a></h2>
+                                <h2><a href="/portifilo"> دیجیتال مارکتینگ </a></h2>
                                 <h2><a href="/posts"> اخبار و مقالات </a></h2>
                                 <h2><a href="/aboutus">  درباره ما  </a></h2>
                                 <h2><a href="/contactus">  تماس با ما  </a></h2>
