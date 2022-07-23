@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Home\Sections;
 
+use App\Models\Post;
 use App\PrsAuth\PrsAuth;
 use Illuminate\Support\Facades\Route;
 use Livewire\Component;
@@ -12,6 +13,8 @@ class Headers extends Component
 
     protected $listeners = ['updateCart' => 'render'];
 
+    public $searchKey = '';
+
     public $route;
 
     public function mount()
@@ -21,7 +24,8 @@ class Headers extends Component
 
     public function render()
     {
-        return view('livewire.home.sections.headers');
+        $searchResults = Post::query()->search($this->searchKey)->get();
+        return view('livewire.home.sections.headers', compact('searchResults'));
     }
 
     public function logout()
@@ -29,5 +33,9 @@ class Headers extends Component
         Cart::deleteAll();
         PrsAuth::getArray([])->logout();
         return redirect('/');
+    }
+
+    public function search(){
+        $this->render();
     }
 }

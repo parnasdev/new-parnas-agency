@@ -16,6 +16,7 @@ class IndexPage extends Component
 {
 
     public $readyToLoad = false;
+    public $searchKey = '';
 
     public function loadPosts()
     {
@@ -25,6 +26,10 @@ class IndexPage extends Component
     public function mount()
     {
         // dd($this->getCategory(1));
+    }
+
+    public function search(){
+
     }
 
     public function render()

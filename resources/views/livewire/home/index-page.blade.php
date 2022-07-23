@@ -129,7 +129,6 @@
         <section id="s2" class="w-90 s2-index" x-data="{
         step:1,
         changeStep(event){
-        console.log(this.step)
         if (event==-1){
         if (this.step>=2){
                 this.step=this.step-1

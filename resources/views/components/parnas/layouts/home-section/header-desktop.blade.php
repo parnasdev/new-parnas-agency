@@ -108,8 +108,8 @@
                          class="popup-box-search">
                         <a @click.prevent="search=false" class="close-popup-search btn-base" href="">بستن جستجو</a>
                         <div class="search-popup">
-                            <input type="text" placeholder="جستجو کنید">
-                            <a href="">
+                            <input wire:model="searchKey" type="text" placeholder="جستجو کنید">
+                            <a wire:click="search">
                                 <svg width="40" height="40" viewBox="0 0 29.393 29.593">
                                     <g id="Search..." transform="translate(0 0)" opacity="1">
                                         <path id="Path_1136" data-name="Path 1136"
@@ -124,6 +124,13 @@
                                     </g>
                                 </svg>
                             </a>
+                        </div>
+                        <div>
+                            
+                            @foreach ($searchResults as $item)
+                            <a>{{ $item->title }}</a>
+                            @endforeach
+                            
                         </div>
                     </div>
                     <div class="line-between"></div>
