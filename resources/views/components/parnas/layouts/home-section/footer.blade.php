@@ -124,7 +124,7 @@
                     </div>
                 </div>
                 <div class="img-contact-footer">
-                    <img src="/images/contact-us-footer.svg" alt="">
+                    <img src="/images/contact-us-footer.jpg" alt="">
                 </div>
             </div>
         </div>

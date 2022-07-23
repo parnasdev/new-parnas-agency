@@ -114,7 +114,7 @@
                                 کار داریم.</p>
                         </div>
                         <div class="l-about-index">
-                            <img draggable="false" width="90%" src="/images/img-about-index.svg" alt="">
+                            <img draggable="false" width="90%" src="/images/img-about-index.webp" alt="">
                             <div class="p-button">
                                 <a href="" class="team-parnas btn-base">تیم خلاق پارناس</a>
                                 <a href="" class="about-parnas btn-base-second">درباره آژانس پارناس</a>
@@ -145,13 +145,13 @@
                 <div class="w-100 p-realtive">
 
                 </div>
-                <img x-show="step===1" class="img-step-1 img" src="/images/img-step-0.png" alt="">
-                <img style="display: none" x-show="step===2" class="img-step-1 img" src="/images/img-step-1.png" alt="">
-                <img style="display: none" x-show="step===3" class="img-step-2 img" src="/images/img-step-2.png" alt="">
-                <img style="display: none" x-show="step===4" class="img-step-3 img" src="/images/img-step-3.png" alt="">
-                <img style="display: none" x-show="step===5" class="img-step-4 img" src="/images/img-step-4.png" alt="">
-                <img style="display: none" x-show="step===6" class="img-step-5 img" src="/images/img-step-5.png" alt="">
-                <img style="display: none" x-show="step===7" class="img-step-6 img" src="/images/img-step-6.png" alt="">
+                <img x-show="step===1" class="img-step-1 img" src="/images/img-step-0.webp" alt="">
+                <img style="display: none" x-show="step===2" class="img-step-1 img" src="/images/img-step-1.webp" alt="">
+                <img style="display: none" x-show="step===3" class="img-step-2 img" src="/images/img-step-2.webp" alt="">
+                <img style="display: none" x-show="step===4" class="img-step-3 img" src="/images/img-step-3.webp" alt="">
+                <img style="display: none" x-show="step===5" class="img-step-4 img" src="/images/img-step-4.webp" alt="">
+                <img style="display: none" x-show="step===6" class="img-step-5 img" src="/images/img-step-5.webp" alt="">
+                <img style="display: none" x-show="step===7" class="img-step-6 img" src="/images/img-step-6.webp" alt="">
             </div>
 
             <div class="prs-responsive">
@@ -406,9 +406,8 @@
         <section class="banner">
             <div class="prs-responsive">
                 <div class="w-90 mx-auto p-banner">
-                    <img class="w-100" src="/images/baner-parnas.svg" alt="">
+                    <img class="w-100" src="/images/baner-parnas.webp" alt="">
                 </div>
-
             </div>
         </section>
 
@@ -737,7 +736,7 @@
             <h3>یک کوه، یک جمع خلاق، یک خیال: داستانِ پارناس</h3>
             <div class="p-s1">
                 <div class="text-about-index">
-                    <img draggable="false" width="90%" src="/images/img-about-index.svg" alt="">
+                    <img draggable="false" width="90%"  src="/images/img-about-index.webp" alt="">
                     <p class="mt-4 text-one">خیال؛ مبدا اتفاقات جهان است. یک تصویر که هیچکس به جز خودت به واقعی بودنش ایمان
                         ندارد. اینجا نقطۀ ابتدایی داستان پارناس است، خیالی کوچک در یک گاراژِ اطراف تهران که دوست داشت به
                         بلندی یک کوه اساطیری در یونان بلند شود. آخ یادم رفت بگویم، پارناس اسم یک کوه اساطیری وسط مسط‌های
@@ -904,13 +903,13 @@
 
             </div>
             <div style="height: 300px !important;" class="w-100 p-realtive">
-                <img x-show="step===1" class="img-step-1 img" src="/images/img-step-0.png" alt="">
-                <img style="display: none" x-show="step===2" class="img-step-1 img" src="/images/img-step-1.png" alt="">
-                <img style="display: none" x-show="step===3" class="img-step-2 img" src="/images/img-step-2.png" alt="">
-                <img style="display: none" x-show="step===4" class="img-step-3 img" src="/images/img-step-3.png" alt="">
-                <img style="display: none" x-show="step===5" class="img-step-4 img" src="/images/img-step-4.png" alt="">
-                <img style="display: none" x-show="step===6" class="img-step-5 img" src="/images/img-step-5.png" alt="">
-                <img style="display: none" x-show="step===7" class="img-step-6 img" src="/images/img-step-6.png" alt="">
+                <img x-show="step===1" class="img-step-1 img" src="/images/img-step-0.webp" alt="">
+                <img style="display: none" x-show="step===2" class="img-step-1 img" src="/images/img-step-1.webp" alt="">
+                <img style="display: none" x-show="step===3" class="img-step-2 img" src="/images/img-step-2.webp" alt="">
+                <img style="display: none" x-show="step===4" class="img-step-3 img" src="/images/img-step-3.webp" alt="">
+                <img style="display: none" x-show="step===5" class="img-step-4 img" src="/images/img-step-4.webp" alt="">
+                <img style="display: none" x-show="step===6" class="img-step-5 img" src="/images/img-step-5.webp" alt="">
+                <img style="display: none" x-show="step===7" class="img-step-6 img" src="/images/img-step-6.webp" alt="">
             </div>
         </section>
 
@@ -1015,7 +1014,7 @@
         <section class="banner">
             <div class="prs-responsive">
                 <div class="w-90 mx-auto p-banner">
-                    <img class="w-100" src="/images/baner-parnas.svg" alt="">
+                    <img class="w-100" src="/images/baner-parnas.webp" alt="">
                 </div>
 
             </div>
