@@ -62,10 +62,10 @@
             {!! $portfolio->body ?? 'توضیحاتی برای این نمونه کار ثبت نشده است' !!}
             </p>
 
-            <div class="d-flex">
-                <p class="p-text-work-samples">:تگ ها</p>
+            <div class="d-flex p-tags">
+                <label class="p-text-work-samples">:تگ ها</label>
                 @forelse ($portfolio->tags as $tag)
-                <div class="d-flex">
+                <div class="d-flex tags">
                     <a class="w-100 link-card-portfolio" href="{{ route('portifilos.index') }}">{{ $tag->name }}</a>
                 </div>
                 @empty
