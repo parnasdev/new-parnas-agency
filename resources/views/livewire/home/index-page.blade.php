@@ -116,8 +116,8 @@
                         <div class="l-about-index">
                             <img draggable="false" width="90%" src="/images/img-about-index.webp" alt="">
                             <div class="p-button">
-                                <a href="" class="team-parnas btn-base">تیم خلاق پارناس</a>
-                                <a href="" class="about-parnas btn-base-second">درباره آژانس پارناس</a>
+                                <a href="/contactus" class="team-parnas btn-base">تیم خلاق پارناس</a>
+                                <a href="/aboutus" class="about-parnas btn-base-second">درباره آژانس پارناس</a>
                             </div>
                         </div>
                     </div>
@@ -424,7 +424,8 @@
                     <h3>برترین پروژه های پارناس ؛ خروجی های با ارزش ما</h3>
                     <div class="tab-header-slider-website">
                         @foreach ($this->getCategory(2) as $category)
-                        <a @click.prevent="tabSlider={{$category->id}}" :class="{'activeSlider':tabSlider==={{$category->id}}}"
+                        <a @click.prevent="tabSlider={{$category->id}}" 
+                            :class="{'activeSlider':tabSlider==={{$category->id}}}"
                            class="tabChange" href="">
                             <div class="line"></div>
                             {{$category->name}}
@@ -441,7 +442,8 @@
                                             <img class="img-work-samples" src="{{ $portfolio->files()->where('type', 1)->first()->url ?? '/images/noPicture.png' }}" alt="{{  $portfolio->files()->where('type', 1)->first()->alt }}">
                                             <div class="item">
                                                 <label for="">{{ $portfolio->title }}</label>
-                                                <a class="link-info-work-samples btn-base" href="{{ route('portifilos.show' , ['portfolio' => $portfolio->slug]) }}"> </a>
+                                                <a class="link-info-work-samples btn-base" 
+                                                href="{{ route('portifilos.show' , ['portfolio' => $portfolio->slug]) }}"> </a>
                                             </div>
                                             <div class="border"></div>
                                     </div>
@@ -964,36 +966,15 @@
                         همه نمونه کار ها
                     </a>
                     <div class="list-work-samples">
+
+
+                        @foreach (config('options.indexPage')['slider']  as $img)
                         <a href="" class="item-work-samples">
-                            <img src="/images/Image-5.png" alt="">
+                            <img src="{{ $img['url'] ?? '/img/png/noPicture.png'  }}" alt="">
                         </a>
-                        <a href="" class="item-work-samples">
-                            <img src="/images/Image-5.png" alt="">
-                        </a>
-                        <a href="" class="item-work-samples">
-                            <img src="/images/Image-5.png" alt="">
-                        </a>
-                        <a href="" class="item-work-samples">
-                            <img src="/images/Image-5.png" alt="">
-                        </a>
-                        <a href="" class="item-work-samples">
-                            <img src="/images/Image-5.png" alt="">
-                        </a>
-                        <a href="" class="item-work-samples">
-                            <img src="/images/Image-5.png" alt="">
-                        </a>
-                        <a href="" class="item-work-samples">
-                            <img src="/images/Image-5.png" alt="">
-                        </a>
-                        <a href="" class="item-work-samples">
-                            <img src="/images/Image-5.png" alt="">
-                        </a>
-                        <a href="" class="item-work-samples">
-                            <img src="/images/Image-5.png" alt="">
-                        </a>
-                        <a href="" class="item-work-samples">
-                            <img src="/images/Image-5.png" alt="">
-                        </a>
+   
+                        @endforeach
+          
                     </div>
                 </div>
             </div>

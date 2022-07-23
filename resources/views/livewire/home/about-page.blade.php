@@ -131,7 +131,7 @@
                                 پروژه‌ها ضربه می‌زند؛ اما یک تیم خوب با تعداد افراد کم اما خبره می‌تواند کاری کند که حتی زمین از
                                 مدارش خارج شود.</p>
                             <figure>
-                                <img src="/images/hoze-screenshot.png" width="100%" alt="">
+                                <img src="/img/png/ax-about-1.jpeg" width="100%" alt="">
                             </figure>
                         </div>
                     </div>
@@ -168,7 +168,7 @@
                                 مدیرعاملتان که صبحا خوش اخلاق‌تر باشد. مدیر ماهم شبهایی که خوب نمیخوابد صبح با یک من عسل نمیشود
                                 خوردش(امیدوارم در ممیزی‌های مدیر عامل این بخش پاک نشود.)</p>
                             <figure class="mt-3">
-                                <img src="/images/hoze-screenshot.png" width="100%" alt="">
+                                <img src="/img/png/ax-about-2.jpeg" width="100%" alt="">
                             </figure>
                         </div>
                     </div>
@@ -200,105 +200,13 @@
                     <div class="prs-responsive">
                         <div class="w-90 list-customers">
                             <div class="list-box-customers">
+                                @foreach ($this->getCategory(3) as $customer)
                                 <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
+                                    <img src="{{ $customer->files->first()?->url }}" alt="">
                                 </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
-                                <div class="box-logo">
-                                    <img src="/images/Image-6.svg" alt="">
-                                </div>
+                                @endforeach
+                               
+
                             </div>
                         </div>
                     </div>
@@ -328,103 +236,32 @@
                 </div>
                 <div class="projects-tab">
                     <div class="prs-responsive">
-                        <div class="w-90 project-box" x-data="{tabSlider:'sliderOne'}">
+                        <div class="w-90 project-box" x-data="{tabSlider:{{$this->getCategory(2)[0]->id}}}">
                             <div class="tab-header-slider-website">
-                                <a @click.prevent="tabSlider='sliderOne'" :class="{'activeSlider':tabSlider==='sliderOne'}"
-                                   class="tabChange activeSlider" href="">
+                                @foreach ($this->getCategory(2) as $category)
+                                    <a @click.prevent="tabSlider={{$category->id}}" 
+                                    :class="{'activeSlider':tabSlider==={{$category->id}}}"
+                                    class="tabChange" href="">
                                     <div class="line"></div>
-                                    طراحی سایت
-                                </a>
-                                <a @click.prevent="tabSlider='sliderTwo'" :class="{'activeSlider':tabSlider==='sliderTwo'}"
-                                   class="tabChange" href="">
-                                    <div class="line"></div>
-                                    طراحی فروشگاه اینترنتی
-                                </a>
-                                <a @click.prevent="tabSlider='sliderThree'" :class="{'activeSlider':tabSlider==='sliderThree'}"
-                                   class="tabChange" href="">
-                                    <div class="line"></div>
-                                    دیجیتال مارکتینگ
-                                </a>
+                                        {{$category->name}}
+                                    </a>
+                                @endforeach
                             </div>
-                            <div style="display: none" x-show="tabSlider==='sliderOne'" class="view-project-one">
+                            
+                            @foreach ($this->getCategory(2) as $category)
+                            <div x-show="tabSlider==={{ $category->id }}" class="view-project-one">
+                                @foreach ($category->posts->where('status_id' , getStatus('publish'))->take(7) as $portfolio)
                                 <div class="card-work-samples">
-                                    <img class="img-work-samples" src="/images/img-test.png" alt="">
+                                    <img class="img-work-samples" src="{{ $portfolio->files()->where('type', 1)->first()->url ?? '/images/noPicture.png' }}" alt="">
                                     <div class="item">
-                                        <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                        <a class="link-info-work-samples btn-base" href=""> </a>
+                                        <label for="">{{ $portfolio->title }}</label>
+                                        <a class="link-info-work-samples btn-base" href="{{ route('portifilos.show' , ['portfolio' => $portfolio->slug]) }}"></a>
                                     </div>
                                     <div class="border"></div>
                                 </div>
+                                @endforeach
                             </div>
-                            <div style="display: none" x-show="tabSlider==='sliderTwo'" class="view-project-two">
-                                <div class="card-work-samples">
-                                    <img class="img-work-samples" src="/images/img-test.png" alt="">
-                                    <div class="item">
-                                        <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                        <a class="link-info-work-samples btn-base" href=""> </a>
-                                    </div>
-                                    <div class="border"></div>
-                                </div>
-                                <div class="card-work-samples">
-                                    <img class="img-work-samples" src="/images/img-test.png" alt="">
-                                    <div class="item">
-                                        <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                        <a class="link-info-work-samples btn-base" href=""> </a>
-                                    </div>
-                                    <div class="border"></div>
-                                </div>
-                            </div>
-                            <div style="display: none" x-show="tabSlider==='sliderThree'" class="view-project-three">
-                                <div class="card-work-samples">
-                                    <img class="img-work-samples" src="/images/img-test.png" alt="">
-                                    <div class="item">
-                                        <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                        <a class="link-info-work-samples btn-base" href=""> </a>
-                                    </div>
-                                    <div class="border"></div>
-                                </div>
-                                <div class="card-work-samples">
-                                    <img class="img-work-samples" src="/images/img-test.png" alt="">
-                                    <div class="item">
-                                        <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                        <a class="link-info-work-samples btn-base" href=""> </a>
-                                    </div>
-                                    <div class="border"></div>
-                                </div>
-                                <div class="card-work-samples">
-                                    <img class="img-work-samples" src="/images/img-test.png" alt="">
-                                    <div class="item">
-                                        <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                        <a class="link-info-work-samples btn-base" href=""> </a>
-                                    </div>
-                                    <div class="border"></div>
-                                </div>
-                                <div class="card-work-samples">
-                                    <img class="img-work-samples" src="/images/img-test.png" alt="">
-                                    <div class="item">
-                                        <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                        <a class="link-info-work-samples btn-base" href=""> </a>
-                                    </div>
-                                    <div class="border"></div>
-                                </div>
-                                <div class="card-work-samples">
-                                    <img class="img-work-samples" src="/images/img-test.png" alt="">
-                                    <div class="item">
-                                        <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                        <a class="link-info-work-samples btn-base" href=""> </a>
-                                    </div>
-                                    <div class="border"></div>
-                                </div>
-                                <div class="card-work-samples">
-                                    <img class="img-work-samples" src="/images/img-test.png" alt="">
-                                    <div class="item">
-                                        <label for="">فروشگاه اینترنتی کفش پارس</label>
-                                        <a class="link-info-work-samples btn-base" href=""> </a>
-                                    </div>
-                                    <div class="border"></div>
-                                </div>
-
-                            </div>
+                            @endforeach
                         </div>
                     </div>
 
