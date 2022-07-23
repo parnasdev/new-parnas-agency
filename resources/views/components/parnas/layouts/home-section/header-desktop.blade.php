@@ -131,7 +131,7 @@
                         EN
                     </button>
                 </div>
-                <img src="/images/mount.png" width="100%" alt="" class="mount-fix">
+                <img src="/images/mount.webp" width="100%" alt="" class="mount-fix">
                 <a href="" class="btn-panel-customers btn-base-second">
                     پنل مشتریان (بزودی)
                 </a>
