@@ -46,6 +46,18 @@ return array(
         'order' => 4
     ),
     array(
+        'title' => 'مشتریان',
+        'icon' => '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M7.00019 2H16.5002L21.0002 6.5V19M1.99219 19H4.99219H1.99219ZM7.99219 19H4.99219H7.99219ZM4.99219 19V16V19ZM4.99219 19V22V19Z" stroke="#A9B0A6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            <path d="M11 22H16.5C16.8978 22 17.2794 21.842 17.5607 21.5607C17.842 21.2794 18 20.8978 18 20.5V8.749C18.0001 8.67007 17.9845 8.59189 17.9543 8.51897C17.9241 8.44604 17.8798 8.37978 17.824 8.324L14.676 5.176C14.6201 5.12003 14.5537 5.07567 14.4806 5.04546C14.4075 5.01526 14.3291 4.99981 14.25 5H4.5C4.10218 5 3.72064 5.15804 3.43934 5.43934C3.15804 5.72065 3 6.10218 3 6.5V13" stroke="#A9B0A6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            <path d="M14 8.39937V5.35337C14.0001 5.28345 14.021 5.21513 14.0599 5.15703C14.0988 5.09893 14.154 5.05365 14.2186 5.02691C14.2832 5.00017 14.3543 4.99316 14.4229 5.00677C14.4915 5.02037 14.5545 5.05399 14.604 5.10337L17.896 8.39537C17.9459 8.44469 17.9799 8.50774 17.9938 8.57649C18.0077 8.64524 18.0008 8.71657 17.974 8.78138C17.9471 8.84618 17.9016 8.90153 17.8432 8.94036C17.7848 8.97918 17.7161 8.99973 17.646 8.99937H14.6C14.4409 8.99937 14.2883 8.93616 14.1757 8.82363C14.0632 8.71111 14 8.5585 14 8.39937V8.39937Z" fill="#A9B0A6" stroke="#A9B0A6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>',
+        'route' => '/admin/customers?type=3',
+        'links' => array(),
+        'can' => 'categories.read',
+        'order' => 5
+    ),
+    array(
         'title' => 'منو سایت',
         'route' => 'admin.links.index',
         'icon' => '<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -55,7 +67,7 @@ return array(
 ',
         'links' => array(),
         'can' => 'links.read',
-        'order' => 5
+        'order' => 6
     ),
     array(
         'title' => 'فایل ها',
@@ -65,7 +77,7 @@ return array(
         </svg>',
         'links' => array(),
         'can' => '',
-        'order' => 6
+        'order' => 7
     ),
     array(
         'title' => 'کاربران',
@@ -76,7 +88,7 @@ return array(
         'links' => array(
         ),
         'can' => 'users.read',
-        'order' => 7
+        'order' => 8
     ),
     array(
         'title' => 'تنظیمات',
@@ -86,6 +98,6 @@ return array(
         'route' => 'admin.settings.index',
         'links' => array(),
         'can' => 'settings.read',
-        'order' => 8
+        'order' => 9
     ),
 );

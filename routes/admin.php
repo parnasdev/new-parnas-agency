@@ -30,6 +30,12 @@ Route::middleware(['auth:web' , 'role_access:panel'])->group(function () {
         Route::get('/edit/{post}' , \App\Http\Livewire\Admin\Posts\PostEdit::class)->name('edit')->middleware('can:posts.edit');
     });
 
+    Route::prefix('customers')->name('customers.')->group(function () {
+        Route::get('/' , \App\Http\Livewire\Admin\Customers\CustomerIndex::class)->name('index')->middleware('can:categories.read');
+        Route::get('/create' , \App\Http\Livewire\Admin\Customers\CustomerCreate::class)->name('create')->middleware('can:categories.create');
+        Route::get('/edit/{post}' , \App\Http\Livewire\Admin\Customers\CustomerEdit::class)->name('edit')->middleware('can:categories.edit');
+    });
+
     Route::prefix('categories')->name('categories.')->group(function () {
         Route::get('/' , \App\Http\Livewire\Admin\Categories\CategoryIndex::class)->name('index')->middleware('can:categories.read');
         Route::get('/create' , \App\Http\Livewire\Admin\Categories\CategoryCreate::class)->name('create')->middleware('can:categories.create');
