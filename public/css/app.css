@@ -5484,6 +5484,10 @@ a {
 }
 .s1-index .p-s1 .l-about-index img {
   transform: translateX(-20px);
+  filter: brightness(70%);
+}
+.s1-index .p-s1 .l-about-index img:hover {
+  filter: brightness(100%);
 }
 .s1-index .p-s1 .l-about-index .p-button {
   display: flex;
@@ -6382,7 +6386,7 @@ a {
 }
 
 .footer-t {
-  background: url(/images/bg-footer.svg) no-repeat 55%;
+  background: url(/images/bg-footer.jpg) no-repeat 55%;
   background-size: 111%;
   height: 600px;
   position: relative;
@@ -7604,6 +7608,10 @@ a {
   }
   .s1-index .p-s1 .l-about-index img {
     transform: translateX(0);
+    filter: brightness(50%);
+  }
+  .s1-index .p-s1 .l-about-index img:hover {
+    filter: brightness(100%);
   }
   .s1-index .p-s1 .l-about-index .p-button {
     display: flex;

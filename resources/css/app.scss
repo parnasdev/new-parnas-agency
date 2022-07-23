@@ -778,6 +778,11 @@ a {
 
             img {
                 transform: translateX(-20px);
+                filter: brightness(70%);
+
+                &:hover {
+                    filter: brightness(100%);
+                }
             }
 
             .p-button {
@@ -1807,7 +1812,7 @@ a {
 
 //footer
 .footer-t {
-    background: url(/images/bg-footer.svg) no-repeat 55%;
+    background: url(/images/bg-footer.jpg) no-repeat 55%;
     background-size: 111%;
     height: 600px;
     position: relative;
@@ -2880,10 +2885,10 @@ a {
         height: auto;
         padding: 12px;
     }
-    .p-team-members{
+    .p-team-members {
         width: 100% !important;
     }
-    .info-who-we-are, .info-What-We-Do-info,.list-customers,.project-box {
+    .info-who-we-are, .info-What-We-Do-info, .list-customers, .project-box {
         width: 100% !important;
         padding: 0 !important;
     }
@@ -3145,6 +3150,11 @@ a {
 
             img {
                 transform: translateX(0);
+                filter: brightness(50%);
+
+                &:hover {
+                    filter: brightness(100%);
+                }
             }
 
             .p-button {
