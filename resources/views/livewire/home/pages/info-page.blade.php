@@ -1,17 +1,5 @@
 <div>
-    @if(isset($post->options['teacher_page']) && $post->options['teacher_page'])
-        <section class="bg-white">
-            <div class="prs-responsive">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-11 m-auto-x">
-                            @livewire('teacher-show' , ['post' => $post])
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    @elseif(isset($post->options['about_page']) && $post->options['about_page'])
+    @if(isset($post->options['about_page']) && $post->options['about_page'])
         {!! $post->options['about_body'] !!}
         <section class="s-about-us-bottom">
             <div class="col-md-11 m-auto-x page-about-us-bottom">
@@ -77,17 +65,18 @@
     {{ $post->title }}
 @endpush
 
-@if(!$post->options['teacher_page'] ?? true)
+{{-- @if(!$post->options['teacher_page'] ?? true)
     @push('page_subtitle')
         {{ $post->options['subtitle'] ?? '' }}
     @endpush
-@endif
+@endif --}}
 
 {{--@if($post->options['about_page'] || $post->options['contact_page'])--}}
 {{--    @push('page_quote')--}}
 {{--        {{ $post->options['quote'] ?? '' }}--}}
 {{--    @endpush--}}
 {{--@endif--}}
+
 @push('addressbar')
     <x-parnas.pages.components.address-bar :links="array(['href' => url()->current() , 'title' => $post->title])"/>
 @endpush

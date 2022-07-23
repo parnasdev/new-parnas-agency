@@ -17,7 +17,7 @@
                     </svg>
                     <span class="fix-page">آژانس خلاقیت پارناس</span>
                     <i class="icon-left-open"></i>
-                    <span class="active-page">درباره ما</span>
+                    <span class="active-page">تماس با ما</span>
 
                 </div>
                 <a class="share" href="">
@@ -130,13 +130,13 @@
                     آدرس شرکت :
 
                   </span>
-                                        <span class="text text-base">تهران، خیابان دکتر شریعتی، تقاطع خیابان پلیس، برج دیپلمات طبقه 2</span>
+                                        <span class="text text-base">{{ config('options.footer')['info'][0]['text'] }}</span>
                                     </div>
                                 </div>
                                 <div class="col-md-5 map-parent">
                                     <div class="map">
                                         <iframe
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.9465031097952!2d51.446227815125944!3d35.75211963368847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e05d938b7c9a1%3A0x3a72a1b1323942ee!2sTehran%20Province%2C%20Tehran%2C%20Shariati%20St%2C%20Iran!5e0!3m2!1sen!2s!4v1657969382279!5m2!1sen!2s"
+                                            src="{{ config('options.footer')['map'] }}"
                                             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                                         <a class="Routing-map btn-base" href="">مسیر یابی</a>
