@@ -576,7 +576,7 @@
                     </svg>
                     <h3 class="title-fa"> از زبان ارباب رجوع‌ها ؛ نظرات مشتریان </h3>
                     <h3 class="title-fa-sm">بیش از ۱۰۰ مشتری واقعــــــی ! نظراتشون رو در مورد ما بدونید…</h3>
-                    <h3 class="title-en">Blog &amp; News</h3>
+                    <h3 class="title-en">IDEALIZE   YOUR   IDEA</h3>
                     <div class="list-box-customers">
 
 
@@ -1099,7 +1099,7 @@
                     </svg>
                     <h3 class="title-fa"> از زبان ارباب رجوع‌ها ؛ نظرات مشتریان </h3>
                     <h3 class="title-fa-sm">بیش از ۱۰۰ مشتری واقعــــــی ! نظراتشون رو در مورد ما بدونید…</h3>
-                    <h3 class="title-en">Blog &amp; News</h3>
+                    <h3 class="title-en">IDEALIZE   YOUR   IDEA</h3>
                     <div class="list-box-customers">
                         <div class="box-logo">
                             <img src="/images/Image-6.svg" alt="">

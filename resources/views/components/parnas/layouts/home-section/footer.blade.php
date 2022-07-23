@@ -88,8 +88,28 @@
                                         transform="translate(-0.003 -17.275)" fill="#a8b0a5" />
                                 </g>
                             </svg>
-                            <h4> ما کجا هستیم؟ یونان یا تهران :)</h4>
+                            <h4> شبکات اجتماعی ما</h4>
                         </div>
+                        <div class="wrapper d-flex justify-content-center">
+                            <div class="icon instagram">
+                                <div class="tooltip">صفحه اینستاگرام</div>
+                                <div class="span-margin"><a href="https://www.instagram.com/parnas.agency/"><i
+                                            class="fab fa-instagram text-white"></i></a></div>
+                            </div>
+                            <div class="icon instagram">
+                                <div class="tooltip">واحد پشتیبانی</div>
+                                <div class="span-margin"><a
+                                        href="https://api.whatsapp.com/send?phone=+989354433706&amp;text=نیاز به پشتیبانی دارم."><i
+                                            class="fab fa-whatsapp text-white"></i></a></div>
+                            </div>
+                            <div class="icon instagram">
+                                <div class="tooltip">واحد فروش</div>
+                                <div class="span-margin"><a
+                                        href="https://api.whatsapp.com/send?phone=+989354433706&amp;text=نیاز به اطلاعات برای خرید سرویس دارم."><i
+                                            class="fab fa-whatsapp text-white"></i></a></div>
+                            </div>
+                        </div>
+
 
                     </div>
                 </div>

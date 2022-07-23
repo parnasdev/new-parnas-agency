@@ -22,6 +22,12 @@ class PageCreate extends Component
         'type' => null
     ];
 
+    public $about_obj = [
+        'quote' => ['nullable'],
+        'about_body' => ['nullable'],
+        'subtitle' => ['nullable']
+    ];
+
     public Collection $files;
 
     protected $listeners = ['upload', 'changeFile', 'getBody'];
@@ -43,22 +49,19 @@ class PageCreate extends Component
             'post.status_id' => ['required'],
             'post.options.master' => ['required'],
 
-            // academy teacher
-
-            'post.options.teacher_page' => ['nullable'],
+            // about page
             'post.options.about_page' => ['nullable'],
+            'post.options.about' => ['nullable'],
+            // 'quote' => ['nullable'],
+            // 'about_body' => ['nullable'],
+            // 'subtitle' => ['nullable']
+
+            // contact page
             'post.options.contact_page' => ['nullable'],
-            'post.options.quote' => ['nullable'],
             'post.options.form_code' => ['nullable'],
             'post.options.contact_info' => ['nullable'],
-            'post.options.about_body' => ['nullable'],
             'post.options.map_frame' => ['nullable'],
-            'post.options.subtitle' => ['nullable'],
-            'post.options.teacher_id' => Rule::when($this->post->options['teacher_page'], ['required'], ['nullable']),
-            'post.options.instagram' => Rule::when($this->post->options['teacher_page'], ['required'], ['nullable']),
-            'post.options.email' => Rule::when($this->post->options['teacher_page'], ['required'], ['nullable']),
-            'post.options.whatsapp' => Rule::when($this->post->options['teacher_page'], ['required'], ['nullable']),
-            'post.options.teacher_description' => Rule::when($this->post->options['teacher_page'], ['required'], ['nullable']),
+
         ];
     }
 
@@ -70,19 +73,14 @@ class PageCreate extends Component
             'options' => [
                 'master' => 'layouts.app',
                 'subtitle' => null,
-                'teacher_page' => false,
                 'about_page' => false,
+                'about' => [],
                 'contact_page' => false,
-                'teacher_id' => null,
                 'quote' => null,
                 'form_code' => null,
                 'contact_info' => null,
                 'about_body' => null,
                 'map_frame' => null,
-                'instagram' => null,
-                'whatsapp' => null,
-                'email' => null,
-                'teacher_description' => null,
             ]
         ]);
         $this->files = collect([]);
@@ -151,10 +149,9 @@ class PageCreate extends Component
         $this->validate();
 
         $this->post->options = match ($this->pageType) {
-            "teacher_page" => array_merge($this->post->options, ['teacher_page' => true]),
             "about_page" => array_merge($this->post->options, ['about_page' => true]),
             "contact_page" => array_merge($this->post->options, ['contact_page' => true]),
-            default =>  array_merge($this->post->options , ['teacher_page' => false , 'about_page' => false , 'contact_page' => false])
+            default =>  array_merge($this->post->options , ['about_page' => false , 'contact_page' => false])
         };
 
         $this->post->user_id = auth()->id();
