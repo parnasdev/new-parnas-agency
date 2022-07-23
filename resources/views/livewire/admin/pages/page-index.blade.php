@@ -369,4 +369,4 @@
         </div>
     </div>
 </div>
-@push('title' , 'بلاگ ها')
+@push('title' , 'صفحه ها')
