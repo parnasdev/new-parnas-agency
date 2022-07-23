@@ -455,41 +455,18 @@
                         </div>
                         @endforeach
                     </div>
+
                     <a href="/portfolio" class="btn-all-works btn-base">
                         همه نمونه کار ها
                     </a>
                     <div class="list-work-samples">
+                        @foreach (config('options.indexPage')['slider']  as $img)
                         <a href="" class="item-work-samples">
-                            <img src="/images/Image-5.png" alt="">
+                            <img src="{{ $img['url'] ?? '/img/png/noPicture.png'  }}" alt="">
                         </a>
-                        <a href="" class="item-work-samples">
-                            <img src="/images/Image-5.png" alt="">
-                        </a>
-                        <a href="" class="item-work-samples">
-                            <img src="/images/Image-5.png" alt="">
-                        </a>
-                        <a href="" class="item-work-samples">
-                            <img src="/images/Image-5.png" alt="">
-                        </a>
-                        <a href="" class="item-work-samples">
-                            <img src="/images/Image-5.png" alt="">
-                        </a>
-                        <a href="" class="item-work-samples">
-                            <img src="/images/Image-5.png" alt="">
-                        </a>
-                        <a href="" class="item-work-samples">
-                            <img src="/images/Image-5.png" alt="">
-                        </a>
-                        <a href="" class="item-work-samples">
-                            <img src="/images/Image-5.png" alt="">
-                        </a>
-                        <a href="" class="item-work-samples">
-                            <img src="/images/Image-5.png" alt="">
-                        </a>
-                        <a href="" class="item-work-samples">
-                            <img src="/images/Image-5.png" alt="">
-                        </a>
-
+   
+                        @endforeach
+                    
 
                     </div>
                 </div>
