@@ -38,30 +38,25 @@ class PageEdit extends Component
     public function rules()
     {
         return [
-            'post.title' => ['required' , 'string' , 'max:100'],
-            'post.slug' => ['required' , 'string'  , Rule::unique('posts' , 'slug')->where('post_type' , 'page')->ignore($this->post->id)],
-            'post.pin' => ['nullable' , 'boolean'],
-            'post.comment' => ['nullable' , 'boolean'],
-            'post.lang' => ['nullable', 'string'],
+            'post.title' => ['required', 'string', 'max:100'],
+            'post.slug' => ['required', 'string', Rule::unique('posts', 'slug')->where('post_type', 'page')],
+            'post.pin' => ['nullable', 'boolean'],
+            'post.comment' => ['nullable', 'boolean'],
             'post.status_id' => ['required'],
             'post.options.master' => ['required'],
 
-            // academy teacher
-
-            'post.options.teacher_page' => ['nullable'],
+            // about page
             'post.options.about_page' => ['nullable'],
+            'post.options.quote' => ['nullable'],
+            'post.options.about_body' => ['nullable'],
+            'post.options.subtitle' => ['nullable'],
+
+            // contact page
             'post.options.contact_page' => ['nullable'],
             'post.options.form_code' => ['nullable'],
-            'post.options.quote' => ['nullable'],
             'post.options.contact_info' => ['nullable'],
-            'post.options.about_body' => ['nullable'],
             'post.options.map_frame' => ['nullable'],
-            'post.options.subtitle' => ['nullable'],
-            'post.options.teacher_id' => Rule::when($this->post->options['teacher_page'] , ['required'] , ['nullable']),
-            'post.options.instagram' => Rule::when($this->post->options['teacher_page'] , ['required'] , ['nullable']),
-            'post.options.email' => Rule::when($this->post->options['teacher_page'] , ['required'] , ['nullable']),
-            'post.options.whatsapp' => Rule::when($this->post->options['teacher_page'] , ['required'] , ['nullable']),
-            'post.options.teacher_description' => Rule::when($this->post->options['teacher_page'] , ['required'] , ['nullable']),
+
         ];
     }
 
@@ -69,9 +64,7 @@ class PageEdit extends Component
     {
         $this->files = collect($this->post->files()->get()->toArray());
 
-        if ($this->post->options['teacher_page'] ?? false) {
-            $this->pageType = 'teacher_page';
-        } elseif($this->post->options['about_page'] ?? false) {
+        if($this->post->options['about_page'] ?? false) {
             $this->pageType = 'about_page';
         } elseif($this->post->options['contact_page'] ?? false) {
             $this->pageType = 'contact_page';
@@ -144,10 +137,9 @@ class PageEdit extends Component
         $this->validate();
 
         $this->post->options = match($this->pageType) {
-            "teacher_page" => array_merge($this->post->options , ['teacher_page' => true , 'about_page' => false , 'contact_page' => false]),
-            "about_page" => array_merge($this->post->options , ['teacher_page' => false , 'about_page' => true , 'contact_page' => false]),
-            "contact_page" => array_merge($this->post->options , ['teacher_page' => false , 'about_page' => false , 'contact_page' => true]),
-            default =>  array_merge($this->post->options , ['teacher_page' => false , 'about_page' => false , 'contact_page' => false])
+            "about_page" => array_merge($this->post->options , ['about_page' => true , 'contact_page' => false]),
+            "contact_page" => array_merge($this->post->options , ['about_page' => false , 'contact_page' => true]),
+            default =>  array_merge($this->post->options , ['about_page' => false , 'contact_page' => false])
         };
 
         $this->post->post_type = 'page';

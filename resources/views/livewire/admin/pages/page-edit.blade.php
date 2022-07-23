@@ -82,7 +82,7 @@
                                     @enderror
                                 </x-parnas.form-group>
                             </div>
-
+{{--
                             <div class="pr-10 pt-10">
                                 <div class="d-flex justify-content-start m-left-auto pos-relative pr-10">
                                     <label for="useData" class="d-flex f-12 text-63">
@@ -108,7 +108,7 @@
                                     <p>{{ $message }}</p>
                                     @enderror
                                 </x-parnas.form-group>
-                            </div>
+                            </div> --}}
 
                             <x-parnas.form-group class="checkbox-list justify-content-start align-items-center flex-100 my-10 mr-9 m-mr-7">
                                 <x-parnas.label class="checkbox f-12">
@@ -121,16 +121,6 @@
                                 </x-parnas.label>
                             </x-parnas.form-group>
 
-                            <x-parnas.form-group class="checkbox-list justify-content-start align-items-center flex-100 my-10 mr-9 m-mr-7">
-                                <x-parnas.label class="checkbox f-12">
-                                    <x-parnas.inputs.text class="radio-input" type="radio"
-                                                          value="teacher_page" name="type" x-model="page_type"/>
-                                    <span class="radio-checkmark-box">
-                                        <span class="radio-checkmark"></span>
-                                    </span>
-                                    صفحه مدرس
-                                </x-parnas.label>
-                            </x-parnas.form-group>
                             <x-parnas.form-group class="checkbox-list justify-content-start align-items-center flex-100 my-10 mr-9 m-mr-7">
                                 <x-parnas.label class="checkbox f-12">
                                     <x-parnas.inputs.text class="radio-input" type="radio"
@@ -155,141 +145,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="mx-10 m-mx-5 mb-15" x-show="page_type === 'teacher_page'">
-                    <div class="c-data">
-                        <!--! title  -->
-                        <div class="rx-title pb-10">
-                            <div class="text">
-                                <h6>مشخصات مدرس</h6>
-                            </div>
-                            <div class="p-rx ">
-                                <div class="rx-border-rectangle"></div>
-                                <div class="rx-border-rectangle-after"></div>
-                            </div>
-                        </div>
-                        <!--! data form  -->
-                        <div class="my-10 ml-5">
-                            <div class="pr-10">
-                                <div class="d-flex justify-content-start m-left-auto pos-relative pb-5 pr-10">
-                                    <label for="useData" class="d-flex f-12 text-63">
-                                        نام مدرس
-                                        <div class="rx-title title-input pb-10">
-                                            <div class="p-rx">
-                                                <div class="rx-border-rectangle-after label-input"></div>
-                                            </div>
-                                        </div>
-                                    </label>
-                                </div>
-                                <x-parnas.form-group class="select mb-10" wire:ignore>
-                                    <x-parnas.inputs.select2 class="form-select" id="teacher"
-                                                             placeholder="مدرس"
-                                                             wire:model="post.options.teacher_id">
-                                        <x-parnas.inputs.option></x-parnas.inputs.option>
-                                        @foreach(\App\Models\User::query()->where('role_id' , '!=' , 3)->get() as $user)
-                                            <x-parnas.inputs.option :value="$user->id">
-                                                {{ $user->name }} {{ $user->family }}
-                                            </x-parnas.inputs.option>
-                                        @endforeach
-                                    </x-parnas.inputs.select2>
-                                    @error('post.options.teacher_id')
-                                    <p class="text-danger f-12 pt-7 m-left-auto alert-invalid">{{ $message }}</p>
-                                    @enderror
-                                </x-parnas.form-group>
-                            </div>
-
-                            <x-parnas.form-group class="c-input align-items-end flex-100 mr-9 m-mr-7">
-                                <div class="d-flex justify-content-start m-left-auto pos-relative pb-5 pr-5">
-                                    <label for="useData" class="d-flex f-12 text-63">
-                                        زیر عنوان
-                                        <div class="rx-title title-input pb-10">
-                                            <div class="p-rx">
-                                                <div class="rx-border-rectangle-after label-input"></div>
-                                            </div>
-                                        </div>
-                                    </label>
-                                </div>
-                                <x-parnas.inputs.text  wire:model.defer="post.options.subtitle"
-                                                       placeholder="زیر عنوان"/>
-                                @error('post.options.subtitle')
-                                <p class="text-danger f-12 pt-7 m-left-auto alert-invalid">{{ $message }}</p>
-                                @enderror
-                            </x-parnas.form-group>
-
-                            <x-parnas.form-group class="c-input align-items-end flex-100 mr-9 m-mr-7">
-                                <div class="d-flex justify-content-start m-left-auto pos-relative pb-5 pr-5">
-                                    <label for="useData" class="d-flex f-12 text-63">
-                                        آدرس اینستاگرام
-                                        <div class="rx-title title-input pb-10">
-                                            <div class="p-rx">
-                                                <div class="rx-border-rectangle-after label-input"></div>
-                                            </div>
-                                        </div>
-                                    </label>
-                                </div>
-                                <x-parnas.inputs.text  wire:model.defer="post.options.instagram"
-                                                       placeholder="instagram"/>
-                                @error('post.options.instagram')
-                                <p class="text-danger f-12 pt-7 m-left-auto alert-invalid">{{ $message }}</p>
-                                @enderror
-                            </x-parnas.form-group>
-
-                            <x-parnas.form-group class="c-input align-items-end flex-100 mr-9 m-mr-7">
-                                <div class="d-flex justify-content-start m-left-auto pos-relative pb-5 pr-5">
-                                    <label for="useData" class="d-flex f-12 text-63">
-                                        آدرس واتساپ
-                                        <div class="rx-title title-input pb-10">
-                                            <div class="p-rx">
-                                                <div class="rx-border-rectangle-after label-input"></div>
-                                            </div>
-                                        </div>
-                                    </label>
-                                </div>
-                                <x-parnas.inputs.text  wire:model.defer="post.options.whatsapp"
-                                                       placeholder="whatsapp"/>
-                                @error('post.options.whatsapp')
-                                <p class="text-danger f-12 pt-7 m-left-auto alert-invalid">{{ $message }}</p>
-                                @enderror
-                            </x-parnas.form-group>
-
-                            <x-parnas.form-group class="c-input align-items-end flex-100 mr-9 m-mr-7">
-                                <div class="d-flex justify-content-start m-left-auto pos-relative pb-5 pr-5">
-                                    <label for="useData" class="d-flex f-12 text-63">
-                                        آدرس ایمیل
-                                        <div class="rx-title title-input pb-10">
-                                            <div class="p-rx">
-                                                <div class="rx-border-rectangle-after label-input"></div>
-                                            </div>
-                                        </div>
-                                    </label>
-                                </div>
-                                <x-parnas.inputs.text  wire:model.defer="post.options.email"
-                                                       placeholder="email"/>
-                                @error('post.options.email')
-                                <p class="text-danger f-12 pt-7 m-left-auto alert-invalid">{{ $message }}</p>
-                                @enderror
-                            </x-parnas.form-group>
-
-                            <x-parnas.form-group class="align-items-end flex-100 mr-9 m-mr-7 mb-2" wire:ignore>
-                                <div class="d-flex justify-content-start m-left-auto pos-relative pb-10 pr-10">
-                                    <label for="useData" class="d-flex f-12 text-63">
-                                        توضیحات
-                                        <div class="rx-title title-input pb-10">
-                                            <div class="p-rx">
-                                                <div class="rx-border-rectangle-after label-input"></div>
-                                            </div>
-                                        </div>
-                                    </label>
-                                </div>
-                                <x-parnas.inputs.editor id="description" placeholder="توضیحات کوتاه"
-                                                        wire:model="post.options.teacher_description"/>
-                                @error('post.options.teacher_description')
-                                <p class="text-danger f-12 pt-7 m-left-auto alert-invalid">{{ $message }}</p>
-                                @enderror
-                            </x-parnas.form-group>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="mx-10 m-mx-5 mb-15" x-show="page_type === 'about_page'">
                     <div class="c-data">
                         <!--! title  -->

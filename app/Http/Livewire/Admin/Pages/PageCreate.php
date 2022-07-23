@@ -45,16 +45,14 @@ class PageCreate extends Component
             'post.slug' => ['required', 'string', Rule::unique('posts', 'slug')->where('post_type', 'page')],
             'post.pin' => ['nullable', 'boolean'],
             'post.comment' => ['nullable', 'boolean'],
-            'post.lang' => ['nullable', 'string'],
             'post.status_id' => ['required'],
             'post.options.master' => ['required'],
 
             // about page
             'post.options.about_page' => ['nullable'],
-            'post.options.about' => ['nullable'],
-            // 'quote' => ['nullable'],
-            // 'about_body' => ['nullable'],
-            // 'subtitle' => ['nullable']
+            'post.options.quote' => ['nullable'],
+            'post.options.about_body' => ['nullable'],
+            'post.options.subtitle' => ['nullable'],
 
             // contact page
             'post.options.contact_page' => ['nullable'],
