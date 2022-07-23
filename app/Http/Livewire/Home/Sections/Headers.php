@@ -24,7 +24,11 @@ class Headers extends Component
 
     public function render()
     {
-        $searchResults = Post::query()->search($this->searchKey)->get();
+        if ($this->searchKey == '') {
+            $searchResults = [];
+        } else {
+            $searchResults = Post::query()->search($this->searchKey)->get();
+        }
         return view('livewire.home.sections.headers', compact('searchResults'));
     }
 
@@ -35,7 +39,8 @@ class Headers extends Component
         return redirect('/');
     }
 
-    public function search(){
+    public function search()
+    {
         $this->render();
     }
 }

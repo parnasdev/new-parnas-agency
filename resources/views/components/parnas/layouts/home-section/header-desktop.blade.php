@@ -128,15 +128,17 @@
                             </a>
                         </div>
                         <div class="d-flex flex-column align-items-start w-100">
-                            <h4 class="title-search-main">نتایج جتسجو</h4>
+                            @if (count($searchResults) > 0)
+                            <h4 class="title-search-main">نتایج جستجو</h4>
+                            @endif
                             <div class="p-list-searched">
                                 @foreach ($searchResults as $item)
                                     <div class="item-search">
-                                        <img class="img" src="/images/img-test.png" alt="">
+                                        <img class="img" src="{{ $item->files->first()->url? $item->files->first()->url : '/images/noPicture.png' }}" alt="">
                                         <div class="info">
                                             <h5 class="ms-3 mt-3 f-13">{{$item->title}}</h5>
                                             <div class="w-100 info-search d-flex justify-content-end">
-                                                <a class="btn-more" href="">آدامه مطلب </a>
+                                                <a class="btn-more" href="{{ $item->post_type === 'post' ? '/posts/' . $item->slug : '/portfolio/'. $item->slug}}">ادامه مطلب</a>
                                             </div>
                                         </div>
                                     </div>
@@ -148,8 +150,7 @@
                         </div>
                         <div>
 
-                            @foreach ($searchResults as $item)
-                            @endforeach
+                  
 
                         </div>
                     </div>
