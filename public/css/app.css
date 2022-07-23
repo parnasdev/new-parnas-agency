@@ -5074,6 +5074,23 @@ a {
 }
 
 /*end*/
+.p-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.p-tags label {
+  font-weight: 600;
+  color: #151515;
+}
+.p-tags .tags {
+  margin: 0 8px;
+}
+.p-tags .tags a {
+  color: #212E47;
+  font-size: 14px;
+}
+
 .header-desktop {
   width: 100%;
   position: relative;
@@ -6298,6 +6315,7 @@ a {
   width: 100%;
   margin: 20px 0 15px 0;
   display: flex;
+  height: 45px;
   align-items: center;
   justify-content: space-between;
 }
@@ -6308,8 +6326,6 @@ a {
   font-size: 13px;
   padding-bottom: 10px;
   position: relative;
-  -webkit-animation: w-empty-blog 0.4s linear;
-          animation: w-empty-blog 0.4s linear;
 }
 .card-blog .footer-card-blog .btn-info-blog {
   padding: 0 !important;
