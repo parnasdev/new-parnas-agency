@@ -78,8 +78,8 @@
                                     <div class="p-buttons-link-page">
                                         <a @click.prevent="modal=false" class="btn-close-modal btn-base" href="">بستن</a>
                                         <div class="w-75 d-flex align-items-center justify-content-between">
-                                            <a class="btn-contact-us btn-base px-5" href="/aboutus">تماس با ما</a>
-                                            <a class="btn-about-us btn-base-second px-5" href="/contactus">درباره ما</a>
+                                            <a class="btn-contact-us btn-base px-5" href="/contactus">تماس با ما</a>
+                                            <a class="btn-about-us btn-base-second px-5" href="/aboutus">درباره ما</a>
                                         </div>
                                     </div>
                                 </div>
@@ -151,11 +151,13 @@
                     بخواهد. دست ما نیست، ما قله‌ها را دوست داریم؛ مخصوصا اگر پای کسب‌وکارمان وسط باشد.</p>
             </div>
             <div class="nav-header">
-                <h2><a href="">صفحه نخست </a></h2>
-                <h2><a href="/portifilo"> طراحی سایت </a></h2>
-                <h2><a href=""> طراحی فروشگاه اینترنتی </a></h2>
-                <h2><a href=""> دیجیتال مارکتینگ </a></h2>
-                <h2><a href="/posts"> اخبار و مقالات </a></h2>
+                @foreach(\App\Models\Link::query()->where('type' , 'header')->first()?->linkContents()->get()->sortBy('order_item') ?? [] as $link)
+                @if($link->is_link)
+                <h2><a href="{{ $link->href }}">  {{ $link->title }}  </a></h2>
+                @else
+                <h2><a href="{{ $link->href }}">  {{ $link->title }}  </a></h2>
+                @endif
+                @endforeach
             </div>
 
         </div>
