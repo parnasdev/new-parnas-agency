@@ -49,7 +49,7 @@
                         </svg>
                         <div class="line-between"></div>
                         <div x-data="{modal:false}" class="header-box-menu">
-                            <a @click.prevent="modal=true" >
+                            <a @click.prevent="modal=true">
                                 <svg id="_032-pattern-1" data-name="032-pattern-1" width="23"
                                      height="23"
                                      viewBox="0 0 27.742 27.742">
@@ -70,13 +70,15 @@
                                 </svg>
                             </a>
 
-                            <div x-show="modal" x-transition.scale.20 x-transition.duration.500ms class="modal-menu-desktop">
+                            <div x-show="modal" x-transition.scale.20 x-transition.duration.500ms
+                                 class="modal-menu-desktop">
                                 <div class="box">
                                     <div class="images">
                                         <img src="/images/bg-fix-modal-min.png" alt="">
                                     </div>
                                     <div class="p-buttons-link-page">
-                                        <a @click.prevent="modal=false" class="btn-close-modal btn-base" href="">بستن</a>
+                                        <a @click.prevent="modal=false" class="btn-close-modal btn-base"
+                                           href="">بستن</a>
                                         <div class="w-75 d-flex align-items-center justify-content-between">
                                             <a class="btn-contact-us btn-base px-5" href="/contactus">تماس با ما</a>
                                             <a class="btn-about-us btn-base-second px-5" href="/aboutus">درباره ما</a>
@@ -125,12 +127,30 @@
                                 </svg>
                             </a>
                         </div>
+                        <div class="d-flex flex-column align-items-start w-100">
+                            <h4 class="title-search-main">نتایج جتسجو</h4>
+                            <div class="p-list-searched">
+                                @foreach ($searchResults as $item)
+                                    <div class="item-search">
+                                        <img class="img" src="/images/img-test.png" alt="">
+                                        <div class="info">
+                                            <h5 class="ms-3 mt-3 f-13">{{$item->title}}</h5>
+                                            <div class="w-100 info-search d-flex justify-content-end">
+                                                <a class="btn-more" href="">آدامه مطلب </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+
+
+
+                            </div>
+                        </div>
                         <div>
-                            
+
                             @foreach ($searchResults as $item)
-                            <a>{{ $item->title }}</a>
                             @endforeach
-                            
+
                         </div>
                     </div>
                     <div class="line-between"></div>
@@ -159,11 +179,11 @@
             </div>
             <div class="nav-header">
                 @foreach(\App\Models\Link::query()->where('type' , 'header')->first()?->linkContents()->get()->sortBy('order_item') ?? [] as $link)
-                @if($link->is_link)
-                <h2><a href="{{ $link->href }}">  {{ $link->title }}  </a></h2>
-                @else
-                <h2><a href="{{ $link->href }}">  {{ $link->title }}  </a></h2>
-                @endif
+                    @if($link->is_link)
+                        <h2><a href="{{ $link->href }}">  {{ $link->title }}  </a></h2>
+                    @else
+                        <h2><a href="{{ $link->href }}">  {{ $link->title }}  </a></h2>
+                    @endif
                 @endforeach
             </div>
 
