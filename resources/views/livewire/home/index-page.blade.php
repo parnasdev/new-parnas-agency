@@ -144,7 +144,7 @@
                 <div class="w-100 p-realtive">
 
                 </div>
-                <img x-show="step===1" class="img-step-1 img" src="/images/img-step-0.webp" alt="">
+                <img  x-show="step===1" class="img-step-0 img" src="/images/img-step-0.webp" alt="">
                 <img style="display: none" x-show="step===2" class="img-step-1 img" src="/images/img-step-1.webp" alt="">
                 <img style="display: none" x-show="step===3" class="img-step-2 img" src="/images/img-step-2.webp" alt="">
                 <img style="display: none" x-show="step===4" class="img-step-3 img" src="/images/img-step-3.webp" alt="">
@@ -424,7 +424,7 @@
                     <h3>برترین پروژه های پارناس ؛ خروجی های با ارزش ما</h3>
                     <div class="tab-header-slider-website">
                         @foreach ($this->getCategory(2) as $category)
-                        <a @click.prevent="tabSlider={{$category->id}}" 
+                        <a @click.prevent="tabSlider={{$category->id}}"
                             :class="{'activeSlider':tabSlider==={{$category->id}}}"
                            class="tabChange" href="">
                             <div class="line"></div>
@@ -442,7 +442,7 @@
                                             <img class="img-work-samples" src="{{ $portfolio->files()->where('type', 1)->first()->url ?? '/images/noPicture.png' }}" alt="{{  $portfolio->files()->where('type', 1)->first()->alt }}">
                                             <div class="item">
                                                 <label for="">{{ $portfolio->title }}</label>
-                                                <a class="link-info-work-samples btn-base" 
+                                                <a class="link-info-work-samples btn-base"
                                                 href="{{ route('portifilos.show' , ['portfolio' => $portfolio->slug]) }}"> </a>
                                             </div>
                                             <div class="border"></div>
@@ -464,9 +464,9 @@
                         <a href="" class="item-work-samples">
                             <img src="{{ $img['url'] ?? '/img/png/noPicture.png'  }}" alt="">
                         </a>
-   
+
                         @endforeach
-                    
+
 
                     </div>
                 </div>
@@ -586,7 +586,7 @@
                             <img src="{{ $customer->files->first()?->url }}" alt="">
                         </div>
                         @endforeach
-                     
+
                         <div style="width: 27.9%;display: flex;justify-content: center">
                             <a href="/portfolio " class="btn-all-project btn-base-second">همه نمونه کار ها</a>
                         </div>
@@ -596,7 +596,7 @@
                      @if ($loop->index > 10)
                      <div class="box-logo">
                             <img src="{{ $customer->files->first()?->url }}" alt="">
-                        </div> 
+                        </div>
                      @endif
                         @endforeach
                   @endif
@@ -972,9 +972,9 @@
                         <a href="" class="item-work-samples">
                             <img src="{{ $img['url'] ?? '/img/png/noPicture.png'  }}" alt="">
                         </a>
-   
+
                         @endforeach
-          
+
                     </div>
                 </div>
             </div>

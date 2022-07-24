@@ -42,7 +42,7 @@
 }" @scroll.window="progressIndicator()"
       @scroll-top.window="window.scrollTo(0,0)">
 <div x-data="{loader : true}">
-            <div class="loading" x-init="setTimeout( () => { loader = false } , 2000)" x-show="loader">
+            <div class="loading" x-init="setTimeout( () => { loader = false } , 1000)" x-show="loader">
                 <div class="parent-loading">
                     <svg class="svg-loading" width="200" height="200" viewBox="0 0 100 100">
                         <polyline class="line-cornered stroke-still" points="0,0 100,0 100,100" stroke-width="10" fill="none"></polyline>
@@ -71,7 +71,6 @@
                             </g>
                         </g>
                     </svg>
-
                 </div>
             </div>
     <div x-show="!loader" style="display: none">
